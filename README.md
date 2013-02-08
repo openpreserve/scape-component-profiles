@@ -10,7 +10,7 @@ This repository contains the profiles, the corresponding ontology and other rela
 ## Profiles
 This folder contains the profiles that describe different component types. They specify the metadata that must be added to workflows to adhere to profiles. Profiles are written as XML documents that are validated against the [Taverna component profile XSD](http://ns.taverna.org.uk/2012/component/profile/ComponentProfile.xsd).
 
-The profile specifies mandatory workflow elements (*InputPort*, *OutputPort*, and *Activity*). For the component itself and each element, the *annotation*s and *semanticAnnotation*s are defined. Ports depth can also be restricted. Semantic annotations are based on the *ontology* specified in the profile. 
+The profile specifies mandatory workflow elements (e.g. *InputPort*, *OutputPort*, and *Activity*). For the component itself and each element, the *annotations* and *semanticAnnotations* are defined. Ports depth can also be restricted. Semantic annotations are based on the *ontology* specified in the profile. 
 
 ## Ontology
 The ontology is used to add semantic annotations to the workflows.
