@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+
+<profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://ns.taverna.org.uk/2012/component/profile"
+	xsi:schemaLocation="http://ns.taverna.org.uk/2012/component/profile ComponentProfile.xsd">
+
+	<id>eu.scape-project.taverna.component.profile.migration</id>
+	<name>Migration Action Component</name>
+	<description>A SCAPE component for migration actions</description>
+	<ontology id="scape">http://www.myexperiment.org/files/871/download</ontology>
+	<ontology id="dependency">http://www.myexperiment.org/files/870/download</ontology>
+	<component>
+		<inputPort maxDepth='1'>
+			<annotation>Example</annotation>
+			<semanticAnnotation ontology="scape"
+				predicate="http://scape-project.eu/pc/vocab/components#portType"
+				class="http://scape-project.eu/pc/vocab/components#PortType">
+				http://scape-project.eu/pc/vocab/components#FromURIPort
+			</semanticAnnotation>
+		</inputPort>
+		<inputPort maxDepth='1'>
+			<annotation>Example</annotation>
+			<semanticAnnotation ontology="scape"
+				predicate="http://scape-project.eu/pc/vocab/components#portType"
+				class="http://scape-project.eu/pc/vocab/components#PortType">
+				http://scape-project.eu/pc/vocab/components#ToURIPort
+			</semanticAnnotation>
+		</inputPort>
+		<inputPort maxDepth='1' minOccurs="0" maxOccurs="unbounded">
+			<annotation>Example</annotation>
+			<semanticAnnotation ontology="scape"
+				predicate="http://scape-project.eu/pc/vocab/components#portType"
+				class="http://scape-project.eu/pc/vocab/components#PortType">
+				http://scape-project.eu/pc/vocab/components#ParameterPort
+			</semanticAnnotation>
+			<semanticAnnotation ontology="scape"
+				predicate="http://scape-project.eu/pc/vocab/components#acceptsPredefinedParameter"
+				class="http://scape-project.eu/pc/vocab/components#PredefinedParameter"
+				maxOccurs="unbounded" />
+		</inputPort>
+		<activity type="Tool" minOccurs="0" maxOccurs="unbounded">
+			<semanticAnnotation ontology="dependency"
+				predicate="http://scape-project.eu/pc/vocab/components#hasDependency"
+				class="http://scape-project.eu/pc/vocab/components#Dependency"
+				maxOccurs="unbounded" />
+		</activity>
+		<activity minOccurs="0" maxOccurs="unbounded" />
+		<annotation>Title</annotation>
+		<annotation minOccurs="0">Description</annotation>
+		<annotation minOccurs="0">Author</annotation>
+		<semanticAnnotation ontology="scape"
+			predicate="http://scape-project.eu/pc/vocab/components#migrates"
+			class="http://scape-project.eu/pc/vocab/components#MigrationPath"
+			maxOccurs="unbounded" />
+	</component>
+</profile>
