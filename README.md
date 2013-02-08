@@ -17,6 +17,6 @@ The ontology is used to add semantic annotations to the workflows.
 
 
 
-This work is licensed under a [Creative Commons Attribution 3.0 Unported License](https://creativecommons.org/licenses/by/3.0/).
+This work is licensed under a [Creative Commons Attribution-NonCommercial 3.0 Unported License](http://creativecommons.org/licenses/by-nc/3.0).
 
-[![Creative Commons Attribution 3.0 Unported License](http://i.creativecommons.org/l/by/3.0/80x15.png)](https://creativecommons.org/licenses/by/3.0/)
+[![Creative Commons Attribution-NonCommercial 3.0 Unported License](http://i.creativecommons.org/l/by-nc/3.0/88x31.png)](http://creativecommons.org/licenses/by-nc/3.0)
