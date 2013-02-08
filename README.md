@@ -8,10 +8,12 @@ The Taverna workbench can be extended to easily validate workflows against profi
 This repository contains the profiles, the corresponding ontology and other related files.
 
 ## Profiles
-This folder contains the profiles that describe different component types. The profile specifies what metadata must be added to workflows to adhere to the profile. The metadata is added as semantic annotations based on the ontology.
+This folder contains the profiles that describe different component types. They specify the metadata that must be added to workflows to adhere to profiles. Profiles are written as XML documents that are validated against the [Taverna component profile XSD](http://ns.taverna.org.uk/2012/component/profile/ComponentProfile.xsd).
+
+The profile specifies mandatory workflow elements (*InputPort*, *OutputPort*, and *Activity*). For the component itself and each element, the *annotation*s and *semanticAnnotation*s are defined. Ports depth can also be restricted. Semantic annotations are based on the *ontology* specified in the profile. 
 
 ## Ontology
-The ontology is used to annotate the workflows.
+The ontology is used to add semantic annotations to the workflows.
 
 
 
