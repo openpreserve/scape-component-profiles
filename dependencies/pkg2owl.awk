@@ -115,5 +115,5 @@ function checkParams() {
 
 # Prints a usage message
 function printUsage() {
-    print "Usage: awk -v repositoryId=repository_id -v repositoryName=repository_name -v repositoryLocation=repository_location -v ontologyUri=ontology_uri -v license=license_uri -f inputfile"
+    print "Usage: awk -v repositoryId=repository_id -v repositoryName=repository_name -v repositoryLocation=repository_location -v ontologyUri=ontology_uri [-v license=license_uri] -f inputfile"
 }
