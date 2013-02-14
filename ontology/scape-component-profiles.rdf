@@ -29,6 +29,17 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Datatypes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -51,7 +62,7 @@
     <!-- http://scape-project.eu/pc/vocab/components#acceptsMeasure -->
 
     <owl:ObjectProperty rdf:about="&components;acceptsMeasure">
-        <rdfs:domain rdf:resource="&components;Port"/>
+        <rdfs:domain rdf:resource="&components;InputPort"/>
         <rdfs:range rdf:resource="&vocab;Measure"/>
     </owl:ObjectProperty>
     
@@ -234,15 +245,6 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#parameter -->
-
-    <owl:DatatypeProperty rdf:about="&components;parameter">
-        <rdfs:domain rdf:resource="&components;PredefinedParameter"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://scape-project.eu/pc/vocab/components#parameterDescription -->
 
     <owl:DatatypeProperty rdf:about="&components;parameterDescription">
@@ -308,13 +310,13 @@
         <rdfs:subClassOf rdf:resource="&components;Property"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;fromMimetype"/>
+                <owl:onProperty rdf:resource="&components;toMimetype"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;toMimetype"/>
+                <owl:onProperty rdf:resource="&components;fromMimetype"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -336,13 +338,6 @@
         <rdfs:subClassOf rdf:resource="&components;Property"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;hasEnvironment"/>
-                <owl:onClass rdf:resource="&components;Environment"/>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&components;name"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
@@ -351,6 +346,13 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&components;hostedIn"/>
                 <owl:onClass rdf:resource="&components;PackageRepository"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&components;hasEnvironment"/>
+                <owl:onClass rdf:resource="&components;Environment"/>
                 <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -379,19 +381,27 @@
     
 
 
+    <!-- http://scape-project.eu/pc/vocab/components#MeasurePortType -->
+
+    <owl:Class rdf:about="&components;MeasurePortType">
+        <rdfs:subClassOf rdf:resource="&components;PortType"/>
+    </owl:Class>
+    
+
+
     <!-- http://scape-project.eu/pc/vocab/components#MigrationPath -->
 
     <owl:Class rdf:about="&components;MigrationPath">
         <rdfs:subClassOf rdf:resource="&components;Property"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;toMimetype"/>
+                <owl:onProperty rdf:resource="&components;fromMimetype"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;fromMimetype"/>
+                <owl:onProperty rdf:resource="&components;toMimetype"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -442,17 +452,23 @@
         <rdfs:subClassOf rdf:resource="&components;Property"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;parameterValue"/>
+                <owl:onProperty rdf:resource="&components;parameterDescription"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;parameterDescription"/>
+                <owl:onProperty rdf:resource="&components;parameterValue"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#Profile -->
+
+    <owl:Class rdf:about="&components;Profile"/>
     
 
 
@@ -515,6 +531,15 @@
     
 
 
+    <!-- http://scape-project.eu/pc/vocab/components#Characterisation -->
+
+    <owl:NamedIndividual rdf:about="&components;Characterisation">
+        <rdf:type rdf:resource="&components;Profile"/>
+        <rdfs:seeAlso>https://raw.github.com/openplanets/scape-component-profiles/master/profiles/CharacterisationComponentProfile.xml</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://scape-project.eu/pc/vocab/components#Debian -->
 
     <owl:NamedIndividual rdf:about="&components;Debian">
@@ -523,10 +548,19 @@
     
 
 
+    <!-- http://scape-project.eu/pc/vocab/components#ExecutablePlan -->
+
+    <owl:NamedIndividual rdf:about="&components;ExecutablePlan">
+        <rdf:type rdf:resource="&components;Profile"/>
+        <rdfs:seeAlso>https://github.com/openplanets/scape-component-profiles/blob/master/profiles/ExecutablePlanComponentProfile.xml</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://scape-project.eu/pc/vocab/components#FromMeasurePort -->
 
     <owl:NamedIndividual rdf:about="&components;FromMeasurePort">
-        <rdf:type rdf:resource="&components;PortType"/>
+        <rdf:type rdf:resource="&components;MeasurePortType"/>
     </owl:NamedIndividual>
     
 
@@ -550,7 +584,16 @@
     <!-- http://scape-project.eu/pc/vocab/components#MeasurePort -->
 
     <owl:NamedIndividual rdf:about="&components;MeasurePort">
-        <rdf:type rdf:resource="&components;PortType"/>
+        <rdf:type rdf:resource="&components;MeasurePortType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#MigrationAction -->
+
+    <owl:NamedIndividual rdf:about="&components;MigrationAction">
+        <rdf:type rdf:resource="&components;Profile"/>
+        <rdfs:seeAlso>https://raw.github.com/openplanets/scape-component-profiles/master/profiles/MigrationActionComponentProfile.xml</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -571,6 +614,24 @@
     
 
 
+    <!-- http://scape-project.eu/pc/vocab/components#QAObjectComparison -->
+
+    <owl:NamedIndividual rdf:about="&components;QAObjectComparison">
+        <rdf:type rdf:resource="&components;Profile"/>
+        <rdfs:seeAlso>https://github.com/openplanets/scape-component-profiles/raw/master/profiles/QAObjectComparisonComponentProfile.xml</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#QAPropertyComparison -->
+
+    <owl:NamedIndividual rdf:about="&components;QAPropertyComparison">
+        <rdf:type rdf:resource="&components;Profile"/>
+        <rdfs:seeAlso>https://github.com/openplanets/scape-component-profiles/raw/master/profiles/QAPropertyComparisonComponentProfile.xml</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://scape-project.eu/pc/vocab/components#Redhat -->
 
     <owl:NamedIndividual rdf:about="&components;Redhat">
@@ -582,7 +643,7 @@
     <!-- http://scape-project.eu/pc/vocab/components#ToMeasurePort -->
 
     <owl:NamedIndividual rdf:about="&components;ToMeasurePort">
-        <rdf:type rdf:resource="&components;PortType"/>
+        <rdf:type rdf:resource="&components;MeasurePortType"/>
     </owl:NamedIndividual>
     
 
@@ -599,6 +660,15 @@
 
     <owl:NamedIndividual rdf:about="&components;Ubuntu">
         <rdf:type rdf:resource="&components;Environment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#Validation -->
+
+    <owl:NamedIndividual rdf:about="&components;Validation">
+        <rdf:type rdf:resource="&components;Profile"/>
+        <rdfs:seeAlso>https://github.com/openplanets/scape-component-profiles/blob/master/profiles/ValidationComponentProfile.xml</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 

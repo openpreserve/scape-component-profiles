@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://ns.taverna.org.uk/2012/component/profile"
+	xsi:schemaLocation="http://ns.taverna.org.uk/2012/component/profile ComponentProfile.xsd">
+
+	<id>http://scape-project.eu/pc/vocab/components#ExecutablePlan</id>
+	<name>Executable Plan Component</name>
+	<description>A SCAPE component for executable plans</description>
+	<ontology id="components">https://github.com/openplanets/scape-component-profiles/raw/master/ontology/scape-component-profiles.rdf</ontology>
+	<component>
+
+	</component>
+</profile>
