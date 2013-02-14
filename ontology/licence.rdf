@@ -211,9 +211,9 @@
     
 
 
-    <!-- https://www.gnu.org/licenses/gpl-3.0 -->
+    <!-- http://www.gnu.org/licenses/gpl-3.0 -->
 
-    <owl:NamedIndividual rdf:about="https://www.gnu.org/licenses/gpl-3.0">
+    <owl:NamedIndividual rdf:about="http://www.gnu.org/licenses/gpl-3.0">
         <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
         <rdfs:label>GNU General Public License (GPL) 3.0</rdfs:label>
     </owl:NamedIndividual>
