@@ -1,0 +1,626 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY vocab "http://scape-project.eu/pw/vocab/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY components "http://scape-project.eu/pc/vocab/components#" >
+]>
+
+
+<rdf:RDF xmlns="http://scape-project.eu/pc/vocab/components#"
+     xml:base="http://scape-project.eu/pc/vocab/components"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:components="http://scape-project.eu/pc/vocab/components#"
+     xmlns:vocab="http://scape-project.eu/pw/vocab/">
+    <owl:Ontology rdf:about="http://scape-project.eu/pc/vocab/components">
+        <owl:imports rdf:resource="https://raw.github.com/openplanets/scape-component-profiles/master/ontology/licence.rdf"/>
+        <owl:imports rdf:resource="https://raw.github.com/openplanets/policies/master/harmonised/attributes_measures.rdf"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#acceptsMeasure -->
+
+    <owl:ObjectProperty rdf:about="&components;acceptsMeasure">
+        <rdfs:domain rdf:resource="&components;Port"/>
+        <rdfs:range rdf:resource="&vocab;Measure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#acceptsPredefinedParameter -->
+
+    <owl:ObjectProperty rdf:about="&components;acceptsPredefinedParameter">
+        <rdfs:domain rdf:resource="&components;InputPort"/>
+        <rdfs:range rdf:resource="&components;PredefinedParameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#handlesMimetype -->
+
+    <owl:ObjectProperty rdf:about="&components;handlesMimetype">
+        <rdfs:range rdf:resource="&components;AcceptedMimetype"/>
+        <rdfs:domain rdf:resource="&components;Workflow"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#handlesMimetypes -->
+
+    <owl:ObjectProperty rdf:about="&components;handlesMimetypes">
+        <rdfs:range rdf:resource="&components;AcceptedMimetypes"/>
+        <rdfs:domain rdf:resource="&components;Workflow"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#hasDependency -->
+
+    <owl:ObjectProperty rdf:about="&components;hasDependency">
+        <rdfs:range rdf:resource="&components;Dependency"/>
+        <rdfs:domain rdf:resource="&components;Tool"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#hasEnvironment -->
+
+    <owl:ObjectProperty rdf:about="&components;hasEnvironment">
+        <rdfs:domain rdf:resource="&components;Dependency"/>
+        <rdfs:range rdf:resource="&components;Environment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#hostedIn -->
+
+    <owl:ObjectProperty rdf:about="&components;hostedIn">
+        <rdfs:domain rdf:resource="&components;Dependency"/>
+        <rdfs:range rdf:resource="&components;PackageRepository"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#migrates -->
+
+    <owl:ObjectProperty rdf:about="&components;migrates">
+        <rdfs:range rdf:resource="&components;MigrationPath"/>
+        <rdfs:domain rdf:resource="&components;Workflow"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#portType -->
+
+    <owl:ObjectProperty rdf:about="&components;portType">
+        <rdfs:domain rdf:resource="&components;Port"/>
+        <rdfs:range rdf:resource="&components;PortType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#providesMeasure -->
+
+    <owl:ObjectProperty rdf:about="&components;providesMeasure">
+        <rdfs:domain rdf:resource="&components;OutputPort"/>
+        <rdfs:range rdf:resource="&vocab;Measure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#acceptedMimetype -->
+
+    <owl:DatatypeProperty rdf:about="&components;acceptedMimetype">
+        <rdfs:domain rdf:resource="&components;AcceptedMimetype"/>
+        <rdfs:subPropertyOf rdf:resource="&components;mimetype"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#dependencyVersion -->
+
+    <owl:DatatypeProperty rdf:about="&components;dependencyVersion">
+        <rdfs:domain rdf:resource="&components;Dependency"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#environmentVersion -->
+
+    <owl:DatatypeProperty rdf:about="&components;environmentVersion">
+        <rdfs:domain rdf:resource="&components;Environment"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#fromMimetype -->
+
+    <owl:DatatypeProperty rdf:about="&components;fromMimetype">
+        <rdfs:subPropertyOf rdf:resource="&components;mimetype"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&components;AcceptedMimetypes"/>
+                    <rdf:Description rdf:about="&components;MigrationPath"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#homepage -->
+
+    <owl:DatatypeProperty rdf:about="&components;homepage">
+        <rdfs:domain rdf:resource="&components;Dependency"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#location -->
+
+    <owl:DatatypeProperty rdf:about="&components;location">
+        <rdfs:domain rdf:resource="&components;PackageRepository"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#mimetype -->
+
+    <owl:DatatypeProperty rdf:about="&components;mimetype">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#name -->
+
+    <owl:DatatypeProperty rdf:about="&components;name">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&components;Dependency"/>
+                    <rdf:Description rdf:about="&components;Environment"/>
+                    <rdf:Description rdf:about="&components;PackageRepository"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#parameter -->
+
+    <owl:DatatypeProperty rdf:about="&components;parameter">
+        <rdfs:domain rdf:resource="&components;PredefinedParameter"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#parameterDescription -->
+
+    <owl:DatatypeProperty rdf:about="&components;parameterDescription">
+        <rdfs:domain rdf:resource="&components;PredefinedParameter"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#parameterValue -->
+
+    <owl:DatatypeProperty rdf:about="&components;parameterValue">
+        <rdfs:domain rdf:resource="&components;PredefinedParameter"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#toMimetype -->
+
+    <owl:DatatypeProperty rdf:about="&components;toMimetype">
+        <rdfs:subPropertyOf rdf:resource="&components;mimetype"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&components;AcceptedMimetypes"/>
+                    <rdf:Description rdf:about="&components;MigrationPath"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#AcceptedMimetype -->
+
+    <owl:Class rdf:about="&components;AcceptedMimetype">
+        <rdfs:subClassOf rdf:resource="&components;Property"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&components;acceptedMimetype"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#AcceptedMimetypes -->
+
+    <owl:Class rdf:about="&components;AcceptedMimetypes">
+        <rdfs:subClassOf rdf:resource="&components;Property"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&components;fromMimetype"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&components;toMimetype"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#Activity -->
+
+    <owl:Class rdf:about="&components;Activity">
+        <rdfs:subClassOf rdf:resource="&components;WorkflowPart"/>
+    </owl:Class>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#Dependency -->
+
+    <owl:Class rdf:about="&components;Dependency">
+        <rdfs:subClassOf rdf:resource="&components;Property"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&components;hasEnvironment"/>
+                <owl:onClass rdf:resource="&components;Environment"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&components;name"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&components;hostedIn"/>
+                <owl:onClass rdf:resource="&components;PackageRepository"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#Environment -->
+
+    <owl:Class rdf:about="&components;Environment">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&components;name"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#InputPort -->
+
+    <owl:Class rdf:about="&components;InputPort">
+        <rdfs:subClassOf rdf:resource="&components;Port"/>
+    </owl:Class>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#MigrationPath -->
+
+    <owl:Class rdf:about="&components;MigrationPath">
+        <rdfs:subClassOf rdf:resource="&components;Property"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&components;toMimetype"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&components;fromMimetype"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#OutputPort -->
+
+    <owl:Class rdf:about="&components;OutputPort">
+        <rdfs:subClassOf rdf:resource="&components;Port"/>
+    </owl:Class>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#PackageRepository -->
+
+    <owl:Class rdf:about="&components;PackageRepository">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&components;location"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#Port -->
+
+    <owl:Class rdf:about="&components;Port">
+        <rdfs:subClassOf rdf:resource="&components;WorkflowPart"/>
+    </owl:Class>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#PortType -->
+
+    <owl:Class rdf:about="&components;PortType">
+        <rdfs:subClassOf rdf:resource="&components;Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#PredefinedParameter -->
+
+    <owl:Class rdf:about="&components;PredefinedParameter">
+        <rdfs:subClassOf rdf:resource="&components;Property"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&components;parameterValue"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&components;parameterDescription"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#Property -->
+
+    <owl:Class rdf:about="&components;Property"/>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#Tool -->
+
+    <owl:Class rdf:about="&components;Tool">
+        <rdfs:subClassOf rdf:resource="&components;Activity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&components;hasDependency"/>
+                <owl:someValuesFrom rdf:resource="&components;Dependency"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#Workflow -->
+
+    <owl:Class rdf:about="&components;Workflow">
+        <rdfs:subClassOf rdf:resource="&components;WorkflowPart"/>
+    </owl:Class>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#WorkflowPart -->
+
+    <owl:Class rdf:about="&components;WorkflowPart"/>
+    
+
+
+    <!-- http://scape-project.eu/pw/vocab/Measure -->
+
+    <owl:Class rdf:about="&vocab;Measure"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#CentOS -->
+
+    <owl:NamedIndividual rdf:about="&components;CentOS">
+        <rdf:type rdf:resource="&components;Environment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#Debian -->
+
+    <owl:NamedIndividual rdf:about="&components;Debian">
+        <rdf:type rdf:resource="&components;Environment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#FromMeasurePort -->
+
+    <owl:NamedIndividual rdf:about="&components;FromMeasurePort">
+        <rdf:type rdf:resource="&components;PortType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#FromURIPort -->
+
+    <owl:NamedIndividual rdf:about="&components;FromURIPort">
+        <rdf:type rdf:resource="&components;PortType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#MacOS -->
+
+    <owl:NamedIndividual rdf:about="&components;MacOS">
+        <rdf:type rdf:resource="&components;Environment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#MeasurePort -->
+
+    <owl:NamedIndividual rdf:about="&components;MeasurePort">
+        <rdf:type rdf:resource="&components;PortType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#ObjectURIPort -->
+
+    <owl:NamedIndividual rdf:about="&components;ObjectURIPort">
+        <rdf:type rdf:resource="&components;PortType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#ParameterPort -->
+
+    <owl:NamedIndividual rdf:about="&components;ParameterPort">
+        <rdf:type rdf:resource="&components;PortType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#Redhat -->
+
+    <owl:NamedIndividual rdf:about="&components;Redhat">
+        <rdf:type rdf:resource="&components;Environment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#ToMeasurePort -->
+
+    <owl:NamedIndividual rdf:about="&components;ToMeasurePort">
+        <rdf:type rdf:resource="&components;PortType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#ToURIPort -->
+
+    <owl:NamedIndividual rdf:about="&components;ToURIPort">
+        <rdf:type rdf:resource="&components;PortType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#Ubuntu -->
+
+    <owl:NamedIndividual rdf:about="&components;Ubuntu">
+        <rdf:type rdf:resource="&components;Environment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#Windows -->
+
+    <owl:NamedIndividual rdf:about="&components;Windows">
+        <rdf:type rdf:resource="&components;Environment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://scape-project.eu/pc/vocab/components#jpegToTiff -->
+
+    <owl:NamedIndividual rdf:about="&components;jpegToTiff">
+        <rdf:type rdf:resource="&components;MigrationPath"/>
+        <fromMimetype>image/jpeg</fromMimetype>
+        <toMimetype>image/tiff</toMimetype>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.3.1957) http://owlapi.sourceforge.net -->
+
