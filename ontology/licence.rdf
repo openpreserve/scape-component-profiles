@@ -1,0 +1,225 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://scape-project.org/pc/vocab/licences#"
+     xml:base="http://scape-project.org/pc/vocab/licences"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://scape-project.org/pc/vocab/licence"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://creativecommons.org/ns#license -->
+
+    <owl:ObjectProperty rdf:about="http://creativecommons.org/ns#license"/>
+    
+
+
+    <!-- http://scape-project.org/pc/vocab/licence#hasLicense -->
+
+    <owl:ObjectProperty rdf:about="http://scape-project.org/pc/vocab/licence#hasLicense">
+        <rdfs:subPropertyOf rdf:resource="http://creativecommons.org/ns#license"/>
+        <rdfs:range rdf:resource="http://scape-project.org/pc/vocab/licence#License"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://creativecommons.org/ns#License -->
+
+    <owl:Class rdf:about="http://creativecommons.org/ns#License"/>
+    
+
+
+    <!-- http://scape-project.org/pc/vocab/licence#License -->
+
+    <owl:Class rdf:about="http://scape-project.org/pc/vocab/licence#License">
+        <rdfs:subClassOf rdf:resource="http://creativecommons.org/ns#License"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://creativecommons.org/licenses/BSD/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/BSD/">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>BSD License</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/GPL/2.0/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/GPL/2.0/">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>GNU General Public License (GPL) 2.0</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/LGPL/2.1/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/LGPL/2.1/">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>GNU Lesser General Public License (LGPL) 2.1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/MIT/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/MIT/">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>MIT License</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by-nc-nd/3.0/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by-nc-nd/3.0/">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 Unported License</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by-nc-sa/3.0/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by-nc-sa/3.0/">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by-nc/3.0/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by-nc/3.0/">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>Creative Commons Attribution-Noncommercial 3.0 Unported License</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by-nd/3.0/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by-nd/3.0/">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>Creative Commons Attribution-No Derivative Works 3.0 Unported License </rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by-sa/3.0/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by-sa/3.0/">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>Creative Commons Attribution-Share Alike 3.0 Unported License</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by/3.0/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by/3.0/">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>Creative Commons Attribution 3.0 Unported License</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/publicdomain/zero/1.0/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/publicdomain/zero/1.0/">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>CC0 1.0 Universal (Public Domain License)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.apache.org/licenses/LICENSE-2.0 -->
+
+    <owl:NamedIndividual rdf:about="http://www.apache.org/licenses/LICENSE-2.0">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>Apache License v2.0</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.gnu.org/licenses/gpl-3.0 -->
+
+    <owl:NamedIndividual rdf:about="https://www.gnu.org/licenses/gpl-3.0">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>GNU General Public License (GPL) 3.0</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.3.1957) http://owlapi.sourceforge.net -->
+
