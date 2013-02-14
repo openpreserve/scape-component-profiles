@@ -1,6 +1,8 @@
 BEGIN {
     FS = ": ";
     
+    exitInvoked = 0
+
     if (length(indent) == 0) {
         indent = "  "
     }
@@ -33,21 +35,23 @@ $1 == "Version" {
 
 $0 ~ /^$/ {
     if (length(packageName) > 0) {
-      packageName = ""
-      print "</owl:NamedIndividual>"
+        packageName = ""
+        print "</owl:NamedIndividual>"
     }
 }
 
 END {
-print "</rdf:RDF>"
+    if (! exitInvoked  ) {
+        print "</rdf:RDF>"
+    }
 }
 
 
 # Prints the RDF/OWL header
 function printHeader() {
-  print "<?xml version=\"1.0\"?>"
+    print "<?xml version=\"1.0\"?>"
 
-  print \
+    print \
 "<!DOCTYPE rdf:RDF [\n",
 "    <!ENTITY owl \"http://www.w3.org/2002/07/owl#\" >\n",
 "    <!ENTITY xsd \"http://www.w3.org/2001/XMLSchema#\" >\n",
@@ -57,7 +61,7 @@ function printHeader() {
 "    <!ENTITY components \"http://scape-project.eu/pc/vocab/components#\" >\n",
 "]>\n"
 
-print \
+    print \
 "<rdf:RDF xmlns=\"" ontologyUri "#\"\n",
 "     xml:base=\"" ontologyUri "\"\n",
 "     xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\"\n",
@@ -69,40 +73,42 @@ print \
 "    <owl:Ontology rdf:about=\"" ontologyUri "\">\n",
 "        <owl:imports rdf:resource=\"https://raw.github.com/openplanets/scape-component-profiles/master/ontology/scape-componet-profiles.rdf\"/>\n",
 "    </owl:Ontology>\n"
-
 }
 
 
 # Prints the repository individual
 function printRepository() {
-print \
+    print \
 "<owl:NamedIndividual rdf:about=\"" ontologyUri "#" repositoryID "\">\n",
 indent "<rdf:type rdf:resource=\"&components;PackageRepository\"/>\n",
 indent "<components:location>" repositoryLocation "</components:location>\n",
 indent "<components:name>" repositoryName "</components:name>\n",
 "</owl:NamedIndividual>\n"
-
 }
 
 # Checks parameters
 function checkParams() {
     if (length(repositoryId) == 0) {
         printUsage()
+        exitInvoked = 1
         exit 1
     }
 
     if (length(repositoryName) == 0) {
         printUsage()
+        exitInvoked = 1
         exit 1
     }
 
     if (length(repositoryLocation) == 0) {
         printUsage()
+        exitInvoked = 1
         exit 1
     }
 
     if (length(ontologyUri) == 0) {
         printUsage()
+        exitInvoked = 1
         exit 1
     }
 }
