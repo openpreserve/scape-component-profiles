@@ -39,7 +39,7 @@
 			<semanticAnnotation ontology="components"
 				predicate="http://scape-project.eu/pc/vocab/components#hasDependency"
 				class="http://scape-project.eu/pc/vocab/components#Dependency"
-				minOccurs="0" maxOccurs="unbounded" />
+				minOccurs="1" maxOccurs="unbounded" />
 		</activity>
 		<activity minOccurs="0" maxOccurs="unbounded" />
 		<annotation>Title</annotation>
