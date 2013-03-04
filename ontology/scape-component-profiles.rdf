@@ -2,26 +2,25 @@
 
 
 <!DOCTYPE rdf:RDF [
+    <!ENTITY components "http://purl.org/DP/components#" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY vocab "http://scape-project.eu/pw/vocab/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY components "http://scape-project.eu/pc/vocab/components#" >
 ]>
 
 
-<rdf:RDF xmlns="http://scape-project.eu/pc/vocab/components#"
-     xml:base="http://scape-project.eu/pc/vocab/components"
+<rdf:RDF xmlns="http://purl.org/DP/components#"
+     xml:base="http://purl.org/DP/components"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:components="http://scape-project.eu/pc/vocab/components#"
+     xmlns:components="http://purl.org/DP/components#"
      xmlns:vocab="http://scape-project.eu/pw/vocab/">
-    <owl:Ontology rdf:about="http://scape-project.eu/pc/vocab/components">
-        <owl:imports rdf:resource="https://raw.github.com/openplanets/scape-component-profiles/master/ontology/licence.rdf"/>
-        <owl:imports rdf:resource="https://raw.github.com/openplanets/policies/master/harmonised/attributes_measures.rdf"/>
+    <owl:Ontology rdf:about="http://purl.org/DP/components">
+        <owl:imports rdf:resource="http://scape-project.org/pc/vocab/licence"/>
     </owl:Ontology>
     
 
@@ -59,7 +58,13 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#acceptsMeasure -->
+    <!-- http://creativecommons.org/ns#license -->
+
+    <owl:ObjectProperty rdf:about="http://creativecommons.org/ns#license"/>
+    
+
+
+    <!-- http://purl.org/DP/components#acceptsMeasure -->
 
     <owl:ObjectProperty rdf:about="&components;acceptsMeasure">
         <rdfs:domain rdf:resource="&components;InputPort"/>
@@ -68,7 +73,7 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#acceptsPredefinedParameter -->
+    <!-- http://purl.org/DP/components#acceptsPredefinedParameter -->
 
     <owl:ObjectProperty rdf:about="&components;acceptsPredefinedParameter">
         <rdfs:domain rdf:resource="&components;InputPort"/>
@@ -77,7 +82,17 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#handlesMimetype -->
+    <!-- http://purl.org/DP/components#fits -->
+
+    <owl:ObjectProperty rdf:about="&components;fits">
+        <rdfs:range rdf:resource="&components;Profile"/>
+        <rdfs:domain rdf:resource="&components;Workflow"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/DP/components#handlesMimetype -->
 
     <owl:ObjectProperty rdf:about="&components;handlesMimetype">
         <rdfs:range rdf:resource="&components;AcceptedMimetype"/>
@@ -86,7 +101,7 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#handlesMimetypes -->
+    <!-- http://purl.org/DP/components#handlesMimetypes -->
 
     <owl:ObjectProperty rdf:about="&components;handlesMimetypes">
         <rdfs:range rdf:resource="&components;AcceptedMimetypes"/>
@@ -95,7 +110,7 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#hasDependency -->
+    <!-- http://purl.org/DP/components#hasDependency -->
 
     <owl:ObjectProperty rdf:about="&components;hasDependency">
         <rdfs:range rdf:resource="&components;Dependency"/>
@@ -104,7 +119,7 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#hasEnvironment -->
+    <!-- http://purl.org/DP/components#hasEnvironment -->
 
     <owl:ObjectProperty rdf:about="&components;hasEnvironment">
         <rdfs:domain rdf:resource="&components;Dependency"/>
@@ -113,7 +128,16 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#hostedIn -->
+    <!-- http://purl.org/DP/components#hasLicence -->
+
+    <owl:ObjectProperty rdf:about="&components;hasLicence">
+        <rdfs:subPropertyOf rdf:resource="http://creativecommons.org/ns#license"/>
+        <rdfs:range rdf:resource="&components;Licence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/DP/components#hostedIn -->
 
     <owl:ObjectProperty rdf:about="&components;hostedIn">
         <rdfs:domain rdf:resource="&components;Dependency"/>
@@ -122,7 +146,7 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#migrates -->
+    <!-- http://purl.org/DP/components#migrates -->
 
     <owl:ObjectProperty rdf:about="&components;migrates">
         <rdfs:range rdf:resource="&components;MigrationPath"/>
@@ -131,7 +155,7 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#portType -->
+    <!-- http://purl.org/DP/components#portType -->
 
     <owl:ObjectProperty rdf:about="&components;portType">
         <rdfs:domain rdf:resource="&components;Port"/>
@@ -140,7 +164,7 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#providesMeasure -->
+    <!-- http://purl.org/DP/components#providesMeasure -->
 
     <owl:ObjectProperty rdf:about="&components;providesMeasure">
         <rdfs:domain rdf:resource="&components;OutputPort"/>
@@ -160,7 +184,7 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#acceptedMimetype -->
+    <!-- http://purl.org/DP/components#acceptedMimetype -->
 
     <owl:DatatypeProperty rdf:about="&components;acceptedMimetype">
         <rdfs:domain rdf:resource="&components;AcceptedMimetype"/>
@@ -169,7 +193,7 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#dependencyVersion -->
+    <!-- http://purl.org/DP/components#dependencyVersion -->
 
     <owl:DatatypeProperty rdf:about="&components;dependencyVersion">
         <rdfs:domain rdf:resource="&components;Dependency"/>
@@ -178,16 +202,7 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#environmentVersion -->
-
-    <owl:DatatypeProperty rdf:about="&components;environmentVersion">
-        <rdfs:domain rdf:resource="&components;Environment"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://scape-project.eu/pc/vocab/components#fromMimetype -->
+    <!-- http://purl.org/DP/components#fromMimetype -->
 
     <owl:DatatypeProperty rdf:about="&components;fromMimetype">
         <rdfs:subPropertyOf rdf:resource="&components;mimetype"/>
@@ -203,7 +218,7 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#homepage -->
+    <!-- http://purl.org/DP/components#homepage -->
 
     <owl:DatatypeProperty rdf:about="&components;homepage">
         <rdfs:domain rdf:resource="&components;Dependency"/>
@@ -212,7 +227,7 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#location -->
+    <!-- http://purl.org/DP/components#location -->
 
     <owl:DatatypeProperty rdf:about="&components;location">
         <rdfs:domain rdf:resource="&components;PackageRepository"/>
@@ -220,7 +235,7 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#mimetype -->
+    <!-- http://purl.org/DP/components#mimetype -->
 
     <owl:DatatypeProperty rdf:about="&components;mimetype">
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -228,7 +243,7 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#name -->
+    <!-- http://purl.org/DP/components#name -->
 
     <owl:DatatypeProperty rdf:about="&components;name">
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -236,7 +251,6 @@
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&components;Dependency"/>
-                    <rdf:Description rdf:about="&components;Environment"/>
                     <rdf:Description rdf:about="&components;PackageRepository"/>
                 </owl:unionOf>
             </owl:Class>
@@ -245,7 +259,7 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#parameterDescription -->
+    <!-- http://purl.org/DP/components#parameterDescription -->
 
     <owl:DatatypeProperty rdf:about="&components;parameterDescription">
         <rdfs:domain rdf:resource="&components;PredefinedParameter"/>
@@ -254,7 +268,7 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#parameterValue -->
+    <!-- http://purl.org/DP/components#parameterValue -->
 
     <owl:DatatypeProperty rdf:about="&components;parameterValue">
         <rdfs:domain rdf:resource="&components;PredefinedParameter"/>
@@ -263,7 +277,7 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#toMimetype -->
+    <!-- http://purl.org/DP/components#toMimetype -->
 
     <owl:DatatypeProperty rdf:about="&components;toMimetype">
         <rdfs:subPropertyOf rdf:resource="&components;mimetype"/>
@@ -290,7 +304,7 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#AcceptedMimetype -->
+    <!-- http://purl.org/DP/components#AcceptedMimetype -->
 
     <owl:Class rdf:about="&components;AcceptedMimetype">
         <rdfs:subClassOf rdf:resource="&components;Property"/>
@@ -304,19 +318,19 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#AcceptedMimetypes -->
+    <!-- http://purl.org/DP/components#AcceptedMimetypes -->
 
     <owl:Class rdf:about="&components;AcceptedMimetypes">
         <rdfs:subClassOf rdf:resource="&components;Property"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;toMimetype"/>
+                <owl:onProperty rdf:resource="&components;fromMimetype"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;fromMimetype"/>
+                <owl:onProperty rdf:resource="&components;toMimetype"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -324,7 +338,7 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#Activity -->
+    <!-- http://purl.org/DP/components#Activity -->
 
     <owl:Class rdf:about="&components;Activity">
         <rdfs:subClassOf rdf:resource="&components;WorkflowPart"/>
@@ -332,10 +346,17 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#Dependency -->
+    <!-- http://purl.org/DP/components#Dependency -->
 
     <owl:Class rdf:about="&components;Dependency">
         <rdfs:subClassOf rdf:resource="&components;Property"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&components;hasEnvironment"/>
+                <owl:onClass rdf:resource="&components;Environment"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&components;name"/>
@@ -349,18 +370,11 @@
                 <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;hasEnvironment"/>
-                <owl:onClass rdf:resource="&components;Environment"/>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
     </owl:Class>
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#Environment -->
+    <!-- http://purl.org/DP/components#Environment -->
 
     <owl:Class rdf:about="&components;Environment">
         <rdfs:subClassOf>
@@ -373,7 +387,7 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#InputPort -->
+    <!-- http://purl.org/DP/components#InputPort -->
 
     <owl:Class rdf:about="&components;InputPort">
         <rdfs:subClassOf rdf:resource="&components;Port"/>
@@ -381,15 +395,31 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#MeasurePortType -->
+    <!-- http://purl.org/DP/components#Licence -->
 
-    <owl:Class rdf:about="&components;MeasurePortType">
-        <rdfs:subClassOf rdf:resource="&components;PortType"/>
+    <owl:Class rdf:about="&components;Licence">
+        <rdfs:subClassOf rdf:resource="http://creativecommons.org/ns#License"/>
     </owl:Class>
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#MigrationPath -->
+    <!-- http://purl.org/DP/components#LinuxEnvironment -->
+
+    <owl:Class rdf:about="&components;LinuxEnvironment">
+        <rdfs:subClassOf rdf:resource="&components;Environment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/DP/components#MacOSEnvironment -->
+
+    <owl:Class rdf:about="&components;MacOSEnvironment">
+        <rdfs:subClassOf rdf:resource="&components;Environment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/DP/components#MigrationPath -->
 
     <owl:Class rdf:about="&components;MigrationPath">
         <rdfs:subClassOf rdf:resource="&components;Property"/>
@@ -409,7 +439,7 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#OutputPort -->
+    <!-- http://purl.org/DP/components#OutputPort -->
 
     <owl:Class rdf:about="&components;OutputPort">
         <rdfs:subClassOf rdf:resource="&components;Port"/>
@@ -417,7 +447,7 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#PackageRepository -->
+    <!-- http://purl.org/DP/components#PackageRepository -->
 
     <owl:Class rdf:about="&components;PackageRepository">
         <rdfs:subClassOf>
@@ -430,7 +460,7 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#Port -->
+    <!-- http://purl.org/DP/components#Port -->
 
     <owl:Class rdf:about="&components;Port">
         <rdfs:subClassOf rdf:resource="&components;WorkflowPart"/>
@@ -438,7 +468,7 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#PortType -->
+    <!-- http://purl.org/DP/components#PortType -->
 
     <owl:Class rdf:about="&components;PortType">
         <rdfs:subClassOf rdf:resource="&components;Property"/>
@@ -446,19 +476,19 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#PredefinedParameter -->
+    <!-- http://purl.org/DP/components#PredefinedParameter -->
 
     <owl:Class rdf:about="&components;PredefinedParameter">
         <rdfs:subClassOf rdf:resource="&components;Property"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;parameterDescription"/>
+                <owl:onProperty rdf:resource="&components;parameterValue"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;parameterValue"/>
+                <owl:onProperty rdf:resource="&components;parameterDescription"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -466,19 +496,19 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#Profile -->
+    <!-- http://purl.org/DP/components#Profile -->
 
     <owl:Class rdf:about="&components;Profile"/>
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#Property -->
+    <!-- http://purl.org/DP/components#Property -->
 
     <owl:Class rdf:about="&components;Property"/>
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#Tool -->
+    <!-- http://purl.org/DP/components#Tool -->
 
     <owl:Class rdf:about="&components;Tool">
         <rdfs:subClassOf rdf:resource="&components;Activity"/>
@@ -492,7 +522,15 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#Workflow -->
+    <!-- http://purl.org/DP/components#WindowsEnvironment -->
+
+    <owl:Class rdf:about="&components;WindowsEnvironment">
+        <rdfs:subClassOf rdf:resource="&components;Environment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/DP/components#Workflow -->
 
     <owl:Class rdf:about="&components;Workflow">
         <rdfs:subClassOf rdf:resource="&components;WorkflowPart"/>
@@ -500,7 +538,7 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#WorkflowPart -->
+    <!-- http://purl.org/DP/components#WorkflowPart -->
 
     <owl:Class rdf:about="&components;WorkflowPart"/>
     
@@ -523,15 +561,15 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#CentOS -->
+    <!-- http://purl.org/DP/components#CentOS -->
 
     <owl:NamedIndividual rdf:about="&components;CentOS">
-        <rdf:type rdf:resource="&components;Environment"/>
+        <rdf:type rdf:resource="&components;LinuxEnvironment"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#Characterisation -->
+    <!-- http://purl.org/DP/components#Characterisation -->
 
     <owl:NamedIndividual rdf:about="&components;Characterisation">
         <rdf:type rdf:resource="&components;Profile"/>
@@ -540,32 +578,32 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#Debian -->
+    <!-- http://purl.org/DP/components#Debian -->
 
     <owl:NamedIndividual rdf:about="&components;Debian">
-        <rdf:type rdf:resource="&components;Environment"/>
+        <rdf:type rdf:resource="&components;LinuxEnvironment"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#ExecutablePlan -->
+    <!-- http://purl.org/DP/components#ExecutablePlan -->
 
     <owl:NamedIndividual rdf:about="&components;ExecutablePlan">
         <rdf:type rdf:resource="&components;Profile"/>
-        <rdfs:seeAlso>https://github.com/openplanets/scape-component-profiles/blob/master/profiles/ExecutablePlanComponentProfile.xml</rdfs:seeAlso>
+        <rdfs:seeAlso>https://raw.github.com/openplanets/scape-component-profiles/master/profiles/ExecutablePlanComponentProfile.xml</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#FromMeasurePort -->
+    <!-- http://purl.org/DP/components#FromMeasurePort -->
 
     <owl:NamedIndividual rdf:about="&components;FromMeasurePort">
-        <rdf:type rdf:resource="&components;MeasurePortType"/>
+        <rdf:type rdf:resource="&components;PortType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#FromURIPort -->
+    <!-- http://purl.org/DP/components#FromURIPort -->
 
     <owl:NamedIndividual rdf:about="&components;FromURIPort">
         <rdf:type rdf:resource="&components;PortType"/>
@@ -573,23 +611,23 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#MacOS -->
+    <!-- http://purl.org/DP/components#MacOS -->
 
     <owl:NamedIndividual rdf:about="&components;MacOS">
-        <rdf:type rdf:resource="&components;Environment"/>
+        <rdf:type rdf:resource="&components;MacOSEnvironment"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#MeasurePort -->
+    <!-- http://purl.org/DP/components#MeasurePort -->
 
     <owl:NamedIndividual rdf:about="&components;MeasurePort">
-        <rdf:type rdf:resource="&components;MeasurePortType"/>
+        <rdf:type rdf:resource="&components;PortType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#MigrationAction -->
+    <!-- http://purl.org/DP/components#MigrationAction -->
 
     <owl:NamedIndividual rdf:about="&components;MigrationAction">
         <rdf:type rdf:resource="&components;Profile"/>
@@ -598,7 +636,7 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#ObjectURIPort -->
+    <!-- http://purl.org/DP/components#ObjectURIPort -->
 
     <owl:NamedIndividual rdf:about="&components;ObjectURIPort">
         <rdf:type rdf:resource="&components;PortType"/>
@@ -606,7 +644,7 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#ParameterPort -->
+    <!-- http://purl.org/DP/components#ParameterPort -->
 
     <owl:NamedIndividual rdf:about="&components;ParameterPort">
         <rdf:type rdf:resource="&components;PortType"/>
@@ -614,41 +652,41 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#QAObjectComparison -->
+    <!-- http://purl.org/DP/components#QAObjectComparison -->
 
     <owl:NamedIndividual rdf:about="&components;QAObjectComparison">
         <rdf:type rdf:resource="&components;Profile"/>
-        <rdfs:seeAlso>https://github.com/openplanets/scape-component-profiles/raw/master/profiles/QAObjectComparisonComponentProfile.xml</rdfs:seeAlso>
+        <rdfs:seeAlso>https://raw.github.com/openplanets/scape-component-profiles/master/profiles/QAObjectComparisonComponentProfile.xml</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#QAPropertyComparison -->
+    <!-- http://purl.org/DP/components#QAPropertyComparison -->
 
     <owl:NamedIndividual rdf:about="&components;QAPropertyComparison">
         <rdf:type rdf:resource="&components;Profile"/>
-        <rdfs:seeAlso>https://github.com/openplanets/scape-component-profiles/raw/master/profiles/QAPropertyComparisonComponentProfile.xml</rdfs:seeAlso>
+        <rdfs:seeAlso>https://raw.github.com/openplanets/scape-component-profiles/master/profiles/QAPropertyComparisonComponentProfile.xml</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#Redhat -->
+    <!-- http://purl.org/DP/components#Redhat -->
 
     <owl:NamedIndividual rdf:about="&components;Redhat">
-        <rdf:type rdf:resource="&components;Environment"/>
+        <rdf:type rdf:resource="&components;LinuxEnvironment"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#ToMeasurePort -->
+    <!-- http://purl.org/DP/components#ToMeasurePort -->
 
     <owl:NamedIndividual rdf:about="&components;ToMeasurePort">
-        <rdf:type rdf:resource="&components;MeasurePortType"/>
+        <rdf:type rdf:resource="&components;PortType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#ToURIPort -->
+    <!-- http://purl.org/DP/components#ToURIPort -->
 
     <owl:NamedIndividual rdf:about="&components;ToURIPort">
         <rdf:type rdf:resource="&components;PortType"/>
@@ -656,15 +694,15 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#Ubuntu -->
+    <!-- http://purl.org/DP/components#Ubuntu -->
 
     <owl:NamedIndividual rdf:about="&components;Ubuntu">
-        <rdf:type rdf:resource="&components;Environment"/>
+        <rdf:type rdf:resource="&components;LinuxEnvironment"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#Validation -->
+    <!-- http://purl.org/DP/components#Validation -->
 
     <owl:NamedIndividual rdf:about="&components;Validation">
         <rdf:type rdf:resource="&components;Profile"/>
@@ -673,20 +711,20 @@
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#Windows -->
+    <!-- http://purl.org/DP/components#Windows -->
 
     <owl:NamedIndividual rdf:about="&components;Windows">
-        <rdf:type rdf:resource="&components;Environment"/>
+        <rdf:type rdf:resource="&components;WindowsEnvironment"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://scape-project.eu/pc/vocab/components#jpegToTiff -->
+    <!-- http://purl.org/DP/components#jpegToTiff -->
 
     <owl:NamedIndividual rdf:about="&components;jpegToTiff">
         <rdf:type rdf:resource="&components;MigrationPath"/>
-        <fromMimetype>image/jpeg</fromMimetype>
         <toMimetype>image/tiff</toMimetype>
+        <fromMimetype>image/jpeg</fromMimetype>
     </owl:NamedIndividual>
 </rdf:RDF>
 
