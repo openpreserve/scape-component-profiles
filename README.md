@@ -13,13 +13,19 @@ This folder contains the profiles that describe different component types. They 
 The profile specifies mandatory workflow elements (e.g. *InputPort*, *OutputPort*, and *Activity*). For the component itself and each element, the *annotations* and *semanticAnnotations* are defined. Ports depth can also be restricted. Semantic annotations are based on the *ontology* specified in the profile. 
 
 ## Ontology
-The ontology is used to add semantic annotations to the workflows. 
+The ontology is used to add semantic annotations to the workflows. It describes workflow parts that can be annotated as well as the properties are added as annotations to the workflow parts.
+
+[![SCAPE component profile ontology classes](https://raw.github.com/openplanets/scape-component-profiles/master/images/Ontology%20-%20components.png "SCAPE component profile ontology classes")](https://github.com/openplanets/scape-component-profiles/blob/master/images/Ontology%20-%20components.png)
 
 ## Dependencies
 To create dependency individuals from a debian *Packages* file, a AWL script is provided. Run `awk -f pkg2owl.awk` to print a usage message and check [dependencies/opf](dependencies/opf) for an example.
 
+## Images
+This creates images related to the profiles and ontology.
 
-
-[![Creative Commons Attribution-NonCommercial 3.0 Unported License](http://i.creativecommons.org/l/by-nc/3.0/88x31.png)](http://creativecommons.org/licenses/by-nc/3.0)
+# License an Acknowledgements
+Part of this work was supported by the European Union in the 7th Framework Program, IST, through the SCAPE project, Contract 270137.
 
 This work is licensed under a [Creative Commons Attribution-NonCommercial 3.0 Unported License](http://creativecommons.org/licenses/by-nc/3.0).
+
+[![Creative Commons Attribution-NonCommercial 3.0 Unported License](http://i.creativecommons.org/l/by-nc/3.0/88x31.png)](http://creativecommons.org/licenses/by-nc/3.0)
