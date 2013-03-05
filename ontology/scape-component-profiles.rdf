@@ -19,10 +19,9 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:components="http://purl.org/DP/components#"
      xmlns:vocab="http://scape-project.eu/pw/vocab/">
-    <owl:Ontology rdf:about="http://purl.org/DP/components">
-        <owl:imports rdf:resource="http://scape-project.org/pc/vocab/licence"/>
+    <owl:Ontology rdf:about="http://purl.org/DP/components"/>
+        <owl:imports rdf:resource="https://raw.github.com/openplanets/policies/master/harmonised/attributes_measures.rdf"/>
     </owl:Ontology>
-    
 
 
     <!-- 
@@ -132,7 +131,6 @@
 
     <owl:ObjectProperty rdf:about="&components;hasLicence">
         <rdfs:subPropertyOf rdf:resource="http://creativecommons.org/ns#license"/>
-        <rdfs:range rdf:resource="&components;Licence"/>
     </owl:ObjectProperty>
     
 
@@ -304,6 +302,12 @@
     
 
 
+    <!-- http://creativecommons.org/ns#License -->
+
+    <owl:Class rdf:about="http://creativecommons.org/ns#License"/>
+    
+
+
     <!-- http://purl.org/DP/components#AcceptedMimetype -->
 
     <owl:Class rdf:about="&components;AcceptedMimetype">
@@ -324,13 +328,13 @@
         <rdfs:subClassOf rdf:resource="&components;Property"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;fromMimetype"/>
+                <owl:onProperty rdf:resource="&components;toMimetype"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;toMimetype"/>
+                <owl:onProperty rdf:resource="&components;fromMimetype"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -561,10 +565,110 @@
     
 
 
+    <!-- http://creativecommons.org/licenses/BSD/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/BSD/">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>BSD License</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/GPL/2.0/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/GPL/2.0/">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>GNU General Public License (GPL) 2.0</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/LGPL/2.1/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/LGPL/2.1/">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>GNU Lesser General Public License (LGPL) 2.1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/MIT/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/MIT/">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>MIT License</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by-nc-nd/3.0/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by-nc-nd/3.0/">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 Unported License</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by-nc-sa/3.0/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by-nc-sa/3.0/">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by-nc/3.0/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by-nc/3.0/">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>Creative Commons Attribution-Noncommercial 3.0 Unported License</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by-nd/3.0/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by-nd/3.0/">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>Creative Commons Attribution-No Derivative Works 3.0 Unported License </rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by-sa/3.0/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by-sa/3.0/">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>Creative Commons Attribution-Share Alike 3.0 Unported License</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by/3.0/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by/3.0/">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>Creative Commons Attribution 3.0 Unported License</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/publicdomain/zero/1.0/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/publicdomain/zero/1.0/">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>CC0 1.0 Universal (Public Domain License)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://purl.org/DP/components#CentOS -->
 
     <owl:NamedIndividual rdf:about="&components;CentOS">
         <rdf:type rdf:resource="&components;LinuxEnvironment"/>
+        <rdfs:label>CentOS</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -582,6 +686,7 @@
 
     <owl:NamedIndividual rdf:about="&components;Debian">
         <rdf:type rdf:resource="&components;LinuxEnvironment"/>
+        <rdfs:label>Debian</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -674,6 +779,7 @@
 
     <owl:NamedIndividual rdf:about="&components;Redhat">
         <rdf:type rdf:resource="&components;LinuxEnvironment"/>
+        <rdfs:label>Redhat</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -698,6 +804,7 @@
 
     <owl:NamedIndividual rdf:about="&components;Ubuntu">
         <rdf:type rdf:resource="&components;LinuxEnvironment"/>
+        <rdfs:label>Ubuntu</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -725,6 +832,24 @@
         <rdf:type rdf:resource="&components;MigrationPath"/>
         <toMimetype>image/tiff</toMimetype>
         <fromMimetype>image/jpeg</fromMimetype>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.apache.org/licenses/LICENSE-2.0 -->
+
+    <owl:NamedIndividual rdf:about="http://www.apache.org/licenses/LICENSE-2.0">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>Apache License v2.0</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.gnu.org/licenses/gpl-3.0 -->
+
+    <owl:NamedIndividual rdf:about="http://www.gnu.org/licenses/gpl-3.0">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>GNU General Public License (GPL) 3.0</rdfs:label>
     </owl:NamedIndividual>
 </rdf:RDF>
 
