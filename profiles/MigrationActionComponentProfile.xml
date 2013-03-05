@@ -4,52 +4,60 @@
 	xmlns="http://ns.taverna.org.uk/2012/component/profile"
 	xsi:schemaLocation="http://ns.taverna.org.uk/2012/component/profile ComponentProfile.xsd">
 
-	<id>http://scape-project.eu/pc/vocab/components#MigrationAction</id>
+	<id>http://purl.org/DP/components#MigrationAction</id>
 	<name>Migration Action Component</name>
 	<description>A SCAPE component for migration actions</description>
-	<ontology id="components">https://github.com/openplanets/scape-component-profiles/raw/master/ontology/scape-component-profiles.rdf</ontology>
+	<ontology id="components">http://purl.org/DP/components</ontology>
 	<component>
 		<inputPort maxDepth="1">
 			<annotation>Example</annotation>
 			<semanticAnnotation ontology="components"
-				predicate="http://scape-project.eu/pc/vocab/components#portType"
-				class="http://scape-project.eu/pc/vocab/components#PortType">
-				http://scape-project.eu/pc/vocab/components#FromURIPort
+				predicate="http://purl.org/DP/components#portType"
+				class="http://purl.org/DP/components#PortType">
+				http://purl.org/DP/components#FromURIPort
 			</semanticAnnotation>
 		</inputPort>
 		<inputPort maxDepth="1">
 			<annotation>Example</annotation>
 			<semanticAnnotation ontology="components"
-				predicate="http://scape-project.eu/pc/vocab/components#portType"
-				class="http://scape-project.eu/pc/vocab/components#PortType">
-				http://scape-project.eu/pc/vocab/components#ToURIPort
+				predicate="http://purl.org/DP/components#portType"
+				class="http://purl.org/DP/components#PortType">
+				http://purl.org/DP/components#ToURIPort
 			</semanticAnnotation>
 		</inputPort>
 		<inputPort maxDepth="0" minOccurs="0" maxOccurs="unbounded">
 			<annotation>Example</annotation>
+			<annotation>Description</annotation>
 			<semanticAnnotation ontology="components"
-				predicate="http://scape-project.eu/pc/vocab/components#portType"
-				class="http://scape-project.eu/pc/vocab/components#PortType">
-				http://scape-project.eu/pc/vocab/components#ParameterPort
+				predicate="http://purl.org/DP/components#portType"
+				class="http://purl.org/DP/components#PortType">
+				http://purl.org/DP/components#ParameterPort
 			</semanticAnnotation>
 			<semanticAnnotation ontology="components"
-				predicate="http://scape-project.eu/pc/vocab/components#acceptsPredefinedParameter"
-				class="http://scape-project.eu/pc/vocab/components#PredefinedParameter"
+				predicate="http://purl.org/DP/components#acceptsPredefinedParameter"
+				class="http://purl.org/DP/components#PredefinedParameter"
 				minOccurs="0" maxOccurs="unbounded" />
 		</inputPort>
+		<outputPort maxDepth="0" minOccurs="1" maxOccurs="1">
+			<semanticAnnotation ontology="components"
+				predicate="http://purl.org/DP/components#portType"
+				class="http://purl.org/DP/components#PortType">
+				http://purl.org/DP/components#ActionStatusPort
+			</semanticAnnotation>
+		</outputPort>
 		<activity type="Tool" minOccurs="0" maxOccurs="unbounded">
 			<semanticAnnotation ontology="components"
-				predicate="http://scape-project.eu/pc/vocab/components#hasDependency"
-				class="http://scape-project.eu/pc/vocab/components#Dependency"
+				predicate="http://purl.org/DP/components#hasDependency"
+				class="http://purl.org/DP/components#Dependency"
 				minOccurs="1" maxOccurs="unbounded" />
 		</activity>
 		<activity minOccurs="0" maxOccurs="unbounded" />
 		<annotation>Title</annotation>
-		<annotation minOccurs="0">Description</annotation>
+		<annotation>Description</annotation>
 		<annotation minOccurs="0">Author</annotation>
 		<semanticAnnotation ontology="components"
-			predicate="http://scape-project.eu/pc/vocab/components#migrates"
-			class="http://scape-project.eu/pc/vocab/components#MigrationPath"
+			predicate="http://purl.org/DP/components#migrates"
+			class="http://purl.org/DP/components#MigrationPath"
 			maxOccurs="unbounded" />
 	</component>
 </profile>

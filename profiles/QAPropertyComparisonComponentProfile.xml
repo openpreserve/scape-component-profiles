@@ -4,7 +4,7 @@
 	xmlns="http://ns.taverna.org.uk/2012/component/profile"
 	xsi:schemaLocation="http://ns.taverna.org.uk/2012/component/profile ComponentProfile.xsd">
 
-	<id>http://scape-project.eu/pc/vocab/components#QAPropertyComparison</id>
+	<id>http://purl.org/DP/components#QAPropertyComparison</id>
 	<name>Quality Assurance Property Comparison Component</name>
 	<description>A SCAPE component for property comparison QA</description>
 	<ontology id="components">https://github.com/openplanets/scape-component-profiles/raw/master/ontology/scape-component-profiles.rdf</ontology>
@@ -12,59 +12,60 @@
 		<inputPort maxDepth="1" minOccurs="0" maxOccurs="1">
 			<annotation>Example</annotation>
 			<semanticAnnotation ontology="components"
-				predicate="http://scape-project.eu/pc/vocab/components#portType"
-				class="http://scape-project.eu/pc/vocab/components#PortType">
-				http://scape-project.eu/pc/vocab/components#FromURIPort
+				predicate="http://purl.org/DP/components#portType"
+				class="http://purl.org/DP/components#PortType">
+				http://purl.org/DP/components#FromURIPort
 			</semanticAnnotation>
 		</inputPort>
 		<inputPort maxDepth="1" minOccurs="0" maxOccurs="1">
 			<annotation>Example</annotation>
 			<semanticAnnotation ontology="components"
-				predicate="http://scape-project.eu/pc/vocab/components#portType"
-				class="http://scape-project.eu/pc/vocab/components#PortType">
-				http://scape-project.eu/pc/vocab/components#ToURIPort
+				predicate="http://purl.org/DP/components#portType"
+				class="http://purl.org/DP/components#PortType">
+				http://purl.org/DP/components#ToURIPort
 			</semanticAnnotation>
 		</inputPort>
 		<inputPort maxDepth="0" minOccurs="2" maxOccurs="unbounded">
 			<annotation>Example</annotation>
 			<semanticAnnotation ontology="components"
-				predicate="http://scape-project.eu/pc/vocab/components#portType"
-				class="http://scape-project.eu/pc/vocab/components#MeasurePortType" />
+				predicate="http://purl.org/DP/components#portType"
+				class="http://purl.org/DP/components#MeasurePortType" />
 			<semanticAnnotation ontology="components"
-				predicate="http://scape-project.eu/pc/vocab/components#acceptsMeasure"
+				predicate="http://purl.org/DP/components#acceptsMeasure"
 				class="http://scape-project.eu/pw/vocab/components#Measure" />
 		</inputPort>
 		<inputPort maxDepth="0" minOccurs="0" maxOccurs="unbounded">
 			<annotation>Example</annotation>
+			<annotation>Description</annotation>
 			<semanticAnnotation ontology="components"
-				predicate="http://scape-project.eu/pc/vocab/components#portType"
-				class="http://scape-project.eu/pc/vocab/components#PortType">
-				http://scape-project.eu/pc/vocab/components#ParameterPort
+				predicate="http://purl.org/DP/components#portType"
+				class="http://purl.org/DP/components#PortType">
+				http://purl.org/DP/components#ParameterPort
 			</semanticAnnotation>
 			<semanticAnnotation ontology="components"
-				predicate="http://scape-project.eu/pc/vocab/components#acceptsPredefinedParameter"
-				class="http://scape-project.eu/pc/vocab/components#PredefinedParameter"
+				predicate="http://purl.org/DP/components#acceptsPredefinedParameter"
+				class="http://purl.org/DP/components#PredefinedParameter"
 				minOccurs="1" maxOccurs="unbounded" />
 		</inputPort>
 		<outputPort maxDepth="0" minOccurs="1" maxOccurs="unbounded">
 			<annotation>Example</annotation>
 			<semanticAnnotation ontology="components"
-				predicate="http://scape-project.eu/pc/vocab/components#providesMeasure"
+				predicate="http://purl.org/DP/components#providesMeasure"
 				class="http://scape-project.eu/pw/vocab/components#Measure" />
 		</outputPort>
 		<activity type="Tool" minOccurs="0" maxOccurs="unbounded">
 			<semanticAnnotation ontology="components"
-				predicate="http://scape-project.eu/pc/vocab/components#hasDependency"
-				class="http://scape-project.eu/pc/vocab/components#Dependency"
-				minOccurs="0" maxOccurs="unbounded" />
+				predicate="http://purl.org/DP/components#hasDependency"
+				class="http://purl.org/DP/components#Dependency"
+				minOccurs="1" maxOccurs="unbounded" />
 		</activity>
 		<activity minOccurs="0" maxOccurs="unbounded" />
 		<annotation>Title</annotation>
-		<annotation minOccurs="0">Description</annotation>
+		<annotation>Description</annotation>
 		<annotation minOccurs="0">Author</annotation>
 		<semanticAnnotation ontology="components"
-			predicate="http://scape-project.eu/pc/vocab/components#handlesMimetypes"
-			class="http://scape-project.eu/pc/vocab/components#AcceptedMimetypes"
+			predicate="http://purl.org/DP/components#handlesMimetypes"
+			class="http://purl.org/DP/components#AcceptedMimetypes"
 			maxOccurs="unbounded" />
 	</component>
 </profile>
