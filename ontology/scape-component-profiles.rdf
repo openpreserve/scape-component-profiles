@@ -22,6 +22,7 @@
     <owl:Ontology rdf:about="http://purl.org/DP/components">
         <owl:imports rdf:resource="https://raw.github.com/openplanets/policies/master/harmonised/attributes_measures.rdf"/>
     </owl:Ontology>
+    
 
 
     <!-- 
@@ -356,15 +357,15 @@
         <rdfs:subClassOf rdf:resource="&components;Property"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;hasEnvironment"/>
-                <owl:onClass rdf:resource="&components;Environment"/>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onProperty rdf:resource="&components;name"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;name"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+                <owl:onProperty rdf:resource="&components;hasEnvironment"/>
+                <owl:onClass rdf:resource="&components;Environment"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -419,6 +420,14 @@
 
     <owl:Class rdf:about="&components;MacOSEnvironment">
         <rdfs:subClassOf rdf:resource="&components;Environment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/DP/components#MeasurePortType -->
+
+    <owl:Class rdf:about="&components;MeasurePortType">
+        <rdfs:subClassOf rdf:resource="&components;PortType"/>
     </owl:Class>
     
 
@@ -664,6 +673,14 @@
     
 
 
+    <!-- http://purl.org/DP/components#ActionStatusPort -->
+
+    <owl:NamedIndividual rdf:about="&components;ActionStatusPort">
+        <rdf:type rdf:resource="&components;PortType"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://purl.org/DP/components#CentOS -->
 
     <owl:NamedIndividual rdf:about="&components;CentOS">
@@ -703,7 +720,7 @@
     <!-- http://purl.org/DP/components#FromMeasurePort -->
 
     <owl:NamedIndividual rdf:about="&components;FromMeasurePort">
-        <rdf:type rdf:resource="&components;PortType"/>
+        <rdf:type rdf:resource="&components;MeasurePortType"/>
     </owl:NamedIndividual>
     
 
@@ -720,14 +737,6 @@
 
     <owl:NamedIndividual rdf:about="&components;MacOS">
         <rdf:type rdf:resource="&components;MacOSEnvironment"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/DP/components#MeasurePort -->
-
-    <owl:NamedIndividual rdf:about="&components;MeasurePort">
-        <rdf:type rdf:resource="&components;PortType"/>
     </owl:NamedIndividual>
     
 
@@ -787,7 +796,7 @@
     <!-- http://purl.org/DP/components#ToMeasurePort -->
 
     <owl:NamedIndividual rdf:about="&components;ToMeasurePort">
-        <rdf:type rdf:resource="&components;PortType"/>
+        <rdf:type rdf:resource="&components;MeasurePortType"/>
     </owl:NamedIndividual>
     
 
