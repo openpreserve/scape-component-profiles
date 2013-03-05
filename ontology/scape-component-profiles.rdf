@@ -19,7 +19,7 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:components="http://purl.org/DP/components#"
      xmlns:vocab="http://scape-project.eu/pw/vocab/">
-    <owl:Ontology rdf:about="http://purl.org/DP/components"/>
+    <owl:Ontology rdf:about="http://purl.org/DP/components">
         <owl:imports rdf:resource="https://raw.github.com/openplanets/policies/master/harmonised/attributes_measures.rdf"/>
     </owl:Ontology>
 
