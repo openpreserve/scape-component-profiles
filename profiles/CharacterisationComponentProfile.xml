@@ -50,5 +50,10 @@
 			predicate="http://purl.org/DP/components#handlesMimetype"
 			class="http://purl.org/DP/components#AcceptedMimetype"
 			maxOccurs="unbounded" />
+		<semanticAnnotation ontology="components"
+			predicate="http://purl.org/DP/components#fits"
+			class="http://purl.org/DP/components#Profile">
+			http://purl.org/DP/components#Characterisation
+		</semanticAnnotation>
 	</component>
 </profile>

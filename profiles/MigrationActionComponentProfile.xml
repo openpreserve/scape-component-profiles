@@ -59,5 +59,10 @@
 			predicate="http://purl.org/DP/components#migrates"
 			class="http://purl.org/DP/components#MigrationPath"
 			maxOccurs="unbounded" />
+		<semanticAnnotation ontology="components"
+			predicate="http://purl.org/DP/components#fits"
+			class="http://purl.org/DP/components#Profile">
+			http://purl.org/DP/components#MigrationAction
+		</semanticAnnotation>
 	</component>
 </profile>
