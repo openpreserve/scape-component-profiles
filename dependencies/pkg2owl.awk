@@ -56,9 +56,8 @@ function printHeader() {
 "    <!ENTITY owl \"http://www.w3.org/2002/07/owl#\" >\n",
 "    <!ENTITY xsd \"http://www.w3.org/2001/XMLSchema#\" >\n",
 "    <!ENTITY rdfs \"http://www.w3.org/2000/01/rdf-schema#\" >\n",
-"    <!ENTITY license \"http://scape-project.org/pc/vocab/licence#\" >\n",
 "    <!ENTITY rdf \"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" >\n",
-"    <!ENTITY components \"http://scape-project.eu/pc/vocab/components#\" >\n",
+"    <!ENTITY components \"http://purl.org/DP/components#\" >\n",
 "]>\n"
 
     print \
@@ -68,10 +67,9 @@ function printHeader() {
 "     xmlns:owl=\"http://www.w3.org/2002/07/owl#\"\n",
 "     xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\"\n",
 "     xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\n",
-"     xmlns:license=\"http://scape-project.org/pc/vocab/licence#\">\n",
-"     xmlns:components=\"http://scape-project.eu/pc/vocab/components#\">\n",
+"     xmlns:components=\"http://purl.org/DP/components#\">\n",
 "    <owl:Ontology rdf:about=\"" ontologyUri "\">\n",
-"        <owl:imports rdf:resource=\"https://raw.github.com/openplanets/scape-component-profiles/master/ontology/scape-componet-profiles.rdf\"/>\n",
+"        <owl:imports rdf:resource=\"http://purl.org/DP/components\"/>\n",
 "    </owl:Ontology>\n"
 }
 
