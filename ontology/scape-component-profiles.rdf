@@ -20,6 +20,7 @@
      xmlns:components="http://purl.org/DP/components#"
      xmlns:vocab="http://scape-project.eu/pw/vocab/">
     <owl:Ontology rdf:about="http://purl.org/DP/components">
+        <owl:imports rdf:resource="http://purl.org/DP/components/dependencies"/>
         <owl:imports rdf:resource="https://raw.github.com/openplanets/policies/master/harmonised/attributes_measures.rdf"/>
     </owl:Ontology>
     
