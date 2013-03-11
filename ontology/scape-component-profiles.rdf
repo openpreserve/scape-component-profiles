@@ -93,15 +93,6 @@
     
 
 
-    <!-- http://purl.org/DP/components#handlesMimetype -->
-
-    <owl:ObjectProperty rdf:about="&components;handlesMimetype">
-        <rdfs:range rdf:resource="&components;AcceptedMimetype"/>
-        <rdfs:domain rdf:resource="&components;Workflow"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://purl.org/DP/components#handlesMimetypes -->
 
     <owl:ObjectProperty rdf:about="&components;handlesMimetypes">
@@ -184,15 +175,6 @@
     
 
 
-    <!-- http://purl.org/DP/components#acceptedMimetype -->
-
-    <owl:DatatypeProperty rdf:about="&components;acceptedMimetype">
-        <rdfs:domain rdf:resource="&components;AcceptedMimetype"/>
-        <rdfs:subPropertyOf rdf:resource="&components;mimetype"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://purl.org/DP/components#dependencyVersion -->
 
     <owl:DatatypeProperty rdf:about="&components;dependencyVersion">
@@ -214,6 +196,15 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/DP/components#handlesMimetype -->
+
+    <owl:DatatypeProperty rdf:about="&components;handlesMimetype">
+        <rdfs:domain rdf:resource="&components;Workflow"/>
+        <rdfs:subPropertyOf rdf:resource="&components;mimetype"/>
     </owl:DatatypeProperty>
     
 
@@ -310,20 +301,6 @@
     
 
 
-    <!-- http://purl.org/DP/components#AcceptedMimetype -->
-
-    <owl:Class rdf:about="&components;AcceptedMimetype">
-        <rdfs:subClassOf rdf:resource="&components;Property"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;acceptedMimetype"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
     <!-- http://purl.org/DP/components#AcceptedMimetypes -->
 
     <owl:Class rdf:about="&components;AcceptedMimetypes">
@@ -364,15 +341,15 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;hasEnvironment"/>
-                <owl:onClass rdf:resource="&components;Environment"/>
+                <owl:onProperty rdf:resource="&components;hostedIn"/>
+                <owl:onClass rdf:resource="&components;PackageRepository"/>
                 <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;hostedIn"/>
-                <owl:onClass rdf:resource="&components;PackageRepository"/>
+                <owl:onProperty rdf:resource="&components;hasEnvironment"/>
+                <owl:onClass rdf:resource="&components;Environment"/>
                 <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -496,13 +473,13 @@
         <rdfs:subClassOf rdf:resource="&components;Property"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;parameterValue"/>
+                <owl:onProperty rdf:resource="&components;parameterDescription"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;parameterDescription"/>
+                <owl:onProperty rdf:resource="&components;parameterValue"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
