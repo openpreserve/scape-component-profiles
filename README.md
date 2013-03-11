@@ -21,7 +21,10 @@ The ontology is used to add semantic annotations to the workflows. It describes 
 To create dependency individuals from a debian *Packages* file, a AWL script is provided. Run `awk -f pkg2owl.awk` to print a usage message and check [dependencies/opf](dependencies/opf) for an example.
 
 ## Images
-This creates images related to the profiles and ontology.
+This contains images related to the profiles and ontology.
+
+## Examples
+The examples folder contains annotated example workflows.
 
 # License an Acknowledgements
 Part of this work was supported by the European Union in the 7th Framework Program, IST, through the SCAPE project, Contract 270137.
