@@ -9,15 +9,32 @@ BEGIN {
     individualSeparator = "\n"
     checkParams()
 
+    if (length(filterFile) > 0) {
+        while (getline < filterFile) {
+            filterPackages[$0] = 1
+        }
+        close(filterFile)
+    }
+
     printHeader()
     printRepository()
 }
 
 $1 == "Package" {
+
+    processPackage = 1
+    packageName = $2
+
+    if (length(filterFile) > 0) {
+        if (! filterPackages[packageName] > 0) {
+            processPackage = 0
+        }
+    }
+
+    if (! processPackage) next
+  
     print individualSeparator
 
-    packageName = $2
-  
     print "<owl:NamedIndividual rdf:about=\"" ontologyUri "#" packageName "\">"
     print indent "<rdf:type rdf:resource=\"&components;Dependency\"/>"
     print indent "<components:name>" packageName "</components:name>"
@@ -30,12 +47,16 @@ $1 == "Package" {
 }
 
 $1 == "Version" {
+    if (! processPackage) next
     print indent "<components:dependencyVersion>" $2 "</components:dependencyVersion>"
 }
 
 $0 ~ /^$/ {
     if (length(packageName) > 0) {
         packageName = ""
+
+        if (! processPackage) next
+
         print "</owl:NamedIndividual>"
     }
 }
@@ -113,5 +134,6 @@ function checkParams() {
 
 # Prints a usage message
 function printUsage() {
-    print "Usage: awk -v repositoryId=repository_id -v repositoryName=repository_name -v repositoryLocation=repository_location -v ontologyUri=ontology_uri [-v license=license_uri] -f inputfile"
+    print "Usage: awk -v repositoryId=repository_id -v repositoryName=repository_name -v repositoryLocation=repository_location -v ontologyUri=ontology_uri [-v license=license_uri] [-v filterFile=filter_file_name] -f inputfile"
 }
+
