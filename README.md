@@ -15,12 +15,12 @@ The profile specifies mandatory workflow elements (e.g. *InputPort*, *OutputPort
 ## Ontology
 The ontology is used to add semantic annotations to the workflows. It describes workflow parts that can be annotated as well as the properties are added as annotations to the workflow parts.
 
-[![SCAPE component profile ontology classes](https://raw.github.com/openplanets/scape-component-profiles/master/images/Ontology%20-%20components.png "SCAPE component profile ontology classes")](https://github.com/openplanets/scape-component-profiles/blob/master/images/Ontology%20-%20components.png)
+[![SCAPE component profile ontology classes](images/Ontology%20-%20components.png "SCAPE component profile ontology classes")](images/Ontology%20-%20components.png)
 
 ## Dependencies
-To create dependency individuals from a debian *Packages* file, an AWK script is provided in [dependencies/packages](dependencies/packages). Run `awk -f pkg2owl.awk` to print a usage message and check [dependencies/packages](dependencies/packages) for examples.
+To create sample dependency individuals from a debian *Packages* file, an AWK script is provided in [dependencies/packages](dependencies/packages). Run `awk -f pkg2owl.awk` to print a usage message and check [dependencies/packages](dependencies/packages) for examples.
 
-To create dependency individuals from [*toolspec*](https://github.com/openplanets/scape-toolspecs) files, a ruby script is provided in [dependencies/toolspec](dependencies/toolspec). Run `toolspec2owl.rb -h` to print a usage message and check [dependencies/packages](dependencies/packages) for examples.
+To create sample dependency individuals from [*toolspec*](https://github.com/openplanets/scape-toolspecs) files, a ruby script is provided in [dependencies/toolspec](dependencies/toolspec). Run `toolspec2owl.rb -h` to print a usage message and check [dependencies/packages](dependencies/packages) for examples.
 
 ## Images
 This contains images related to the profiles and ontology.
