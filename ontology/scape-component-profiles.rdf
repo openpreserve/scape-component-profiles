@@ -2,7 +2,8 @@
 
 
 <!DOCTYPE rdf:RDF [
-    <!ENTITY dct "http://purl.org/dc/terms/" >
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
     <!ENTITY components "http://purl.org/DP/components#" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY vocab "http://scape-project.eu/pw/vocab/" >
@@ -15,13 +16,36 @@
 <rdf:RDF xmlns="http://purl.org/DP/components#"
      xml:base="http://purl.org/DP/components"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:dct="http://purl.org/dc/terms/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:components="http://purl.org/DP/components#"
-     xmlns:vocab="http://scape-project.eu/pw/vocab/">
+     xmlns:vocab="http://scape-project.eu/pw/vocab/"
+     xmlns:dcterms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="http://purl.org/DP/components"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
 
 
@@ -196,27 +220,18 @@
     
 
 
-    <!-- http://purl.org/DP/components#homepage -->
+    <!-- http://purl.org/DP/components#installsDpkgs -->
 
-    <owl:DatatypeProperty rdf:about="&components;homepage">
-        <rdfs:domain rdf:resource="&components;Dependency"/>
-        <rdfs:range rdf:resource="&xsd;anyURI"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/DP/components#hostedAt -->
-
-    <owl:DatatypeProperty rdf:about="&components;hostedAt">
+    <owl:DatatypeProperty rdf:about="&components;installsDpkgs">
         <rdfs:domain rdf:resource="&components;DpkgConfig"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://purl.org/DP/components#installsDpkgs -->
+    <!-- http://purl.org/DP/components#isHostedAt -->
 
-    <owl:DatatypeProperty rdf:about="&components;installsDpkgs">
+    <owl:DatatypeProperty rdf:about="&components;isHostedAt">
         <rdfs:domain rdf:resource="&components;DpkgConfig"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -267,7 +282,7 @@
 
     <!-- http://purl.org/dc/terms/title -->
 
-    <owl:DatatypeProperty rdf:about="&dct;title">
+    <owl:DatatypeProperty rdf:about="&dcterms;title">
         <rdfs:range rdf:resource="&rdfs;Literal"/>
     </owl:DatatypeProperty>
     
@@ -323,14 +338,14 @@
     <owl:Class rdf:about="&components;Dependency">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&dct;title"/>
-                <owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+                <owl:onProperty rdf:resource="&components;license"/>
+                <owl:someValuesFrom rdf:resource="http://creativecommons.org/ns#License"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;license"/>
-                <owl:someValuesFrom rdf:resource="http://creativecommons.org/ns#License"/>
+                <owl:onProperty rdf:resource="&dcterms;title"/>
+                <owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -343,13 +358,13 @@
         <rdfs:subClassOf rdf:resource="&components;PackageManagerConfig"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;installsDpkgs"/>
+                <owl:onProperty rdf:resource="&components;isHostedAt"/>
                 <owl:someValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;hostedAt"/>
+                <owl:onProperty rdf:resource="&components;installsDpkgs"/>
                 <owl:someValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -362,7 +377,7 @@
     <owl:Class rdf:about="&components;Environment">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&dct;title"/>
+                <owl:onProperty rdf:resource="&dcterms;title"/>
                 <owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -920,12 +935,12 @@
 
     <owl:NamedIndividual rdf:about="&components;jpegToTiff">
         <rdf:type rdf:resource="&components;MigrationPath"/>
-        <fromMimetype>image/jpeg</fromMimetype>
         <toMimetype>image/tiff</toMimetype>
+        <fromMimetype>image/jpeg</fromMimetype>
     </owl:NamedIndividual>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 3.3.1957) http://owlapi.sourceforge.net -->
 
