@@ -139,15 +139,6 @@
     
 
 
-    <!-- http://purl.org/DP/components#license -->
-
-    <owl:ObjectProperty rdf:about="&components;license">
-        <rdfs:range rdf:resource="http://creativecommons.org/ns#License"/>
-        <rdfs:subPropertyOf rdf:resource="http://creativecommons.org/ns#license"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://purl.org/DP/components#migrates -->
 
     <owl:ObjectProperty rdf:about="&components;migrates">
@@ -171,6 +162,14 @@
     <owl:ObjectProperty rdf:about="&components;providesMeasure">
         <rdfs:domain rdf:resource="&components;OutputPort"/>
         <rdfs:range rdf:resource="http://purl.org/DP/quality#Measure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/page -->
+
+    <owl:ObjectProperty rdf:about="&foaf;page">
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
     </owl:ObjectProperty>
     
 
@@ -338,7 +337,7 @@
     <owl:Class rdf:about="&components;Dependency">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;license"/>
+                <owl:onProperty rdf:resource="http://creativecommons.org/ns#license"/>
                 <owl:someValuesFrom rdf:resource="http://creativecommons.org/ns#License"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -445,13 +444,13 @@
         <rdfs:subClassOf rdf:resource="&components;Property"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;fromMimetype"/>
+                <owl:onProperty rdf:resource="&components;toMimetype"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;toMimetype"/>
+                <owl:onProperty rdf:resource="&components;fromMimetype"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -503,13 +502,13 @@
         <rdfs:subClassOf rdf:resource="&components;Property"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;parameterDescription"/>
+                <owl:onProperty rdf:resource="&components;parameterValue"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;parameterValue"/>
+                <owl:onProperty rdf:resource="&components;parameterDescription"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
