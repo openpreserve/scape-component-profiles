@@ -22,11 +22,16 @@ To create sample dependency individuals from a debian *Packages* file, an AWK sc
 
 To create sample dependency individuals from [*toolspec*](https://github.com/openplanets/scape-toolspecs) files, a ruby script is provided in [dependencies/toolspec](dependencies/toolspec). Run `toolspec2owl.rb -h` to print a usage message and check [dependencies/packages](dependencies/packages) for examples.
 
+**Please note that this has changed to #installations and should not be used anymore.**
+
 ## Images
 This contains images related to the profiles and ontology.
 
 ## Examples
 The examples folder contains annotated example workflows.
+
+## Ontology-snippets
+Contains example snippets of ontology individuals.
 
 # License an Acknowledgements
 Part of this work was supported by the European Union in the 7th Framework Program, IST, through the SCAPE project, Contract 270137.

@@ -81,7 +81,7 @@
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
         <content>[]    &lt;http://purl.org/DP/components#providesMeasure&gt;
-              &lt;http://scape-project.eu/pw/vocab/measures/52&gt; .
+              &lt;http://purl.org/DP/quality/measures#52&gt; .
 </content>
       </annotationBean>
       <date>2013-03-11 14:07:37.127 UTC</date>
@@ -117,7 +117,7 @@
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
         <content>[]    &lt;http://purl.org/DP/components#providesMeasure&gt;
-              &lt;http://scape-project.eu/pw/vocab/measures/50&gt; .
+              &lt;http://purl.org/DP/quality/measures#50&gt; .
 </content>
       </annotationBean>
       <date>2013-03-11 14:07:50.957 UTC</date>
@@ -130,8 +130,19 @@
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>[]    &lt;http://purl.org/DP/components#hasDependency&gt;
-              &lt;http://scape.keep.pt/vocab/dependencies#jpylyzer&gt; .
+        <content>[] a &lt;http://purl.org/DP/components#Installation&gt; ;
+    &lt;http://purl.org/DP/components#hasEnvironment&gt; &lt;http://purl.org/DP/components#Debian&gt; ;
+    &lt;http://purl.org/DP/components#hasPackageManagerConfig&gt; 
+        [ a &lt;http://purl.org/DP/components#DpkgConfig&gt; ;
+            &lt;http://purl.org/DP/components#installsDpkgs&gt; "jpylyzer" ;
+            &lt;http://purl.org/DP/components#requiresSource&gt; "deb http://deb.openplanetsfoundation.org stable main"
+        ] ;
+    &lt;http://purl.org/DP/components#dependsOn&gt;
+        [ a &lt;http://purl.org/DP/components#Dependency&gt; ;
+            &lt;http://purl.org/dc/terms/title&gt; "jpylyzer" ;
+            &lt;http://xmlns.com/foaf/0.1/page&gt; &lt;http://www.openplanetsfoundation.org/software/jpylyzer&gt; ;
+            &lt;http://creativecommons.org/ns#license&gt; &lt;http://opensource.org/licenses/GPL-3.0&gt;
+        ] .
 </content>
       </annotationBean>
       <date>2013-03-11 14:08:44.893 UTC</date>

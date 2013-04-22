@@ -160,8 +160,20 @@
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>[]    &lt;http://purl.org/DP/components#hasDependency&gt;
-              &lt;http://scape.keep.pt/vocab/dependencies#digital-preservation-migration-image-imagemagick-image2tiff&gt; .
+        <content>[] a &lt;http://purl.org/DP/components#Installation&gt; ;
+    &lt;http://purl.org/DP/components#hasEnvironment&gt; &lt;http://purl.org/DP/components#Debian&gt; ;
+    &lt;http://purl.org/DP/components#hasPackageManagerConfig&gt; 
+        [ a &lt;http://purl.org/DP/components#DpkgConfig&gt; ;
+            &lt;http://purl.org/DP/components#installsDpkgs&gt; "imagemagick" ;
+            &lt;http://purl.org/DP/components#requiresSource&gt; "deb http://scape.keep.pt/apt stable main" .
+        ] ;
+    &lt;http://purl.org/DP/components#dependsOn&gt;
+        [ a &lt;http://purl.org/DP/components#Dependency&gt; ;
+            &lt;http://purl.org/dc/terms/title&gt; "imagemagick" ;
+            &lt;http://purl.org/DP/components#dependencyVersion&gt; "6.7.7.10" ;
+            &lt;http://xmlns.com/foaf/0.1/page&gt; &lt;http://www.imagemagick.org&gt; ;
+            &lt;http://creativecommons.org/ns#license&gt; &lt;http://opensource.org/licenses/Apache-2.0&gt;.
+        ] .
 </content>
       </annotationBean>
       <date>2013-03-06 19:59:47.611 UTC</date>

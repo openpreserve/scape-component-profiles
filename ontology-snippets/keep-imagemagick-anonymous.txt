@@ -1,0 +1,31 @@
+[] a <http://purl.org/DP/components#Installation> ;
+    <http://purl.org/DP/components#hasEnvironment> <http://purl.org/DP/components#Debian> ;
+    <http://purl.org/DP/components#hasPackageManagerConfig> 
+        [ a <http://purl.org/DP/components#DpkgConfig> ;
+            <http://purl.org/DP/components#installsDpkgs> "imagemagick" ;
+            <http://purl.org/DP/components#requiresSource> "deb http://scape.keep.pt/apt stable main"
+        ] ;
+    <http://purl.org/DP/components#dependsOn>
+        [ a <http://purl.org/DP/components#Dependency> ;
+            <http://purl.org/dc/terms/title> "imagemagick" ;
+            <http://purl.org/DP/components#dependencyVersion> "6.7.7.10" ;
+            <http://xmlns.com/foaf/0.1/page> <http://www.imagemagick.org> ;
+            <http://creativecommons.org/ns#license> <http://opensource.org/licenses/Apache-2.0>
+        ] .
+
+
+
+[] a &lt;http://purl.org/DP/components#Installation&gt; ;
+    &lt;http://purl.org/DP/components#hasEnvironment&gt; &lt;http://purl.org/DP/components#Debian&gt; ;
+    &lt;http://purl.org/DP/components#hasPackageManagerConfig&gt; 
+        [ a &lt;http://purl.org/DP/components#DpkgConfig&gt; ;
+            &lt;http://purl.org/DP/components#installsDpkgs&gt; "imagemagick" ;
+            &lt;http://purl.org/DP/components#requiresSource&gt; "deb http://scape.keep.pt/apt stable main"
+        ] ;
+    &lt;http://purl.org/DP/components#dependsOn&gt;
+        [ a &lt;http://purl.org/DP/components#Dependency&gt; ;
+            &lt;http://purl.org/dc/terms/title&gt; "imagemagick" ;
+            &lt;http://purl.org/DP/components#dependencyVersion&gt; "6.7.7.10" ;
+            &lt;http://xmlns.com/foaf/0.1/page&gt; &lt;http://www.imagemagick.org&gt; ;
+            &lt;http://creativecommons.org/ns#license&gt; &lt;http://opensource.org/licenses/Apache-2.0&gt;
+        ] .

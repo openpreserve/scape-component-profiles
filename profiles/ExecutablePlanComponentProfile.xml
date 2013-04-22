@@ -9,7 +9,7 @@
 	<description>A SCAPE component for executable plans</description>
 	<ontology id="components">http://purl.org/DP/components</ontology>
 	<component>
-		<inputPort maxDepth="1" minOccurs="0" maxOccurs="1">
+		<inputPort maxDepth="1">
 			<annotation>Example</annotation>
 			<semanticAnnotation ontology="components"
 				predicate="http://purl.org/DP/components#portType"
@@ -17,7 +17,7 @@
 				http://purl.org/DP/components#FromURIPort
 			</semanticAnnotation>
 		</inputPort>
-		<inputPort maxDepth="1" minOccurs="0" maxOccurs="1">
+		<inputPort maxDepth="1">
 			<annotation>Example</annotation>
 			<semanticAnnotation ontology="components"
 				predicate="http://purl.org/DP/components#portType"
@@ -29,9 +29,9 @@
 			<annotation>Example</annotation>
 			<semanticAnnotation ontology="components"
 				predicate="http://purl.org/DP/components#providesMeasure"
-				class="http://scape-project.eu/pw/vocab/components#Measure" />
+				class="http://purl.org/DP/quality#Measure" />
 		</outputPort>
-		<outputPort maxDepth="0" minOccurs="1" maxOccurs="1">
+		<outputPort maxDepth="0">
 			<semanticAnnotation ontology="components"
 				predicate="http://purl.org/DP/components#portType"
 				class="http://purl.org/DP/components#PortType">
@@ -40,8 +40,8 @@
 		</outputPort>
 		<activity type="Tool" minOccurs="0" maxOccurs="unbounded">
 			<semanticAnnotation ontology="components"
-				predicate="http://purl.org/DP/components#hasDependency"
-				class="http://purl.org/DP/components#Dependency"
+				predicate="http://purl.org/DP/components#requiresInstallation"
+				class="http://purl.org/DP/components#Installation"
 				minOccurs="1" maxOccurs="unbounded" />
 		</activity>
 		<activity minOccurs="0" maxOccurs="unbounded" />

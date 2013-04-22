@@ -29,10 +29,23 @@
 			<annotation>Example</annotation>
 			<semanticAnnotation ontology="components"
 				predicate="http://purl.org/DP/components#portType"
-				class="http://purl.org/DP/components#MeasurePortType" />
+				class="http://purl.org/DP/components#PortType">
+				http://purl.org/DP/components#FromMeasurePort
+			</semanticAnnotation>
 			<semanticAnnotation ontology="components"
 				predicate="http://purl.org/DP/components#acceptsMeasure"
-				class="http://scape-project.eu/pw/vocab/components#Measure" />
+				class="http://purl.org/DP/quality#Measure" />
+		</inputPort>
+		<inputPort maxDepth="0" minOccurs="0" maxOccurs="unbounded">
+			<annotation>Example</annotation>
+			<semanticAnnotation ontology="components"
+				predicate="http://purl.org/DP/components#portType"
+				class="http://purl.org/DP/components#PortType">
+				http://purl.org/DP/components#ToMeasurePort
+			</semanticAnnotation>
+			<semanticAnnotation ontology="components"
+				predicate="http://purl.org/DP/components#acceptsMeasure"
+				class="http://purl.org/DP/quality#Measure" />
 		</inputPort>
 		<inputPort maxDepth="0" minOccurs="0" maxOccurs="unbounded">
 			<annotation>Example</annotation>
@@ -45,18 +58,18 @@
 			<semanticAnnotation ontology="components"
 				predicate="http://purl.org/DP/components#acceptsPredefinedParameter"
 				class="http://purl.org/DP/components#PredefinedParameter"
-				minOccurs="1" maxOccurs="unbounded" />
+				minOccurs="0" maxOccurs="unbounded" />
 		</inputPort>
 		<outputPort maxDepth="0" minOccurs="1" maxOccurs="unbounded">
 			<annotation>Example</annotation>
 			<semanticAnnotation ontology="components"
 				predicate="http://purl.org/DP/components#providesMeasure"
-				class="http://scape-project.eu/pw/vocab/components#Measure" />
+				class="http://purl.org/DP/quality#Measure" />
 		</outputPort>
 		<activity type="Tool" minOccurs="0" maxOccurs="unbounded">
 			<semanticAnnotation ontology="components"
-				predicate="http://purl.org/DP/components#hasDependency"
-				class="http://purl.org/DP/components#Dependency"
+				predicate="http://purl.org/DP/components#requiresInstallation"
+				class="http://purl.org/DP/components#Installation"
 				minOccurs="1" maxOccurs="unbounded" />
 		</activity>
 		<activity minOccurs="0" maxOccurs="unbounded" />

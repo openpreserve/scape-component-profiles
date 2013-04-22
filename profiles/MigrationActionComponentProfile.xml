@@ -38,7 +38,7 @@
 				class="http://purl.org/DP/components#PredefinedParameter"
 				minOccurs="0" maxOccurs="unbounded" />
 		</inputPort>
-		<outputPort maxDepth="0" minOccurs="1" maxOccurs="1">
+		<outputPort maxDepth="0">
 			<semanticAnnotation ontology="components"
 				predicate="http://purl.org/DP/components#portType"
 				class="http://purl.org/DP/components#PortType">
@@ -47,8 +47,8 @@
 		</outputPort>
 		<activity type="Tool" minOccurs="0" maxOccurs="unbounded">
 			<semanticAnnotation ontology="components"
-				predicate="http://purl.org/DP/components#hasDependency"
-				class="http://purl.org/DP/components#Dependency"
+				predicate="http://purl.org/DP/components#requiresInstallation"
+				class="http://purl.org/DP/components#Installation"
 				minOccurs="1" maxOccurs="unbounded" />
 		</activity>
 		<activity minOccurs="0" maxOccurs="unbounded" />

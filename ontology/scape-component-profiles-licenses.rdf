@@ -1,0 +1,305 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY licenses "http://purl.org/DP/components/licenses#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:licenses="http://purl.org/DP/components/licenses#">
+    <Ontology rdf:about="http://purl.org/DP/components/licenses"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/DP/components/licenses#hasLicenseType -->
+
+    <ObjectProperty rdf:about="&licenses;hasLicenseType"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://creativecommons.org/ns#License -->
+
+    <Class rdf:about="http://creativecommons.org/ns#License"/>
+    
+
+
+    <!-- http://purl.org/DP/components/licenses#LicenseType -->
+
+    <Class rdf:about="&licenses;LicenseType"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://creativecommons.org/licenses/by-nc-nd/3.0/ -->
+
+    <NamedIndividual rdf:about="http://creativecommons.org/licenses/by-nc-nd/3.0/">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 Unported License</rdfs:label>
+        <licenses:hasLicenseType rdf:resource="&licenses;CCLicense"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by-nc-sa/3.0/ -->
+
+    <NamedIndividual rdf:about="http://creativecommons.org/licenses/by-nc-sa/3.0/">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License</rdfs:label>
+        <licenses:hasLicenseType rdf:resource="&licenses;CCLicense"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by-nc/3.0/ -->
+
+    <NamedIndividual rdf:about="http://creativecommons.org/licenses/by-nc/3.0/">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>Creative Commons Attribution-Noncommercial 3.0 Unported License</rdfs:label>
+        <licenses:hasLicenseType rdf:resource="&licenses;CCLicense"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by-nd/3.0/ -->
+
+    <NamedIndividual rdf:about="http://creativecommons.org/licenses/by-nd/3.0/">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>Creative Commons Attribution-No Derivative Works 3.0 Unported License </rdfs:label>
+        <licenses:hasLicenseType rdf:resource="&licenses;CCLicense"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by-sa/3.0/ -->
+
+    <NamedIndividual rdf:about="http://creativecommons.org/licenses/by-sa/3.0/">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>Creative Commons Attribution-Share Alike 3.0 Unported License</rdfs:label>
+        <licenses:hasLicenseType rdf:resource="&licenses;CCLicense"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by/3.0/ -->
+
+    <NamedIndividual rdf:about="http://creativecommons.org/licenses/by/3.0/">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>Creative Commons Attribution 3.0 Unported License</rdfs:label>
+        <licenses:hasLicenseType rdf:resource="&licenses;CCLicense"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/publicdomain/zero/1.0/ -->
+
+    <NamedIndividual rdf:about="http://creativecommons.org/publicdomain/zero/1.0/">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>CC0 1.0 Universal (Public Domain License)</rdfs:label>
+        <licenses:hasLicenseType rdf:resource="&licenses;CCLicense"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://opensource.org/licenses/Apache-2.0 -->
+
+    <NamedIndividual rdf:about="http://opensource.org/licenses/Apache-2.0">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>Apache License 2.0</rdfs:label>
+        <licenses:hasLicenseType rdf:resource="&licenses;OSILicense"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://opensource.org/licenses/BSD-2-Clause -->
+
+    <NamedIndividual rdf:about="http://opensource.org/licenses/BSD-2-Clause">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>BSD 2-Clause &quot;Simplified&quot; or &quot;FreeBSD&quot; license</rdfs:label>
+        <licenses:hasLicenseType rdf:resource="&licenses;OSILicense"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://opensource.org/licenses/BSD-3-Clause -->
+
+    <NamedIndividual rdf:about="http://opensource.org/licenses/BSD-3-Clause">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>BSD 3-Clause &quot;New&quot; or &quot;Revised&quot; license</rdfs:label>
+        <licenses:hasLicenseType rdf:resource="&licenses;OSILicense"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://opensource.org/licenses/CDDL-1.0 -->
+
+    <NamedIndividual rdf:about="http://opensource.org/licenses/CDDL-1.0">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>Common Development and Distribution License (CDDL-1.0)</rdfs:label>
+        <licenses:hasLicenseType rdf:resource="&licenses;OSILicense"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://opensource.org/licenses/EPL-1.0 -->
+
+    <NamedIndividual rdf:about="http://opensource.org/licenses/EPL-1.0">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>Eclipse Public License 1.0 (EPL-1.0)</rdfs:label>
+        <licenses:hasLicenseType rdf:resource="&licenses;OSILicense"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://opensource.org/licenses/GPL-1.0 -->
+
+    <NamedIndividual rdf:about="http://opensource.org/licenses/GPL-1.0">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>GNU General Public License, version 1</rdfs:label>
+        <licenses:hasLicenseType rdf:resource="&licenses;OSILicense"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://opensource.org/licenses/GPL-2.0 -->
+
+    <NamedIndividual rdf:about="http://opensource.org/licenses/GPL-2.0">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>GNU General Public License, version 2.0 (GPLv2)</rdfs:label>
+        <licenses:hasLicenseType rdf:resource="&licenses;OSILicense"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://opensource.org/licenses/GPL-3.0 -->
+
+    <NamedIndividual rdf:about="http://opensource.org/licenses/GPL-3.0">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>GNU General Public License, version 3.0 (GPLv3)</rdfs:label>
+        <licenses:hasLicenseType rdf:resource="&licenses;OSILicense"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://opensource.org/licenses/LGPL-2.1 -->
+
+    <NamedIndividual rdf:about="http://opensource.org/licenses/LGPL-2.1">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>GNU Library or &quot;Lesser&quot; General Public License, version 2.1 (LGPL-2.1)</rdfs:label>
+        <licenses:hasLicenseType rdf:resource="&licenses;OSILicense"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://opensource.org/licenses/LGPL-3.0 -->
+
+    <NamedIndividual rdf:about="http://opensource.org/licenses/LGPL-3.0">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>GNU Library or &quot;Lesser&quot; General Public License, version 3.0 (LGPL-3.0)</rdfs:label>
+        <licenses:hasLicenseType rdf:resource="&licenses;OSILicense"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://opensource.org/licenses/MIT -->
+
+    <NamedIndividual rdf:about="http://opensource.org/licenses/MIT">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>MIT license</rdfs:label>
+        <licenses:hasLicenseType rdf:resource="&licenses;OSILicense"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://opensource.org/licenses/MPL-2.0 -->
+
+    <NamedIndividual rdf:about="http://opensource.org/licenses/MPL-2.0">
+        <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
+        <rdfs:label>Mozilla Public License 2.0 (MPL-2.0)</rdfs:label>
+        <licenses:hasLicenseType rdf:resource="&licenses;OSILicense"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://purl.org/DP/components/licenses#CCLicense -->
+
+    <NamedIndividual rdf:about="&licenses;CCLicense">
+        <rdf:type rdf:resource="&licenses;LicenseType"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://purl.org/DP/components/licenses#OSILicense -->
+
+    <NamedIndividual rdf:about="&licenses;OSILicense">
+        <rdf:type rdf:resource="&licenses;LicenseType"/>
+    </NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.3.1957) http://owlapi.sourceforge.net -->
+

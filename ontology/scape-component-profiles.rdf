@@ -6,8 +6,8 @@
     <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
     <!ENTITY components "http://purl.org/DP/components#" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY vocab "http://scape-project.eu/pw/vocab/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 ]>
@@ -21,7 +21,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:components="http://purl.org/DP/components#"
-     xmlns:vocab="http://scape-project.eu/pw/vocab/"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:dcterms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="http://purl.org/DP/components"/>
     
@@ -35,6 +35,8 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    <owl:AnnotationProperty rdf:about="&skos;note"/>
+    <owl:AnnotationProperty rdf:about="&skos;prefLabel"/>
     
 
 
@@ -121,20 +123,28 @@
     
 
 
+    <!-- http://purl.org/DP/components#hasEnvironmentType -->
+
+    <owl:ObjectProperty rdf:about="&components;hasEnvironmentType">
+        <rdfs:domain rdf:resource="&components;Environment"/>
+        <rdfs:range rdf:resource="&components;EnvironmentType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/DP/components#hasLicenseType -->
+
+    <owl:ObjectProperty rdf:about="&components;hasLicenseType">
+        <rdfs:domain rdf:resource="http://creativecommons.org/ns#License"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.org/DP/components#hasPackageManagerConfig -->
 
     <owl:ObjectProperty rdf:about="&components;hasPackageManagerConfig">
         <rdfs:domain rdf:resource="&components;Installation"/>
         <rdfs:range rdf:resource="&components;PackageManagerConfig"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/DP/components#installedIn -->
-
-    <owl:ObjectProperty rdf:about="&components;installedIn">
-        <rdfs:range rdf:resource="&components;Installation"/>
-        <rdfs:domain rdf:resource="&components;Tool"/>
     </owl:ObjectProperty>
     
 
@@ -162,6 +172,15 @@
     <owl:ObjectProperty rdf:about="&components;providesMeasure">
         <rdfs:domain rdf:resource="&components;OutputPort"/>
         <rdfs:range rdf:resource="http://purl.org/DP/quality#Measure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/DP/components#requiresInstallation -->
+
+    <owl:ObjectProperty rdf:about="&components;requiresInstallation">
+        <rdfs:range rdf:resource="&components;Installation"/>
+        <rdfs:domain rdf:resource="&components;Tool"/>
     </owl:ObjectProperty>
     
 
@@ -228,15 +247,6 @@
     
 
 
-    <!-- http://purl.org/DP/components#isHostedAt -->
-
-    <owl:DatatypeProperty rdf:about="&components;isHostedAt">
-        <rdfs:domain rdf:resource="&components;DpkgConfig"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://purl.org/DP/components#mimetype -->
 
     <owl:DatatypeProperty rdf:about="&components;mimetype">
@@ -258,6 +268,15 @@
 
     <owl:DatatypeProperty rdf:about="&components;parameterValue">
         <rdfs:domain rdf:resource="&components;PredefinedParameter"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/DP/components#requiresSource -->
+
+    <owl:DatatypeProperty rdf:about="&components;requiresSource">
+        <rdfs:domain rdf:resource="&components;DpkgConfig"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -357,7 +376,7 @@
         <rdfs:subClassOf rdf:resource="&components;PackageManagerConfig"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;isHostedAt"/>
+                <owl:onProperty rdf:resource="&components;requiresSource"/>
                 <owl:someValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -384,6 +403,12 @@
     
 
 
+    <!-- http://purl.org/DP/components#EnvironmentType -->
+
+    <owl:Class rdf:about="&components;EnvironmentType"/>
+    
+
+
     <!-- http://purl.org/DP/components#InputPort -->
 
     <owl:Class rdf:about="&components;InputPort">
@@ -402,22 +427,6 @@
                 <owl:someValuesFrom rdf:resource="&components;Environment"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/DP/components#LinuxEnvironment -->
-
-    <owl:Class rdf:about="&components;LinuxEnvironment">
-        <rdfs:subClassOf rdf:resource="&components;Environment"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/DP/components#MacOSEnvironment -->
-
-    <owl:Class rdf:about="&components;MacOSEnvironment">
-        <rdfs:subClassOf rdf:resource="&components;Environment"/>
     </owl:Class>
     
 
@@ -444,24 +453,16 @@
         <rdfs:subClassOf rdf:resource="&components;Property"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;toMimetype"/>
+                <owl:onProperty rdf:resource="&components;fromMimetype"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;fromMimetype"/>
+                <owl:onProperty rdf:resource="&components;toMimetype"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/DP/components#OpenLicense -->
-
-    <owl:Class rdf:about="&components;OpenLicense">
-        <rdfs:subClassOf rdf:resource="http://creativecommons.org/ns#License"/>
     </owl:Class>
     
 
@@ -502,13 +503,13 @@
         <rdfs:subClassOf rdf:resource="&components;Property"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;parameterValue"/>
+                <owl:onProperty rdf:resource="&components;parameterDescription"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;parameterDescription"/>
+                <owl:onProperty rdf:resource="&components;parameterValue"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -528,14 +529,6 @@
     
 
 
-    <!-- http://purl.org/DP/components#ProprietaryLicense -->
-
-    <owl:Class rdf:about="&components;ProprietaryLicense">
-        <rdfs:subClassOf rdf:resource="http://creativecommons.org/ns#License"/>
-    </owl:Class>
-    
-
-
     <!-- http://purl.org/DP/components#RPMConfig -->
 
     <owl:Class rdf:about="&components;RPMConfig">
@@ -550,18 +543,10 @@
         <rdfs:subClassOf rdf:resource="&components;Activity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;installedIn"/>
+                <owl:onProperty rdf:resource="&components;requiresInstallation"/>
                 <owl:someValuesFrom rdf:resource="&components;Installation"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/DP/components#WindowsEnvironment -->
-
-    <owl:Class rdf:about="&components;WindowsEnvironment">
-        <rdfs:subClassOf rdf:resource="&components;Environment"/>
     </owl:Class>
     
 
@@ -576,7 +561,9 @@
 
     <!-- http://purl.org/DP/components#WorkflowPart -->
 
-    <owl:Class rdf:about="&components;WorkflowPart"/>
+    <owl:Class rdf:about="&components;WorkflowPart">
+        <skos:prefLabel>Workflow part</skos:prefLabel>
+    </owl:Class>
     
 
 
@@ -597,177 +584,6 @@
     
 
 
-    <!-- http://creativecommons.org/licenses/by-nc-nd/3.0/ -->
-
-    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by-nc-nd/3.0/">
-        <rdf:type rdf:resource="&components;OpenLicense"/>
-        <rdfs:label>Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 Unported License</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://creativecommons.org/licenses/by-nc-sa/3.0/ -->
-
-    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by-nc-sa/3.0/">
-        <rdf:type rdf:resource="&components;OpenLicense"/>
-        <rdfs:label>Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://creativecommons.org/licenses/by-nc/3.0/ -->
-
-    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by-nc/3.0/">
-        <rdf:type rdf:resource="&components;OpenLicense"/>
-        <rdfs:label>Creative Commons Attribution-Noncommercial 3.0 Unported License</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://creativecommons.org/licenses/by-nd/3.0/ -->
-
-    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by-nd/3.0/">
-        <rdf:type rdf:resource="&components;OpenLicense"/>
-        <rdfs:label>Creative Commons Attribution-No Derivative Works 3.0 Unported License </rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://creativecommons.org/licenses/by-sa/3.0/ -->
-
-    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by-sa/3.0/">
-        <rdf:type rdf:resource="&components;OpenLicense"/>
-        <rdfs:label>Creative Commons Attribution-Share Alike 3.0 Unported License</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://creativecommons.org/licenses/by/3.0/ -->
-
-    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by/3.0/">
-        <rdf:type rdf:resource="&components;OpenLicense"/>
-        <rdfs:label>Creative Commons Attribution 3.0 Unported License</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://creativecommons.org/publicdomain/zero/1.0/ -->
-
-    <owl:NamedIndividual rdf:about="http://creativecommons.org/publicdomain/zero/1.0/">
-        <rdf:type rdf:resource="&components;OpenLicense"/>
-        <rdfs:label>CC0 1.0 Universal (Public Domain License)</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://opensource.org/licenses/Apache-2.0 -->
-
-    <owl:NamedIndividual rdf:about="http://opensource.org/licenses/Apache-2.0">
-        <rdf:type rdf:resource="&components;OpenLicense"/>
-        <rdfs:label>Apache License 2.0</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://opensource.org/licenses/BSD-2-Clause -->
-
-    <owl:NamedIndividual rdf:about="http://opensource.org/licenses/BSD-2-Clause">
-        <rdf:type rdf:resource="&components;OpenLicense"/>
-        <rdfs:label>BSD 2-Clause &quot;Simplified&quot; or &quot;FreeBSD&quot; license</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://opensource.org/licenses/BSD-3-Clause -->
-
-    <owl:NamedIndividual rdf:about="http://opensource.org/licenses/BSD-3-Clause">
-        <rdf:type rdf:resource="&components;OpenLicense"/>
-        <rdfs:label>BSD 3-Clause &quot;New&quot; or &quot;Revised&quot; license</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://opensource.org/licenses/CDDL-1.0 -->
-
-    <owl:NamedIndividual rdf:about="http://opensource.org/licenses/CDDL-1.0">
-        <rdf:type rdf:resource="&components;OpenLicense"/>
-        <rdfs:label>Common Development and Distribution License (CDDL-1.0)</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://opensource.org/licenses/EPL-1.0 -->
-
-    <owl:NamedIndividual rdf:about="http://opensource.org/licenses/EPL-1.0">
-        <rdf:type rdf:resource="&components;OpenLicense"/>
-        <rdfs:label>Eclipse Public License 1.0 (EPL-1.0)</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://opensource.org/licenses/GPL-1.0 -->
-
-    <owl:NamedIndividual rdf:about="http://opensource.org/licenses/GPL-1.0">
-        <rdf:type rdf:resource="&components;OpenLicense"/>
-        <rdfs:label>GNU General Public License, version 1</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://opensource.org/licenses/GPL-2.0 -->
-
-    <owl:NamedIndividual rdf:about="http://opensource.org/licenses/GPL-2.0">
-        <rdf:type rdf:resource="&components;OpenLicense"/>
-        <rdfs:label>GNU General Public License, version 2.0 (GPLv2)</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://opensource.org/licenses/GPL-3.0 -->
-
-    <owl:NamedIndividual rdf:about="http://opensource.org/licenses/GPL-3.0">
-        <rdf:type rdf:resource="&components;OpenLicense"/>
-        <rdfs:label>GNU General Public License, version 3.0 (GPLv3)</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://opensource.org/licenses/LGPL-2.1 -->
-
-    <owl:NamedIndividual rdf:about="http://opensource.org/licenses/LGPL-2.1">
-        <rdf:type rdf:resource="&components;OpenLicense"/>
-        <rdfs:label>GNU Library or &quot;Lesser&quot; General Public License, version 2.1 (LGPL-2.1)</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://opensource.org/licenses/LGPL-3.0 -->
-
-    <owl:NamedIndividual rdf:about="http://opensource.org/licenses/LGPL-3.0">
-        <rdf:type rdf:resource="&components;OpenLicense"/>
-        <rdfs:label>GNU Library or &quot;Lesser&quot; General Public License, version 3.0 (LGPL-3.0)</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://opensource.org/licenses/MIT -->
-
-    <owl:NamedIndividual rdf:about="http://opensource.org/licenses/MIT">
-        <rdf:type rdf:resource="&components;OpenLicense"/>
-        <rdfs:label>MIT license</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://opensource.org/licenses/MPL-2.0 -->
-
-    <owl:NamedIndividual rdf:about="http://opensource.org/licenses/MPL-2.0">
-        <rdf:type rdf:resource="&components;OpenLicense"/>
-        <rdfs:label>Mozilla Public License 2.0 (MPL-2.0)</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://purl.org/DP/components#ActionStatusPort -->
 
     <owl:NamedIndividual rdf:about="&components;ActionStatusPort">
@@ -776,11 +592,18 @@
     
 
 
+    <!-- http://purl.org/DP/components#CCLicense -->
+
+    <owl:NamedIndividual rdf:about="&components;CCLicense"/>
+    
+
+
     <!-- http://purl.org/DP/components#CentOS -->
 
     <owl:NamedIndividual rdf:about="&components;CentOS">
-        <rdf:type rdf:resource="&components;LinuxEnvironment"/>
+        <rdf:type rdf:resource="&components;Environment"/>
         <rdfs:label>CentOS</rdfs:label>
+        <hasEnvironmentType rdf:resource="&components;LinuxEnvironment"/>
     </owl:NamedIndividual>
     
 
@@ -797,8 +620,9 @@
     <!-- http://purl.org/DP/components#Debian -->
 
     <owl:NamedIndividual rdf:about="&components;Debian">
-        <rdf:type rdf:resource="&components;LinuxEnvironment"/>
+        <rdf:type rdf:resource="&components;Environment"/>
         <rdfs:label>Debian</rdfs:label>
+        <hasEnvironmentType rdf:resource="&components;LinuxEnvironment"/>
     </owl:NamedIndividual>
     
 
@@ -828,10 +652,35 @@
     
 
 
-    <!-- http://purl.org/DP/components#MacOS -->
+    <!-- http://purl.org/DP/components#LinuxEnvironment -->
 
-    <owl:NamedIndividual rdf:about="&components;MacOS">
-        <rdf:type rdf:resource="&components;MacOSEnvironment"/>
+    <owl:NamedIndividual rdf:about="&components;LinuxEnvironment">
+        <rdf:type rdf:resource="&components;EnvironmentType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/DP/components#MacOS9Environment -->
+
+    <owl:NamedIndividual rdf:about="&components;MacOS9Environment">
+        <rdf:type rdf:resource="&components;EnvironmentType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/DP/components#MacOSX -->
+
+    <owl:NamedIndividual rdf:about="&components;MacOSX">
+        <rdf:type rdf:resource="&components;Environment"/>
+        <hasEnvironmentType rdf:resource="&components;MacOSXEnvironment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/DP/components#MacOSXEnvironment -->
+
+    <owl:NamedIndividual rdf:about="&components;MacOSXEnvironment">
+        <rdf:type rdf:resource="&components;EnvironmentType"/>
     </owl:NamedIndividual>
     
 
@@ -842,6 +691,12 @@
         <rdf:type rdf:resource="&components;Profile"/>
         <rdfs:seeAlso>https://raw.github.com/openplanets/scape-component-profiles/master/profiles/MigrationActionComponentProfile.xml</rdfs:seeAlso>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/DP/components#OSILicense -->
+
+    <owl:NamedIndividual rdf:about="&components;OSILicense"/>
     
 
 
@@ -882,8 +737,9 @@
     <!-- http://purl.org/DP/components#Redhat -->
 
     <owl:NamedIndividual rdf:about="&components;Redhat">
-        <rdf:type rdf:resource="&components;LinuxEnvironment"/>
+        <rdf:type rdf:resource="&components;Environment"/>
         <rdfs:label>Redhat</rdfs:label>
+        <hasEnvironmentType rdf:resource="&components;LinuxEnvironment"/>
     </owl:NamedIndividual>
     
 
@@ -907,8 +763,9 @@
     <!-- http://purl.org/DP/components#Ubuntu -->
 
     <owl:NamedIndividual rdf:about="&components;Ubuntu">
-        <rdf:type rdf:resource="&components;LinuxEnvironment"/>
+        <rdf:type rdf:resource="&components;Environment"/>
         <rdfs:label>Ubuntu</rdfs:label>
+        <hasEnvironmentType rdf:resource="&components;LinuxEnvironment"/>
     </owl:NamedIndividual>
     
 
@@ -925,7 +782,16 @@
     <!-- http://purl.org/DP/components#Windows -->
 
     <owl:NamedIndividual rdf:about="&components;Windows">
-        <rdf:type rdf:resource="&components;WindowsEnvironment"/>
+        <rdf:type rdf:resource="&components;Environment"/>
+        <hasEnvironmentType rdf:resource="&components;WindowsEnvironment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/DP/components#WindowsEnvironment -->
+
+    <owl:NamedIndividual rdf:about="&components;WindowsEnvironment">
+        <rdf:type rdf:resource="&components;EnvironmentType"/>
     </owl:NamedIndividual>
     
 

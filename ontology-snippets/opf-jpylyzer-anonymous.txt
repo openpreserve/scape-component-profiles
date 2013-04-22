@@ -1,0 +1,27 @@
+[] a <http://purl.org/DP/components#Installation> ;
+    <http://purl.org/DP/components#hasEnvironment> <http://purl.org/DP/components#Debian> ;
+    <http://purl.org/DP/components#hasPackageManagerConfig> 
+        [ a <http://purl.org/DP/components#DpkgConfig> ;
+            <http://purl.org/DP/components#installsDpkgs> "jpylyzer" ;
+            <http://purl.org/DP/components#requiresSource> "deb http://deb.openplanetsfoundation.org stable main"
+        ] ;
+    <http://purl.org/DP/components#dependsOn>
+        [ a <http://purl.org/DP/components#Dependency> ;
+            <http://purl.org/dc/terms/title> "jpylyzer" ;
+            <http://xmlns.com/foaf/0.1/page> <http://www.openplanetsfoundation.org/software/jpylyzer> ;
+            <http://creativecommons.org/ns#license> <http://opensource.org/licenses/GPL-3.0>
+        ] .
+
+[] a &lt;http://purl.org/DP/components#Installation&gt; ;
+    &lt;http://purl.org/DP/components#hasEnvironment&gt; &lt;http://purl.org/DP/components#Debian&gt; ;
+    &lt;http://purl.org/DP/components#hasPackageManagerConfig&gt; 
+        [ a &lt;http://purl.org/DP/components#DpkgConfig&gt; ;
+            &lt;http://purl.org/DP/components#installsDpkgs&gt; "jpylyzer" ;
+            &lt;http://purl.org/DP/components#requiresSource&gt; "deb http://deb.openplanetsfoundation.org stable main"
+        ] ;
+    &lt;http://purl.org/DP/components#dependsOn&gt;
+        [ a &lt;http://purl.org/DP/components#Dependency&gt; ;
+            &lt;http://purl.org/dc/terms/title&gt; "jpylyzer" ;
+            &lt;http://xmlns.com/foaf/0.1/page&gt; &lt;http://www.openplanetsfoundation.org/software/jpylyzer&gt; ;
+            &lt;http://creativecommons.org/ns#license&gt; &lt;http://opensource.org/licenses/GPL-3.0&gt;
+        ] .
