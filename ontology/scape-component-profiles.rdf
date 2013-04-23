@@ -329,13 +329,13 @@
         <rdfs:subClassOf rdf:resource="&components;Property"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;toMimetype"/>
+                <owl:onProperty rdf:resource="&components;fromMimetype"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;fromMimetype"/>
+                <owl:onProperty rdf:resource="&components;toMimetype"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -356,14 +356,14 @@
     <owl:Class rdf:about="&components;Dependency">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://creativecommons.org/ns#license"/>
-                <owl:someValuesFrom rdf:resource="http://creativecommons.org/ns#License"/>
+                <owl:onProperty rdf:resource="&dcterms;title"/>
+                <owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&dcterms;title"/>
-                <owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+                <owl:onProperty rdf:resource="http://creativecommons.org/ns#license"/>
+                <owl:someValuesFrom rdf:resource="http://creativecommons.org/ns#License"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -376,13 +376,13 @@
         <rdfs:subClassOf rdf:resource="&components;PackageManagerConfig"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;requiresSource"/>
+                <owl:onProperty rdf:resource="&components;installsDpkgs"/>
                 <owl:someValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;installsDpkgs"/>
+                <owl:onProperty rdf:resource="&components;requiresSource"/>
                 <owl:someValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -453,13 +453,13 @@
         <rdfs:subClassOf rdf:resource="&components;Property"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;fromMimetype"/>
+                <owl:onProperty rdf:resource="&components;toMimetype"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;toMimetype"/>
+                <owl:onProperty rdf:resource="&components;fromMimetype"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -660,19 +660,10 @@
     
 
 
-    <!-- http://purl.org/DP/components#MacOS9Environment -->
+    <!-- http://purl.org/DP/components#MacOS -->
 
-    <owl:NamedIndividual rdf:about="&components;MacOS9Environment">
-        <rdf:type rdf:resource="&components;EnvironmentType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/DP/components#MacOSX -->
-
-    <owl:NamedIndividual rdf:about="&components;MacOSX">
+    <owl:NamedIndividual rdf:about="&components;MacOS">
         <rdf:type rdf:resource="&components;Environment"/>
-        <hasEnvironmentType rdf:resource="&components;MacOSXEnvironment"/>
     </owl:NamedIndividual>
     
 
