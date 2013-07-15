@@ -3,7 +3,7 @@
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>[]    &lt;http://purl.org/DP/components#portType&gt;
+        <content>&lt;&gt;    &lt;http://purl.org/DP/components#portType&gt;
               &lt;http://purl.org/DP/components#ObjectURIPort&gt; .
 </content>
       </annotationBean>
@@ -28,10 +28,10 @@
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>[]    &lt;http://purl.org/DP/components#portType&gt;
+        <content>&lt;&gt;    &lt;http://purl.org/DP/components#portType&gt;
               &lt;http://purl.org/DP/components#ParameterPort&gt; .
 
-              []    &lt;http://purl.org/DP/components#acceptsPredefinedParameter&gt;
+              &lt;&gt;    &lt;http://purl.org/DP/components#acceptsPredefinedParameter&gt;
               [ a &lt;http://purl.org/DP/components#PredefinedParameter&gt; ;
                 &lt;http://purl.org/DP/components#parameterValue&gt;
                         "" ;
@@ -39,7 +39,7 @@
                         "non-verbose"
               ] .
 
-              []    &lt;http://purl.org/DP/components#acceptsPredefinedParameter&gt;
+              &lt;&gt;    &lt;http://purl.org/DP/components#acceptsPredefinedParameter&gt;
               [ a &lt;http://purl.org/DP/components#PredefinedParameter&gt; ;
                 &lt;http://purl.org/DP/components#parameterValue&gt;
                         "--verbose" ;
@@ -80,7 +80,7 @@
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>[]    &lt;http://purl.org/DP/components#providesMeasure&gt;
+        <content>&lt;&gt;    &lt;http://purl.org/DP/components#providesMeasure&gt;
               &lt;http://purl.org/DP/quality/measures#52&gt; .
 </content>
       </annotationBean>
@@ -116,7 +116,7 @@
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>[]    &lt;http://purl.org/DP/components#providesMeasure&gt;
+        <content>&lt;&gt;    &lt;http://purl.org/DP/components#providesMeasure&gt;
               &lt;http://purl.org/DP/quality/measures#50&gt; .
 </content>
       </annotationBean>
@@ -130,7 +130,7 @@
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>[] a &lt;http://purl.org/DP/components#Installation&gt; ;
+        <content>&lt;&gt; a &lt;http://purl.org/DP/components#Installation&gt; ;
     &lt;http://purl.org/DP/components#hasEnvironment&gt; &lt;http://purl.org/DP/components#Debian&gt; ;
     &lt;http://purl.org/DP/components#hasPackageManagerConfig&gt; 
         [ a &lt;http://purl.org/DP/components#DpkgConfig&gt; ;
@@ -441,16 +441,16 @@ concatenated = sb.toString();
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>[]    &lt;http://purl.org/DP/components#fits&gt;
+        <content>&lt;&gt;    &lt;http://purl.org/DP/components#fits&gt;
               &lt;http://purl.org/DP/components#Characterisation&gt; .
 
-                 []    &lt;http://purl.org/DP/components#handlesMimetype&gt;
+                 &lt;&gt;    &lt;http://purl.org/DP/components#handlesMimetype&gt;
                         "image/jp2" .
 
-                 []    &lt;http://purl.org/DP/components#handlesMimetype&gt;
+                 &lt;&gt;    &lt;http://purl.org/DP/components#handlesMimetype&gt;
                         "image/jpx" .
 
-                 []    &lt;http://purl.org/DP/components#handlesMimetype&gt;
+                 &lt;&gt;    &lt;http://purl.org/DP/components#handlesMimetype&gt;
                         "image/jpm" .
 
         </content>

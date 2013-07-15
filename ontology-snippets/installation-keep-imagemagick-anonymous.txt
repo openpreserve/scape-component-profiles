@@ -1,4 +1,4 @@
-[] a <http://purl.org/DP/components#Installation> ;
+&lt;&gt; a <http://purl.org/DP/components#Installation> ;
     <http://purl.org/DP/components#hasEnvironment> <http://purl.org/DP/components#Debian> ;
     <http://purl.org/DP/components#hasPackageManagerConfig> 
         [ a <http://purl.org/DP/components#DpkgConfig> ;
@@ -15,7 +15,7 @@
 
 
 
-[] a &lt;http://purl.org/DP/components#Installation&gt; ;
+&lt;&gt; a &lt;http://purl.org/DP/components#Installation&gt; ;
     &lt;http://purl.org/DP/components#hasEnvironment&gt; &lt;http://purl.org/DP/components#Debian&gt; ;
     &lt;http://purl.org/DP/components#hasPackageManagerConfig&gt; 
         [ a &lt;http://purl.org/DP/components#DpkgConfig&gt; ;

@@ -1,4 +1,4 @@
-[] <http://purl.org/DP/components#handlesMimetypes>
+&lt;&gt; <http://purl.org/DP/components#handlesMimetypes>
     [ a <http://purl.org/DP/components#AcceptedMimetypes> ;
         <http://purl.org/DP/components#fromMimetype>
             "image/tiff" ;
@@ -6,7 +6,7 @@
             "image/tiff"
     ] .
 
-[] &lt;http://purl.org/DP/components#handlesMimetypes&gt;
+&lt;&gt; &lt;http://purl.org/DP/components#handlesMimetypes&gt;
     [ a &lt;http://purl.org/DP/components#AcceptedMimetypes&gt; ;
         &lt;http://purl.org/DP/components#fromMimetype&gt;
             "image/tiff" ;

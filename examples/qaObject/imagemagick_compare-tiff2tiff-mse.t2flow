@@ -71,7 +71,7 @@
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>[] a &lt;http://purl.org/DP/components#Installation&gt; ;
+        <content>&lt;&gt; a &lt;http://purl.org/DP/components#Installation&gt; ;
     &lt;http://purl.org/DP/components#hasEnvironment&gt; &lt;http://purl.org/DP/components#Debian&gt; ;
     &lt;http://purl.org/DP/components#hasPackageManagerConfig&gt; 
         [ a &lt;http://purl.org/DP/components#DpkgConfig&gt; ;
@@ -280,7 +280,7 @@ if (matcher.find()) {
       &lt;http://purl.org/DP/components#fits&gt;
               &lt;http://purl.org/DP/components#QAObjectComparison&gt; .
               
-[] &lt;http://purl.org/DP/components#handlesMimetypes&gt;
+&lt;&gt; &lt;http://purl.org/DP/components#handlesMimetypes&gt;
     [ a &lt;http://purl.org/DP/components#AcceptedMimetypes&gt; ;
         &lt;http://purl.org/DP/components#fromMimetype&gt;
             "image/tiff" ;

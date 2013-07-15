@@ -1,4 +1,4 @@
-[] <http://purl.org/DP/components#migrates>
+&lt;&gt; <http://purl.org/DP/components#migrates>
     [ a <http://purl.org/DP/components#MigrationPath> ;
         <http://purl.org/DP/components#fromMimetype>
             "image/tiff" ;
@@ -6,7 +6,7 @@
             "image/tiff"
     ] .
 
-[] &lt;http://purl.org/DP/components#migrates&gt;
+&lt;&gt; &lt;http://purl.org/DP/components#migrates&gt;
     [ a &lt;http://purl.org/DP/components#MigrationPath&gt; ;
         &lt;http://purl.org/DP/components#fromMimetype&gt;
             "image/tiff" ;

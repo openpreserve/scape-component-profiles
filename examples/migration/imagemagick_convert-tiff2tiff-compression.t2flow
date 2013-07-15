@@ -3,7 +3,7 @@
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>[]    &lt;http://purl.org/DP/components#portType&gt;
+        <content>&lt;&gt;    &lt;http://purl.org/DP/components#portType&gt;
               &lt;http://purl.org/DP/components#FromURIPort&gt; .
 </content>
       </annotationBean>
@@ -50,7 +50,7 @@
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>[]    &lt;http://purl.org/DP/components#portType&gt;
+        <content>&lt;&gt;    &lt;http://purl.org/DP/components#portType&gt;
               &lt;http://purl.org/DP/components#ToURIPort&gt; .
 </content>
       </annotationBean>
@@ -75,10 +75,10 @@
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>[]    &lt;http://purl.org/DP/components#portType&gt;
+        <content>&lt;&gt;    &lt;http://purl.org/DP/components#portType&gt;
               &lt;http://purl.org/DP/components#ParameterPort&gt; .
 
-[]    &lt;http://purl.org/DP/components#acceptsPredefinedParameter&gt;
+&lt;&gt;    &lt;http://purl.org/DP/components#acceptsPredefinedParameter&gt;
               [ a       &lt;http://purl.org/DP/components#PredefinedParameter&gt; ;
                 &lt;http://purl.org/DP/components#parameterDescription&gt;
                         "no compression" ;
@@ -86,7 +86,7 @@
                         "none"
               ] .
 
-[]    &lt;http://purl.org/DP/components#acceptsPredefinedParameter&gt;
+&lt;&gt;    &lt;http://purl.org/DP/components#acceptsPredefinedParameter&gt;
               [ a       &lt;http://purl.org/DP/components#PredefinedParameter&gt; ;
                 &lt;http://purl.org/DP/components#parameterDescription&gt;
                         "CCITT Group 4" ;
@@ -94,7 +94,7 @@
                         "Group4"
               ] .
 
-[]    &lt;http://purl.org/DP/components#acceptsPredefinedParameter&gt;
+&lt;&gt;    &lt;http://purl.org/DP/components#acceptsPredefinedParameter&gt;
               [ a       &lt;http://purl.org/DP/components#PredefinedParameter&gt; ;
                 &lt;http://purl.org/DP/components#parameterDescription&gt;
                         "run length encoding" ;
@@ -146,7 +146,7 @@
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>[]    &lt;http://purl.org/DP/components#portType&gt;
+        <content>&lt;&gt;    &lt;http://purl.org/DP/components#portType&gt;
               &lt;http://purl.org/DP/components#ActionStatusPort&gt; .
 </content>
       </annotationBean>
@@ -160,7 +160,7 @@
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>[] a &lt;http://purl.org/DP/components#Installation&gt; ;
+        <content>&lt;&gt; a &lt;http://purl.org/DP/components#Installation&gt; ;
     &lt;http://purl.org/DP/components#hasEnvironment&gt; &lt;http://purl.org/DP/components#Debian&gt; ;
     &lt;http://purl.org/DP/components#hasPackageManagerConfig&gt; 
         [ a &lt;http://purl.org/DP/components#DpkgConfig&gt; ;
@@ -301,10 +301,10 @@
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>[]    &lt;http://purl.org/DP/components#fits&gt;
+        <content>&lt;&gt;    &lt;http://purl.org/DP/components#fits&gt;
               &lt;http://purl.org/DP/components#MigrationAction&gt; .
 
-[]    &lt;http://purl.org/DP/components#migrates&gt;
+&lt;&gt;    &lt;http://purl.org/DP/components#migrates&gt;
               [ a       &lt;http://purl.org/DP/components#MigrationPath&gt; ;
                 &lt;http://purl.org/DP/components#fromMimetype&gt;
                         "image/tiff" ;
