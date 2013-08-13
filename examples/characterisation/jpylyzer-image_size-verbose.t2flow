@@ -130,7 +130,8 @@
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>&lt;&gt; a &lt;http://purl.org/DP/components#Installation&gt; ;
+        <content>&lt;&gt; &lt;http://purl.org/DP/components#requiresInstallation&gt; 
+        [ &lt;http://purl.org/DP/components#Installation&gt; ;
     &lt;http://purl.org/DP/components#hasEnvironment&gt; &lt;http://purl.org/DP/components#Debian&gt; ;
     &lt;http://purl.org/DP/components#hasPackageManagerConfig&gt; 
         [ a &lt;http://purl.org/DP/components#DpkgConfig&gt; ;
@@ -142,7 +143,7 @@
             &lt;http://purl.org/dc/terms/title&gt; "jpylyzer" ;
             &lt;http://xmlns.com/foaf/0.1/page&gt; &lt;http://www.openplanetsfoundation.org/software/jpylyzer&gt; ;
             &lt;http://creativecommons.org/ns#license&gt; &lt;http://opensource.org/licenses/GPL-3.0&gt;
-        ] .
+        ] ].
 </content>
       </annotationBean>
       <date>2013-03-11 14:08:44.893 UTC</date>
