@@ -207,6 +207,7 @@
     <!-- http://purl.org/DP/components#handlesMimetype1 -->
 
     <owl:DatatypeProperty rdf:about="&components;handlesMimetype1">
+        <rdfs:domain rdf:resource="&components;AcceptedMimetypes"/>
         <rdfs:subPropertyOf rdf:resource="&components;mimetype"/>
     </owl:DatatypeProperty>
     
@@ -215,6 +216,7 @@
     <!-- http://purl.org/DP/components#handlesMimetype2 -->
 
     <owl:DatatypeProperty rdf:about="&components;handlesMimetype2">
+        <rdfs:domain rdf:resource="&components;AcceptedMimetypes"/>
         <rdfs:subPropertyOf rdf:resource="&components;mimetype"/>
     </owl:DatatypeProperty>
     
@@ -267,15 +269,8 @@
     <!-- http://purl.org/DP/components#sourceMimetype -->
 
     <owl:DatatypeProperty rdf:about="&components;sourceMimetype">
+        <rdfs:domain rdf:resource="&components;MigrationPath"/>
         <rdfs:subPropertyOf rdf:resource="&components;mimetype"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&components;AcceptedMimetypes"/>
-                    <rdf:Description rdf:about="&components;MigrationPath"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
     </owl:DatatypeProperty>
     
 
@@ -283,15 +278,8 @@
     <!-- http://purl.org/DP/components#targetMimetype -->
 
     <owl:DatatypeProperty rdf:about="&components;targetMimetype">
+        <rdfs:domain rdf:resource="&components;MigrationPath"/>
         <rdfs:subPropertyOf rdf:resource="&components;mimetype"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&components;AcceptedMimetypes"/>
-                    <rdf:Description rdf:about="&components;MigrationPath"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
     </owl:DatatypeProperty>
     
 
@@ -343,14 +331,14 @@
     <owl:Class rdf:about="&components;Dependency">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&skos;prefLabel"/>
-                <owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+                <owl:onProperty rdf:resource="http://creativecommons.org/ns#license"/>
+                <owl:someValuesFrom rdf:resource="http://creativecommons.org/ns#License"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://creativecommons.org/ns#license"/>
-                <owl:someValuesFrom rdf:resource="http://creativecommons.org/ns#License"/>
+                <owl:onProperty rdf:resource="&skos;prefLabel"/>
+                <owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>

@@ -555,6 +555,14 @@
         <content>&lt;&gt;
       &lt;http://purl.org/DP/components#fits&gt;
               &lt;http://purl.org/DP/components#ExecutablePlan&gt; .
+
+&lt;&gt; &lt;http://purl.org/DP/components#handlesMimetypes&gt;
+    [ a &lt;http://purl.org/DP/components#AcceptedMimetypes&gt; ;
+        &lt;http://purl.org/DP/components#handlesMimetype1&gt;
+            "image/tiff" ;
+        &lt;http://purl.org/DP/components#handlesMimetype2&gt;
+            "image/tiff"
+    ] .
 </content>
       </annotationBean>
       <date>2013-08-16 18:13:46.824 UTC</date>

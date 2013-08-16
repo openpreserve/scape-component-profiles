@@ -1,0 +1,545 @@
+<workflow xmlns="http://taverna.sf.net/2008/xml/t2flow" version="1" producedBy="taverna-2.4.0"><dataflow id="756ec0f5-87e2-42a5-9cb7-7c2555fe8b93" role="top"><name>Preservation_Workflo</name><inputPorts><port><name>source_path</name><depth>0</depth><granularDepth>0</granularDepth><annotations><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
+        <mimeType>text/rdf+n3</mimeType>
+        <content>&lt;&gt;
+      &lt;http://purl.org/DP/components#portType&gt;
+              &lt;http://purl.org/DP/components#SourcePathPort&gt; .
+</content>
+      </annotationBean>
+      <date>2013-08-16 19:09:40.346 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.FreeTextDescription">
+        <text>Path to source file</text>
+      </annotationBean>
+      <date>2013-08-16 19:06:06.424 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain></annotations></port></inputPorts><outputPorts><port><name>mse</name><annotations><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
+        <mimeType>text/rdf+n3</mimeType>
+        <content>&lt;&gt;
+      &lt;http://purl.org/DP/components#providesMeasure&gt;
+              &lt;http://purl.org/DP/quality/measures#6&gt; .
+</content>
+      </annotationBean>
+      <date>2013-08-16 19:09:52.252 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.FreeTextDescription">
+        <text>MSE</text>
+      </annotationBean>
+      <date>2013-08-16 19:06:11.78 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.ExampleValue">
+        <text>0</text>
+      </annotationBean>
+      <date>2013-08-16 19:06:13.94 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain></annotations></port><port><name>target_height</name><annotations><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.FreeTextDescription">
+        <text>Height of the target file in pixel</text>
+      </annotationBean>
+      <date>2013-08-16 19:07:43.253 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.ExampleValue">
+        <text>1200</text>
+      </annotationBean>
+      <date>2013-08-16 19:07:46.733 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
+        <mimeType>text/rdf+n3</mimeType>
+        <content>&lt;&gt;
+      &lt;http://purl.org/DP/components#portType&gt;
+              &lt;http://purl.org/DP/components#Measure2Port&gt; .
+
+&lt;&gt;
+      &lt;http://purl.org/DP/components#providesMeasure&gt;
+              &lt;http://purl.org/DP/quality/measures#52&gt; .
+</content>
+      </annotationBean>
+      <date>2013-08-16 19:10:41.394 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2></annotations></port><port><name>target_resolution</name><annotations><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.FreeTextDescription">
+        <text>Resolution of target file</text>
+      </annotationBean>
+      <date>2013-08-16 19:07:53.533 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.ExampleValue">
+        <text>1600x1200</text>
+      </annotationBean>
+      <date>2013-08-16 19:07:56.765 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
+        <mimeType>text/rdf+n3</mimeType>
+        <content>&lt;&gt;
+      &lt;http://purl.org/DP/components#portType&gt;
+              &lt;http://purl.org/DP/components#Measure2Port&gt; .
+
+&lt;&gt;    &lt;http://purl.org/DP/components#providesMeasure&gt;
+              &lt;http://purl.org/DP/quality/measures#54&gt; .
+
+</content>
+      </annotationBean>
+      <date>2013-08-16 19:10:46.130 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2></annotations></port><port><name>target_width</name><annotations><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.FreeTextDescription">
+        <text>Width of the target file in pixel</text>
+      </annotationBean>
+      <date>2013-08-16 19:08:01.941 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
+        <mimeType>text/rdf+n3</mimeType>
+        <content>&lt;&gt;
+      &lt;http://purl.org/DP/components#portType&gt;
+              &lt;http://purl.org/DP/components#Measure2Port&gt; .
+
+
+&lt;&gt;
+      &lt;http://purl.org/DP/components#providesMeasure&gt;
+              &lt;http://purl.org/DP/quality/measures#50&gt; .
+
+</content>
+      </annotationBean>
+      <date>2013-08-16 19:10:50.986 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.ExampleValue">
+        <text>1600</text>
+      </annotationBean>
+      <date>2013-08-16 19:08:03.421 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain></annotations></port><port><name>source_height</name><annotations><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.FreeTextDescription">
+        <text>Height of the source file in pixel</text>
+      </annotationBean>
+      <date>2013-08-16 19:06:38.534 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.ExampleValue">
+        <text>1200</text>
+      </annotationBean>
+      <date>2013-08-16 19:06:40.974 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
+        <mimeType>text/rdf+n3</mimeType>
+        <content>&lt;&gt;
+      &lt;http://purl.org/DP/components#portType&gt;
+              &lt;http://purl.org/DP/components#Measure1Port&gt; .
+
+&lt;&gt;
+      &lt;http://purl.org/DP/components#providesMeasure&gt;
+              &lt;http://purl.org/DP/quality/measures#52&gt; .
+
+</content>
+      </annotationBean>
+      <date>2013-08-16 19:09:59.139 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2></annotations></port><port><name>source_resolution</name><annotations><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.ExampleValue">
+        <text>1600x1200</text>
+      </annotationBean>
+      <date>2013-08-16 19:06:50.622 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.FreeTextDescription">
+        <text>Resolution of source file</text>
+      </annotationBean>
+      <date>2013-08-16 19:06:47.526 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
+        <mimeType>text/rdf+n3</mimeType>
+        <content>&lt;&gt;
+      &lt;http://purl.org/DP/components#portType&gt;
+              &lt;http://purl.org/DP/components#Measure1Port&gt; .
+
+&lt;&gt;    &lt;http://purl.org/DP/components#providesMeasure&gt;
+              &lt;http://purl.org/DP/quality/measures#54&gt; .
+</content>
+      </annotationBean>
+      <date>2013-08-16 19:10:03.495 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2></annotations></port><port><name>source_width</name><annotations><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.FreeTextDescription">
+        <text>Width of the source file in pixel</text>
+      </annotationBean>
+      <date>2013-08-16 19:06:58.590 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.ExampleValue">
+        <text>1600</text>
+      </annotationBean>
+      <date>2013-08-16 19:07:00.214 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
+        <mimeType>text/rdf+n3</mimeType>
+        <content>&lt;&gt;
+      &lt;http://purl.org/DP/components#portType&gt;
+              &lt;http://purl.org/DP/components#Measure1Port&gt; .
+
+&lt;&gt;
+      &lt;http://purl.org/DP/components#providesMeasure&gt;
+              &lt;http://purl.org/DP/quality/measures#50&gt; .
+</content>
+      </annotationBean>
+      <date>2013-08-16 19:10:08.891 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2></annotations></port><port><name>height_equals</name><annotations><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.ExampleValue">
+        <text>true</text>
+      </annotationBean>
+      <date>2013-08-16 19:07:04.342 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
+        <mimeType>text/rdf+n3</mimeType>
+        <content>&lt;&gt;
+      &lt;http://purl.org/DP/components#providesMeasure&gt;
+              &lt;http://purl.org/DP/quality/measures#53&gt; .
+</content>
+      </annotationBean>
+      <date>2013-08-16 19:10:14.115 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.FreeTextDescription">
+        <text>Image height equals</text>
+      </annotationBean>
+      <date>2013-08-16 19:07:27.157 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain></annotations></port><port><name>width_equals</name><annotations><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
+        <mimeType>text/rdf+n3</mimeType>
+        <content>
+        &lt;&gt;
+      &lt;http://purl.org/DP/components#providesMeasure&gt;
+              &lt;http://purl.org/DP/quality/measures#51&gt; .
+</content>
+      </annotationBean>
+      <date>2013-08-16 19:10:30.913 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.FreeTextDescription">
+        <text>Image width equals</text>
+      </annotationBean>
+      <date>2013-08-16 19:07:33.53 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.ExampleValue">
+        <text>true</text>
+      </annotationBean>
+      <date>2013-08-16 19:07:34.485 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain></annotations></port></outputPorts><processors><processor><name>migration</name><inputPorts><port><name>compression</name><depth>0</depth></port><port><name>source_path</name><depth>0</depth></port></inputPorts><outputPorts><port><name>target_path</name><depth>0</depth><granularDepth>0</granularDepth></port></outputPorts><annotations /><activities><activity><raven><group>net.sf.taverna.t2.component</group><artifact>component-activity</artifact><version>1.0.1</version></raven><class>net.sf.taverna.t2.component.ComponentActivity</class><inputMap><map from="source_path" to="source_path" /><map from="compression" to="compression" /></inputMap><outputMap><map from="target_path" to="target_path" /></outputMap><configBean encoding="xstream"><net.sf.taverna.t2.component.ComponentActivityConfigurationBean xmlns="">
+  <registryBase>file:/home/plangg/.taverna-2.4.0/components/</registryBase>
+  <familyName>Migration</familyName>
+  <componentName>imagemagick_convert-tiff2tiff-compression</componentName>
+  <componentVersion>1</componentVersion>
+</net.sf.taverna.t2.component.ComponentActivityConfigurationBean></configBean><annotations /></activity></activities><dispatchStack><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Parallelize</class><configBean encoding="xstream"><net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.ParallelizeConfig xmlns="">
+  <maxJobs>1</maxJobs>
+</net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.ParallelizeConfig></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.ErrorBounce</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Failover</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Retry</class><configBean encoding="xstream"><net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.RetryConfig xmlns="">
+  <backoffFactor>1.0</backoffFactor>
+  <initialDelay>1000</initialDelay>
+  <maxDelay>5000</maxDelay>
+  <maxRetries>0</maxRetries>
+</net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.RetryConfig></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.component</group><artifact>component-activity</artifact><version>1.0.1</version></raven><class>net.sf.taverna.t2.component.PatchedInvoke</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer></dispatchStack><iterationStrategyStack><iteration><strategy><cross><port name="compression" depth="0" /><port name="source_path" depth="0" /></cross></strategy></iteration></iterationStrategyStack></processor><processor><name>compression_value</name><inputPorts /><outputPorts><port><name>value</name><depth>0</depth><granularDepth>0</granularDepth></port></outputPorts><annotations /><activities><activity><raven><group>net.sf.taverna.t2.activities</group><artifact>stringconstant-activity</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.activities.stringconstant.StringConstantActivity</class><inputMap /><outputMap><map from="value" to="value" /></outputMap><configBean encoding="xstream"><net.sf.taverna.t2.activities.stringconstant.StringConstantConfigurationBean xmlns="">
+  <value>none</value>
+</net.sf.taverna.t2.activities.stringconstant.StringConstantConfigurationBean></configBean><annotations /></activity></activities><dispatchStack><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Parallelize</class><configBean encoding="xstream"><net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.ParallelizeConfig xmlns="">
+  <maxJobs>1</maxJobs>
+</net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.ParallelizeConfig></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.ErrorBounce</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Failover</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Retry</class><configBean encoding="xstream"><net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.RetryConfig xmlns="">
+  <backoffFactor>1.0</backoffFactor>
+  <initialDelay>1000</initialDelay>
+  <maxDelay>5000</maxDelay>
+  <maxRetries>0</maxRetries>
+</net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.RetryConfig></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Invoke</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer></dispatchStack><iterationStrategyStack><iteration><strategy /></iteration></iterationStrategyStack></processor><processor><name>QA_mse</name><inputPorts><port><name>source_path_1</name><depth>0</depth></port><port><name>source_path_2</name><depth>0</depth></port></inputPorts><outputPorts><port><name>mse</name><depth>0</depth><granularDepth>0</granularDepth></port></outputPorts><annotations /><activities><activity><raven><group>net.sf.taverna.t2.component</group><artifact>component-activity</artifact><version>1.0.1</version></raven><class>net.sf.taverna.t2.component.ComponentActivity</class><inputMap><map from="source_path_2" to="source_path_2" /><map from="source_path_1" to="source_path_1" /></inputMap><outputMap><map from="mse" to="mse" /></outputMap><configBean encoding="xstream"><net.sf.taverna.t2.component.ComponentActivityConfigurationBean xmlns="">
+  <registryBase>file:/home/plangg/.taverna-2.4.0/components/</registryBase>
+  <familyName>QA-Object</familyName>
+  <componentName>imagemagick_compare-tiff2tiff-mse</componentName>
+  <componentVersion>1</componentVersion>
+</net.sf.taverna.t2.component.ComponentActivityConfigurationBean></configBean><annotations /></activity></activities><dispatchStack><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Parallelize</class><configBean encoding="xstream"><net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.ParallelizeConfig xmlns="">
+  <maxJobs>1</maxJobs>
+</net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.ParallelizeConfig></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.ErrorBounce</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Failover</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Retry</class><configBean encoding="xstream"><net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.RetryConfig xmlns="">
+  <backoffFactor>1.0</backoffFactor>
+  <initialDelay>1000</initialDelay>
+  <maxDelay>5000</maxDelay>
+  <maxRetries>0</maxRetries>
+</net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.RetryConfig></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.component</group><artifact>component-activity</artifact><version>1.0.1</version></raven><class>net.sf.taverna.t2.component.PatchedInvoke</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer></dispatchStack><iterationStrategyStack><iteration><strategy><cross><port name="source_path_1" depth="0" /><port name="source_path_2" depth="0" /></cross></strategy></iteration></iterationStrategyStack></processor><processor><name>CC_source</name><inputPorts><port><name>source_path</name><depth>0</depth></port></inputPorts><outputPorts><port><name>image_height</name><depth>0</depth><granularDepth>0</granularDepth></port><port><name>image_resolution</name><depth>0</depth><granularDepth>0</granularDepth></port><port><name>image_width</name><depth>0</depth><granularDepth>0</granularDepth></port></outputPorts><annotations /><activities><activity><raven><group>net.sf.taverna.t2.component</group><artifact>component-activity</artifact><version>1.0.1</version></raven><class>net.sf.taverna.t2.component.ComponentActivity</class><inputMap><map from="source_path" to="source_path" /></inputMap><outputMap><map from="image_width" to="image_width" /><map from="image_height" to="image_height" /><map from="image_resolution" to="image_resolution" /></outputMap><configBean encoding="xstream"><net.sf.taverna.t2.component.ComponentActivityConfigurationBean xmlns="">
+  <registryBase>file:/home/plangg/.taverna-2.4.0/components/</registryBase>
+  <familyName>CC</familyName>
+  <componentName>imagemagick-identify-image_size</componentName>
+  <componentVersion>2</componentVersion>
+</net.sf.taverna.t2.component.ComponentActivityConfigurationBean></configBean><annotations /></activity></activities><dispatchStack><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Parallelize</class><configBean encoding="xstream"><net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.ParallelizeConfig xmlns="">
+  <maxJobs>1</maxJobs>
+</net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.ParallelizeConfig></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.ErrorBounce</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Failover</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Retry</class><configBean encoding="xstream"><net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.RetryConfig xmlns="">
+  <backoffFactor>1.0</backoffFactor>
+  <initialDelay>1000</initialDelay>
+  <maxDelay>5000</maxDelay>
+  <maxRetries>0</maxRetries>
+</net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.RetryConfig></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.component</group><artifact>component-activity</artifact><version>1.0.1</version></raven><class>net.sf.taverna.t2.component.PatchedInvoke</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer></dispatchStack><iterationStrategyStack><iteration><strategy><cross><port name="source_path" depth="0" /></cross></strategy></iteration></iterationStrategyStack></processor><processor><name>CC_target</name><inputPorts><port><name>source_path</name><depth>0</depth></port></inputPorts><outputPorts><port><name>image_height</name><depth>0</depth><granularDepth>0</granularDepth></port><port><name>image_resolution</name><depth>0</depth><granularDepth>0</granularDepth></port><port><name>image_width</name><depth>0</depth><granularDepth>0</granularDepth></port></outputPorts><annotations /><activities><activity><raven><group>net.sf.taverna.t2.component</group><artifact>component-activity</artifact><version>1.0.1</version></raven><class>net.sf.taverna.t2.component.ComponentActivity</class><inputMap><map from="source_path" to="source_path" /></inputMap><outputMap><map from="image_width" to="image_width" /><map from="image_height" to="image_height" /><map from="image_resolution" to="image_resolution" /></outputMap><configBean encoding="xstream"><net.sf.taverna.t2.component.ComponentActivityConfigurationBean xmlns="">
+  <registryBase>file:/home/plangg/.taverna-2.4.0/components/</registryBase>
+  <familyName>CC</familyName>
+  <componentName>imagemagick-identify-image_size</componentName>
+  <componentVersion>2</componentVersion>
+</net.sf.taverna.t2.component.ComponentActivityConfigurationBean></configBean><annotations /></activity></activities><dispatchStack><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Parallelize</class><configBean encoding="xstream"><net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.ParallelizeConfig xmlns="">
+  <maxJobs>1</maxJobs>
+</net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.ParallelizeConfig></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.ErrorBounce</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Failover</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Retry</class><configBean encoding="xstream"><net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.RetryConfig xmlns="">
+  <backoffFactor>1.0</backoffFactor>
+  <initialDelay>1000</initialDelay>
+  <maxDelay>5000</maxDelay>
+  <maxRetries>0</maxRetries>
+</net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.RetryConfig></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.component</group><artifact>component-activity</artifact><version>1.0.1</version></raven><class>net.sf.taverna.t2.component.PatchedInvoke</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer></dispatchStack><iterationStrategyStack><iteration><strategy><cross><port name="source_path" depth="0" /></cross></strategy></iteration></iterationStrategyStack></processor><processor><name>QA_imageSize</name><inputPorts><port><name>height2</name><depth>0</depth></port><port><name>width2</name><depth>0</depth></port><port><name>height1</name><depth>0</depth></port><port><name>width1</name><depth>0</depth></port></inputPorts><outputPorts><port><name>height_equals</name><depth>0</depth><granularDepth>0</granularDepth></port><port><name>wdith_equals</name><depth>0</depth><granularDepth>0</granularDepth></port></outputPorts><annotations /><activities><activity><raven><group>net.sf.taverna.t2.component</group><artifact>component-activity</artifact><version>1.0.1</version></raven><class>net.sf.taverna.t2.component.ComponentActivity</class><inputMap><map from="width1" to="width1" /><map from="width2" to="width2" /><map from="height2" to="height2" /><map from="height1" to="height1" /></inputMap><outputMap><map from="height_equals" to="height_equals" /><map from="wdith_equals" to="wdith_equals" /></outputMap><configBean encoding="xstream"><net.sf.taverna.t2.component.ComponentActivityConfigurationBean xmlns="">
+  <registryBase>file:/home/plangg/.taverna-2.4.0/components/</registryBase>
+  <familyName>QA-Property</familyName>
+  <componentName>compare-image_height-image_width</componentName>
+  <componentVersion>3</componentVersion>
+</net.sf.taverna.t2.component.ComponentActivityConfigurationBean></configBean><annotations /></activity></activities><dispatchStack><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Parallelize</class><configBean encoding="xstream"><net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.ParallelizeConfig xmlns="">
+  <maxJobs>1</maxJobs>
+</net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.ParallelizeConfig></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.ErrorBounce</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Failover</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Retry</class><configBean encoding="xstream"><net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.RetryConfig xmlns="">
+  <backoffFactor>1.0</backoffFactor>
+  <initialDelay>1000</initialDelay>
+  <maxDelay>5000</maxDelay>
+  <maxRetries>0</maxRetries>
+</net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.RetryConfig></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.component</group><artifact>component-activity</artifact><version>1.0.1</version></raven><class>net.sf.taverna.t2.component.PatchedInvoke</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer></dispatchStack><iterationStrategyStack><iteration><strategy><cross><port name="height2" depth="0" /><port name="width2" depth="0" /><port name="height1" depth="0" /><port name="width1" depth="0" /></cross></strategy></iteration></iterationStrategyStack></processor></processors><conditions /><datalinks><datalink><sink type="processor"><processor>migration</processor><port>compression</port></sink><source type="processor"><processor>compression_value</processor><port>value</port></source></datalink><datalink><sink type="processor"><processor>migration</processor><port>source_path</port></sink><source type="dataflow"><port>source_path</port></source></datalink><datalink><sink type="processor"><processor>QA_mse</processor><port>source_path_1</port></sink><source type="dataflow"><port>source_path</port></source></datalink><datalink><sink type="processor"><processor>QA_mse</processor><port>source_path_2</port></sink><source type="processor"><processor>migration</processor><port>target_path</port></source></datalink><datalink><sink type="processor"><processor>CC_source</processor><port>source_path</port></sink><source type="dataflow"><port>source_path</port></source></datalink><datalink><sink type="processor"><processor>CC_target</processor><port>source_path</port></sink><source type="processor"><processor>migration</processor><port>target_path</port></source></datalink><datalink><sink type="processor"><processor>QA_imageSize</processor><port>height2</port></sink><source type="processor"><processor>CC_target</processor><port>image_height</port></source></datalink><datalink><sink type="processor"><processor>QA_imageSize</processor><port>width2</port></sink><source type="processor"><processor>CC_target</processor><port>image_width</port></source></datalink><datalink><sink type="processor"><processor>QA_imageSize</processor><port>height1</port></sink><source type="processor"><processor>CC_source</processor><port>image_height</port></source></datalink><datalink><sink type="processor"><processor>QA_imageSize</processor><port>width1</port></sink><source type="processor"><processor>CC_source</processor><port>image_width</port></source></datalink><datalink><sink type="dataflow"><port>mse</port></sink><source type="processor"><processor>QA_mse</processor><port>mse</port></source></datalink><datalink><sink type="dataflow"><port>target_height</port></sink><source type="processor"><processor>CC_target</processor><port>image_height</port></source></datalink><datalink><sink type="dataflow"><port>target_resolution</port></sink><source type="processor"><processor>CC_target</processor><port>image_resolution</port></source></datalink><datalink><sink type="dataflow"><port>target_width</port></sink><source type="processor"><processor>CC_target</processor><port>image_width</port></source></datalink><datalink><sink type="dataflow"><port>source_height</port></sink><source type="processor"><processor>CC_source</processor><port>image_height</port></source></datalink><datalink><sink type="dataflow"><port>source_resolution</port></sink><source type="processor"><processor>CC_source</processor><port>image_resolution</port></source></datalink><datalink><sink type="dataflow"><port>source_width</port></sink><source type="processor"><processor>CC_source</processor><port>image_width</port></source></datalink><datalink><sink type="dataflow"><port>height_equals</port></sink><source type="processor"><processor>QA_imageSize</processor><port>height_equals</port></source></datalink><datalink><sink type="dataflow"><port>width_equals</port></sink><source type="processor"><processor>QA_imageSize</processor><port>wdith_equals</port></source></datalink></datalinks><annotations><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>e8634740-0d4a-4cac-bc1e-60ccec63871e</identification>
+      </annotationBean>
+      <date>2013-08-16 19:08:11.427 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>d4d93b23-d189-415b-a105-5438a947eaa0</identification>
+      </annotationBean>
+      <date>2013-08-16 19:08:57.651 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.FreeTextDescription">
+        <text>Preservation Workflow that converts tiff to tiff using imagemagick convert with compression none. Further calculates MSE, and checks image height and image width for equality.</text>
+      </annotationBean>
+      <date>2013-08-16 19:08:56.797 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
+        <mimeType>text/rdf+n3</mimeType>
+        <content>&lt;&gt;
+      &lt;http://purl.org/DP/components#fits&gt;
+              &lt;http://purl.org/DP/components#ExecutablePlan&gt; .
+
+&lt;&gt; &lt;http://purl.org/DP/components#handlesMimetypes&gt;
+    [ a &lt;http://purl.org/DP/components#AcceptedMimetypes&gt; ;
+        &lt;http://purl.org/DP/components#handlesMimetype1&gt;
+            "image/tiff" ;
+        &lt;http://purl.org/DP/components#handlesMimetype2&gt;
+            "image/tiff"
+    ] .
+</content>
+      </annotationBean>
+      <date>2013-08-16 19:09:26.533 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>756ec0f5-87e2-42a5-9cb7-7c2555fe8b93</identification>
+      </annotationBean>
+      <date>2013-08-16 19:10:56.407 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.DescriptiveTitle">
+        <text>Preservation Workflow tiff2tiff with MSE, image height, image width using Components</text>
+      </annotationBean>
+      <date>2013-08-16 19:08:48.781 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.Author">
+        <text>Markus</text>
+      </annotationBean>
+      <date>2013-08-16 19:08:26.93 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain></annotations></dataflow></workflow>
