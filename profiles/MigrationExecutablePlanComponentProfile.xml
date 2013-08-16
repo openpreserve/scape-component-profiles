@@ -5,28 +5,25 @@
 	xsi:schemaLocation="http://ns.taverna.org.uk/2012/component/profile ComponentProfile.xsd">
 
 	<id>http://purl.org/DP/components#ExecutablePlan</id>
-	<name>Executable Plan Component</name>
-	<description>A SCAPE component for executable plans</description>
+	<name>Migration Executable Plan Component</name>
+	<description>A SCAPE component for executable plans based on migration</description>
 	<ontology id="components">http://purl.org/DP/components</ontology>
 	<component>
 		<inputPort maxDepth="1">
-			<annotation>Example</annotation>
 			<semanticAnnotation ontology="components"
 				predicate="http://purl.org/DP/components#portType"
 				class="http://purl.org/DP/components#PortType">
-				http://purl.org/DP/components#FromURIPort
+				http://purl.org/DP/components#SourcePathPort
 			</semanticAnnotation>
 		</inputPort>
 		<inputPort maxDepth="1">
-			<annotation>Example</annotation>
 			<semanticAnnotation ontology="components"
 				predicate="http://purl.org/DP/components#portType"
 				class="http://purl.org/DP/components#PortType">
-				http://purl.org/DP/components#ToURIPort
+				http://purl.org/DP/components#TargetPathPort
 			</semanticAnnotation>
 		</inputPort>
 		<outputPort maxDepth="0" minOccurs="1" maxOccurs="unbounded">
-			<annotation>Example</annotation>
 			<semanticAnnotation ontology="components"
 				predicate="http://purl.org/DP/components#providesMeasure"
 				class="http://purl.org/DP/quality#Measure" />

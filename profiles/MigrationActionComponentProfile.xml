@@ -10,19 +10,10 @@
 	<ontology id="components">http://purl.org/DP/components</ontology>
 	<component>
 		<inputPort maxDepth="1">
-			<annotation>Example</annotation>
 			<semanticAnnotation ontology="components"
 				predicate="http://purl.org/DP/components#portType"
 				class="http://purl.org/DP/components#PortType">
-				http://purl.org/DP/components#FromURIPort
-			</semanticAnnotation>
-		</inputPort>
-		<inputPort maxDepth="1">
-			<annotation>Example</annotation>
-			<semanticAnnotation ontology="components"
-				predicate="http://purl.org/DP/components#portType"
-				class="http://purl.org/DP/components#PortType">
-				http://purl.org/DP/components#ToURIPort
+				http://purl.org/DP/components#SourcePathPort
 			</semanticAnnotation>
 		</inputPort>
 		<inputPort maxDepth="0" minOccurs="0" maxOccurs="unbounded">
@@ -38,6 +29,13 @@
 				class="http://purl.org/DP/components#PredefinedParameter"
 				minOccurs="0" maxOccurs="unbounded" />
 		</inputPort>
+		<outputPort maxDepth="1">
+			<semanticAnnotation ontology="components"
+				predicate="http://purl.org/DP/components#portType"
+				class="http://purl.org/DP/components#PortType">
+				http://purl.org/DP/components#TargetPathPort
+			</semanticAnnotation>
+		</outputPort>
 		<outputPort maxDepth="0">
 			<semanticAnnotation ontology="components"
 				predicate="http://purl.org/DP/components#portType"

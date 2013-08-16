@@ -71,7 +71,6 @@
     <!-- http://purl.org/DP/components#acceptsMeasure -->
 
     <owl:ObjectProperty rdf:about="&components;acceptsMeasure">
-        <rdfs:domain rdf:resource="&components;InputPort"/>
         <rdfs:range rdf:resource="http://purl.org/DP/quality#Measure"/>
     </owl:ObjectProperty>
     
@@ -80,7 +79,6 @@
     <!-- http://purl.org/DP/components#acceptsPredefinedParameter -->
 
     <owl:ObjectProperty rdf:about="&components;acceptsPredefinedParameter">
-        <rdfs:domain rdf:resource="&components;InputPort"/>
         <rdfs:range rdf:resource="&components;PredefinedParameter"/>
     </owl:ObjectProperty>
     
@@ -99,7 +97,6 @@
 
     <owl:ObjectProperty rdf:about="&components;fits">
         <rdfs:range rdf:resource="&components;Profile"/>
-        <rdfs:domain rdf:resource="&components;Workflow"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -109,7 +106,6 @@
 
     <owl:ObjectProperty rdf:about="&components;handlesMimetypes">
         <rdfs:range rdf:resource="&components;AcceptedMimetypes"/>
-        <rdfs:domain rdf:resource="&components;Workflow"/>
     </owl:ObjectProperty>
     
 
@@ -119,15 +115,6 @@
     <owl:ObjectProperty rdf:about="&components;hasEnvironment">
         <rdfs:range rdf:resource="&components;Environment"/>
         <rdfs:domain rdf:resource="&components;Installation"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/DP/components#hasEnvironmentType -->
-
-    <owl:ObjectProperty rdf:about="&components;hasEnvironmentType">
-        <rdfs:domain rdf:resource="&components;Environment"/>
-        <rdfs:range rdf:resource="&components;EnvironmentType"/>
     </owl:ObjectProperty>
     
 
@@ -153,7 +140,6 @@
 
     <owl:ObjectProperty rdf:about="&components;migrates">
         <rdfs:range rdf:resource="&components;MigrationPath"/>
-        <rdfs:domain rdf:resource="&components;Workflow"/>
     </owl:ObjectProperty>
     
 
@@ -161,7 +147,6 @@
     <!-- http://purl.org/DP/components#portType -->
 
     <owl:ObjectProperty rdf:about="&components;portType">
-        <rdfs:domain rdf:resource="&components;Port"/>
         <rdfs:range rdf:resource="&components;PortType"/>
     </owl:ObjectProperty>
     
@@ -170,7 +155,6 @@
     <!-- http://purl.org/DP/components#providesMeasure -->
 
     <owl:ObjectProperty rdf:about="&components;providesMeasure">
-        <rdfs:domain rdf:resource="&components;OutputPort"/>
         <rdfs:range rdf:resource="http://purl.org/DP/quality#Measure"/>
     </owl:ObjectProperty>
     
@@ -180,7 +164,6 @@
 
     <owl:ObjectProperty rdf:about="&components;requiresInstallation">
         <rdfs:range rdf:resource="&components;Installation"/>
-        <rdfs:domain rdf:resource="&components;Tool"/>
     </owl:ObjectProperty>
     
 
@@ -213,26 +196,25 @@
     
 
 
-    <!-- http://purl.org/DP/components#fromMimetype -->
+    <!-- http://purl.org/DP/components#handlesMimetype -->
 
-    <owl:DatatypeProperty rdf:about="&components;fromMimetype">
+    <owl:DatatypeProperty rdf:about="&components;handlesMimetype">
         <rdfs:subPropertyOf rdf:resource="&components;mimetype"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&components;AcceptedMimetypes"/>
-                    <rdf:Description rdf:about="&components;MigrationPath"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://purl.org/DP/components#handlesMimetype -->
+    <!-- http://purl.org/DP/components#handlesMimetype1 -->
 
-    <owl:DatatypeProperty rdf:about="&components;handlesMimetype">
-        <rdfs:domain rdf:resource="&components;Workflow"/>
+    <owl:DatatypeProperty rdf:about="&components;handlesMimetype1">
+        <rdfs:subPropertyOf rdf:resource="&components;mimetype"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/DP/components#handlesMimetype2 -->
+
+    <owl:DatatypeProperty rdf:about="&components;handlesMimetype2">
         <rdfs:subPropertyOf rdf:resource="&components;mimetype"/>
     </owl:DatatypeProperty>
     
@@ -282,9 +264,9 @@
     
 
 
-    <!-- http://purl.org/DP/components#toMimetype -->
+    <!-- http://purl.org/DP/components#sourceMimetype -->
 
-    <owl:DatatypeProperty rdf:about="&components;toMimetype">
+    <owl:DatatypeProperty rdf:about="&components;sourceMimetype">
         <rdfs:subPropertyOf rdf:resource="&components;mimetype"/>
         <rdfs:domain>
             <owl:Class>
@@ -298,11 +280,25 @@
     
 
 
-    <!-- http://purl.org/dc/terms/title -->
+    <!-- http://purl.org/DP/components#targetMimetype -->
 
-    <owl:DatatypeProperty rdf:about="&dcterms;title">
-        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    <owl:DatatypeProperty rdf:about="&components;targetMimetype">
+        <rdfs:subPropertyOf rdf:resource="&components;mimetype"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&components;AcceptedMimetypes"/>
+                    <rdf:Description rdf:about="&components;MigrationPath"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
+
+    <owl:DatatypeProperty rdf:about="&skos;prefLabel"/>
     
 
 
@@ -326,27 +322,18 @@
     <!-- http://purl.org/DP/components#AcceptedMimetypes -->
 
     <owl:Class rdf:about="&components;AcceptedMimetypes">
-        <rdfs:subClassOf rdf:resource="&components;Property"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;fromMimetype"/>
+                <owl:onProperty rdf:resource="&components;sourceMimetype"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;toMimetype"/>
+                <owl:onProperty rdf:resource="&components;targetMimetype"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/DP/components#Activity -->
-
-    <owl:Class rdf:about="&components;Activity">
-        <rdfs:subClassOf rdf:resource="&components;WorkflowPart"/>
     </owl:Class>
     
 
@@ -356,7 +343,7 @@
     <owl:Class rdf:about="&components;Dependency">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&dcterms;title"/>
+                <owl:onProperty rdf:resource="&skos;prefLabel"/>
                 <owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -392,41 +379,35 @@
 
     <!-- http://purl.org/DP/components#Environment -->
 
-    <owl:Class rdf:about="&components;Environment">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&dcterms;title"/>
-                <owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/DP/components#EnvironmentType -->
-
-    <owl:Class rdf:about="&components;EnvironmentType"/>
-    
-
-
-    <!-- http://purl.org/DP/components#InputPort -->
-
-    <owl:Class rdf:about="&components;InputPort">
-        <rdfs:subClassOf rdf:resource="&components;Port"/>
-    </owl:Class>
+    <owl:Class rdf:about="&components;Environment"/>
     
 
 
     <!-- http://purl.org/DP/components#Installation -->
 
     <owl:Class rdf:about="&components;Installation">
-        <rdfs:subClassOf rdf:resource="&components;Property"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&components;hasEnvironment"/>
                 <owl:someValuesFrom rdf:resource="&components;Environment"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/DP/components#LinuxEnvironment -->
+
+    <owl:Class rdf:about="&components;LinuxEnvironment">
+        <rdfs:subClassOf rdf:resource="&components;Environment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/DP/components#MacOSXEnvironment -->
+
+    <owl:Class rdf:about="&components;MacOSXEnvironment">
+        <rdfs:subClassOf rdf:resource="&components;Environment"/>
     </owl:Class>
     
 
@@ -450,27 +431,18 @@
     <!-- http://purl.org/DP/components#MigrationPath -->
 
     <owl:Class rdf:about="&components;MigrationPath">
-        <rdfs:subClassOf rdf:resource="&components;Property"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;toMimetype"/>
+                <owl:onProperty rdf:resource="&components;targetMimetype"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;fromMimetype"/>
+                <owl:onProperty rdf:resource="&components;sourceMimetype"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/DP/components#OutputPort -->
-
-    <owl:Class rdf:about="&components;OutputPort">
-        <rdfs:subClassOf rdf:resource="&components;Port"/>
     </owl:Class>
     
 
@@ -481,26 +453,15 @@
     
 
 
-    <!-- http://purl.org/DP/components#Port -->
-
-    <owl:Class rdf:about="&components;Port">
-        <rdfs:subClassOf rdf:resource="&components;WorkflowPart"/>
-    </owl:Class>
-    
-
-
     <!-- http://purl.org/DP/components#PortType -->
 
-    <owl:Class rdf:about="&components;PortType">
-        <rdfs:subClassOf rdf:resource="&components;Property"/>
-    </owl:Class>
+    <owl:Class rdf:about="&components;PortType"/>
     
 
 
     <!-- http://purl.org/DP/components#PredefinedParameter -->
 
     <owl:Class rdf:about="&components;PredefinedParameter">
-        <rdfs:subClassOf rdf:resource="&components;Property"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&components;parameterDescription"/>
@@ -523,12 +484,6 @@
     
 
 
-    <!-- http://purl.org/DP/components#Property -->
-
-    <owl:Class rdf:about="&components;Property"/>
-    
-
-
     <!-- http://purl.org/DP/components#RPMConfig -->
 
     <owl:Class rdf:about="&components;RPMConfig">
@@ -537,32 +492,10 @@
     
 
 
-    <!-- http://purl.org/DP/components#Tool -->
+    <!-- http://purl.org/DP/components#WindowsEnvironment -->
 
-    <owl:Class rdf:about="&components;Tool">
-        <rdfs:subClassOf rdf:resource="&components;Activity"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&components;requiresInstallation"/>
-                <owl:someValuesFrom rdf:resource="&components;Installation"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/DP/components#Workflow -->
-
-    <owl:Class rdf:about="&components;Workflow">
-        <rdfs:subClassOf rdf:resource="&components;WorkflowPart"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/DP/components#WorkflowPart -->
-
-    <owl:Class rdf:about="&components;WorkflowPart">
-        <skos:prefLabel>Workflow part</skos:prefLabel>
+    <owl:Class rdf:about="&components;WindowsEnvironment">
+        <rdfs:subClassOf rdf:resource="&components;Environment"/>
     </owl:Class>
     
 
@@ -601,9 +534,8 @@
     <!-- http://purl.org/DP/components#CentOS -->
 
     <owl:NamedIndividual rdf:about="&components;CentOS">
-        <rdf:type rdf:resource="&components;Environment"/>
+        <rdf:type rdf:resource="&components;LinuxEnvironment"/>
         <rdfs:label>CentOS</rdfs:label>
-        <hasEnvironmentType rdf:resource="&components;LinuxEnvironment"/>
     </owl:NamedIndividual>
     
 
@@ -620,9 +552,8 @@
     <!-- http://purl.org/DP/components#Debian -->
 
     <owl:NamedIndividual rdf:about="&components;Debian">
-        <rdf:type rdf:resource="&components;Environment"/>
+        <rdf:type rdf:resource="&components;LinuxEnvironment"/>
         <rdfs:label>Debian</rdfs:label>
-        <hasEnvironmentType rdf:resource="&components;LinuxEnvironment"/>
     </owl:NamedIndividual>
     
 
@@ -636,42 +567,38 @@
     
 
 
-    <!-- http://purl.org/DP/components#FromMeasurePort -->
-
-    <owl:NamedIndividual rdf:about="&components;FromMeasurePort">
-        <rdf:type rdf:resource="&components;MeasurePortType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/DP/components#FromURIPort -->
-
-    <owl:NamedIndividual rdf:about="&components;FromURIPort">
-        <rdf:type rdf:resource="&components;PortType"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://purl.org/DP/components#LinuxEnvironment -->
 
-    <owl:NamedIndividual rdf:about="&components;LinuxEnvironment">
-        <rdf:type rdf:resource="&components;EnvironmentType"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="&components;LinuxEnvironment"/>
     
 
 
-    <!-- http://purl.org/DP/components#MacOS -->
+    <!-- http://purl.org/DP/components#MacOSX -->
 
-    <owl:NamedIndividual rdf:about="&components;MacOS">
-        <rdf:type rdf:resource="&components;Environment"/>
+    <owl:NamedIndividual rdf:about="&components;MacOSX">
+        <rdf:type rdf:resource="&components;MacOSXEnvironment"/>
     </owl:NamedIndividual>
     
 
 
     <!-- http://purl.org/DP/components#MacOSXEnvironment -->
 
-    <owl:NamedIndividual rdf:about="&components;MacOSXEnvironment">
-        <rdf:type rdf:resource="&components;EnvironmentType"/>
+    <owl:NamedIndividual rdf:about="&components;MacOSXEnvironment"/>
+    
+
+
+    <!-- http://purl.org/DP/components#Measure1Port -->
+
+    <owl:NamedIndividual rdf:about="&components;Measure1Port">
+        <rdf:type rdf:resource="&components;MeasurePortType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/DP/components#Measure2Port -->
+
+    <owl:NamedIndividual rdf:about="&components;Measure2Port">
+        <rdf:type rdf:resource="&components;MeasurePortType"/>
     </owl:NamedIndividual>
     
 
@@ -688,14 +615,6 @@
     <!-- http://purl.org/DP/components#OSILicense -->
 
     <owl:NamedIndividual rdf:about="&components;OSILicense"/>
-    
-
-
-    <!-- http://purl.org/DP/components#ObjectURIPort -->
-
-    <owl:NamedIndividual rdf:about="&components;ObjectURIPort">
-        <rdf:type rdf:resource="&components;PortType"/>
-    </owl:NamedIndividual>
     
 
 
@@ -728,24 +647,39 @@
     <!-- http://purl.org/DP/components#Redhat -->
 
     <owl:NamedIndividual rdf:about="&components;Redhat">
-        <rdf:type rdf:resource="&components;Environment"/>
+        <rdf:type rdf:resource="&components;LinuxEnvironment"/>
         <rdfs:label>Redhat</rdfs:label>
-        <hasEnvironmentType rdf:resource="&components;LinuxEnvironment"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://purl.org/DP/components#ToMeasurePort -->
+    <!-- http://purl.org/DP/components#SourcePath1Port -->
 
-    <owl:NamedIndividual rdf:about="&components;ToMeasurePort">
-        <rdf:type rdf:resource="&components;MeasurePortType"/>
+    <owl:NamedIndividual rdf:about="&components;SourcePath1Port">
+        <rdf:type rdf:resource="&components;PortType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://purl.org/DP/components#ToURIPort -->
+    <!-- http://purl.org/DP/components#SourcePath2Port -->
 
-    <owl:NamedIndividual rdf:about="&components;ToURIPort">
+    <owl:NamedIndividual rdf:about="&components;SourcePath2Port">
+        <rdf:type rdf:resource="&components;PortType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/DP/components#SourcePathPort -->
+
+    <owl:NamedIndividual rdf:about="&components;SourcePathPort">
+        <rdf:type rdf:resource="&components;PortType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/DP/components#TargetPathPort -->
+
+    <owl:NamedIndividual rdf:about="&components;TargetPathPort">
         <rdf:type rdf:resource="&components;PortType"/>
     </owl:NamedIndividual>
     
@@ -754,9 +688,8 @@
     <!-- http://purl.org/DP/components#Ubuntu -->
 
     <owl:NamedIndividual rdf:about="&components;Ubuntu">
-        <rdf:type rdf:resource="&components;Environment"/>
+        <rdf:type rdf:resource="&components;LinuxEnvironment"/>
         <rdfs:label>Ubuntu</rdfs:label>
-        <hasEnvironmentType rdf:resource="&components;LinuxEnvironment"/>
     </owl:NamedIndividual>
     
 
@@ -773,16 +706,37 @@
     <!-- http://purl.org/DP/components#Windows -->
 
     <owl:NamedIndividual rdf:about="&components;Windows">
-        <rdf:type rdf:resource="&components;Environment"/>
-        <hasEnvironmentType rdf:resource="&components;WindowsEnvironment"/>
+        <rdf:type rdf:resource="&components;WindowsEnvironment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/DP/components#Windows7 -->
+
+    <owl:NamedIndividual rdf:about="&components;Windows7">
+        <rdf:type rdf:resource="&components;WindowsEnvironment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/DP/components#Windows8 -->
+
+    <owl:NamedIndividual rdf:about="&components;Windows8">
+        <rdf:type rdf:resource="&components;WindowsEnvironment"/>
     </owl:NamedIndividual>
     
 
 
     <!-- http://purl.org/DP/components#WindowsEnvironment -->
 
-    <owl:NamedIndividual rdf:about="&components;WindowsEnvironment">
-        <rdf:type rdf:resource="&components;EnvironmentType"/>
+    <owl:NamedIndividual rdf:about="&components;WindowsEnvironment"/>
+    
+
+
+    <!-- http://purl.org/DP/components#WindowsXP -->
+
+    <owl:NamedIndividual rdf:about="&components;WindowsXP">
+        <rdf:type rdf:resource="&components;WindowsEnvironment"/>
     </owl:NamedIndividual>
     
 
@@ -790,9 +744,8 @@
     <!-- http://purl.org/DP/components#jpegToTiff -->
 
     <owl:NamedIndividual rdf:about="&components;jpegToTiff">
-        <rdf:type rdf:resource="&components;MigrationPath"/>
-        <toMimetype>image/tiff</toMimetype>
-        <fromMimetype>image/jpeg</fromMimetype>
+        <sourceMimetype>image/jpeg</sourceMimetype>
+        <targetMimetype>image/tiff</targetMimetype>
     </owl:NamedIndividual>
 </rdf:RDF>
 

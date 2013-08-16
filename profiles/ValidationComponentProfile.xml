@@ -14,7 +14,7 @@
 			<semanticAnnotation ontology="components"
 				predicate="http://purl.org/DP/components#portType"
 				class="http://purl.org/DP/components#PortType">
-				http://purl.org/DP/components#ObjectURIPort
+				http://purl.org/DP/components#SourcePathPort
 			</semanticAnnotation>
 		</inputPort>
 		<inputPort maxDepth="0" minOccurs="0" maxOccurs="unbounded">
