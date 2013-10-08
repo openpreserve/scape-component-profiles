@@ -16,14 +16,19 @@
 				http://purl.org/DP/components#SourcePathPort
 			</semanticAnnotation>
 		</inputPort>
-		<inputPort maxDepth="1">
+		<outputPort maxDepth="1">
 			<semanticAnnotation ontology="components"
 				predicate="http://purl.org/DP/components#portType"
 				class="http://purl.org/DP/components#PortType">
 				http://purl.org/DP/components#TargetPathPort
 			</semanticAnnotation>
-		</inputPort>
-		<outputPort maxDepth="0" minOccurs="1" maxOccurs="unbounded">
+		</outputPort>
+		<outputPort maxDepth="0" minOccurs="0" maxOccurs="unbounded">
+			<semanticAnnotation ontology="components"
+				predicate="http://purl.org/DP/components#providesMeasure"
+				class="http://purl.org/DP/quality#Measure" />
+		</outputPort>
+		<outputPort maxDepth="0" minOccurs="0" maxOccurs="unbounded">
 			<semanticAnnotation ontology="components"
 				predicate="http://purl.org/DP/components#providesMeasure"
 				class="http://purl.org/DP/quality#Measure" />
@@ -46,8 +51,8 @@
 		<annotation>Description</annotation>
 		<annotation minOccurs="0">Author</annotation>
 		<semanticAnnotation ontology="components"
-			predicate="http://purl.org/DP/components#handlesMimetypes"
-			class="http://purl.org/DP/components#AcceptedMimetypes"
+			predicate="http://purl.org/DP/components#migrates"
+			class="http://purl.org/DP/components#MigrationPath"
 			maxOccurs="unbounded" />
 		<semanticAnnotation ontology="components"
 			predicate="http://purl.org/DP/components#fits"

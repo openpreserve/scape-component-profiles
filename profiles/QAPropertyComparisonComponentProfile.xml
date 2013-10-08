@@ -13,14 +13,14 @@
 			<semanticAnnotation ontology="components"
 				predicate="http://purl.org/DP/components#portType"
 				class="http://purl.org/DP/components#PortType">
-				http://purl.org/DP/components#SourcePathPort
+				http://purl.org/DP/components#SourcePath1Port
 			</semanticAnnotation>
 		</inputPort>
 		<inputPort maxDepth="1" minOccurs="0" maxOccurs="1">
 			<semanticAnnotation ontology="components"
 				predicate="http://purl.org/DP/components#portType"
 				class="http://purl.org/DP/components#PortType">
-				http://purl.org/DP/components#TargetPathPort
+				http://purl.org/DP/components#SourcePath2Port
 			</semanticAnnotation>
 		</inputPort>
 		<inputPort maxDepth="0" minOccurs="1" maxOccurs="unbounded">
@@ -44,7 +44,6 @@
 				class="http://purl.org/DP/quality#Measure" />
 		</inputPort>
 		<inputPort maxDepth="0" minOccurs="0" maxOccurs="unbounded">
-			<annotation>Example</annotation>
 			<annotation>Description</annotation>
 			<semanticAnnotation ontology="components"
 				predicate="http://purl.org/DP/components#portType"
@@ -58,6 +57,15 @@
 		</inputPort>
 		<outputPort maxDepth="0" minOccurs="1" maxOccurs="unbounded">
 			<annotation>Example</annotation>
+			<semanticAnnotation ontology="components"
+				predicate="http://purl.org/DP/components#providesMeasure"
+				class="http://purl.org/DP/quality#Measure" />
+		</outputPort>
+		<outputPort maxDepth="0" minOccurs="0" maxOccurs="unbounded">
+			<annotation>Example</annotation>
+			<semanticAnnotation ontology="components"
+				predicate="http://purl.org/DP/components#portType"
+				class="http://purl.org/DP/components#MeasurePortType" />
 			<semanticAnnotation ontology="components"
 				predicate="http://purl.org/DP/components#providesMeasure"
 				class="http://purl.org/DP/quality#Measure" />
