@@ -30,6 +30,9 @@
 		</outputPort>
 		<outputPort maxDepth="0" minOccurs="0" maxOccurs="unbounded">
 			<semanticAnnotation ontology="components"
+				predicate="http://purl.org/DP/components#portType"
+				class="http://purl.org/DP/components#MeasurePortType" />
+			<semanticAnnotation ontology="components"
 				predicate="http://purl.org/DP/components#providesMeasure"
 				class="http://purl.org/DP/quality#Measure" />
 		</outputPort>
