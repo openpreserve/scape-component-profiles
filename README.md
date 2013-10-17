@@ -17,13 +17,6 @@ The ontology is used to add semantic annotations to the workflows. It describes 
 
 [![SCAPE component profile ontology classes](images/Ontology%20-%20components.png "SCAPE component profile ontology classes")](images/Ontology%20-%20components.png)
 
-## Dependencies
-To create sample dependency individuals from a debian *Packages* file, an AWK script is provided in [dependencies/packages](dependencies/packages). Run `awk -f pkg2owl.awk` to print a usage message and check [dependencies/packages](dependencies/packages) for examples.
-
-To create sample dependency individuals from [*toolspec*](https://github.com/openplanets/scape-toolspecs) files, a ruby script is provided in [dependencies/toolspec](dependencies/toolspec). Run `toolspec2owl.rb -h` to print a usage message and check [dependencies/packages](dependencies/packages) for examples.
-
-**Please note that this has changed to #installations and should not be used anymore.**
-
 ## Images
 This contains images related to the profiles and ontology.
 
