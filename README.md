@@ -29,6 +29,6 @@ Contains example snippets of ontology individuals.
 # License an Acknowledgements
 Part of this work was supported by the European Union in the 7th Framework Program, IST, through the SCAPE project, Contract 270137.
 
-This work is licensed under a [Creative Commons Attribution-NonCommercial 3.0 Unported License](http://creativecommons.org/licenses/by-nc/3.0).
+All content and data are © 2013 [Scape Project](http://www.scape-project.eu/) and licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License](https://creativecommons.org/licenses/by-sa/3.0/).
 
-[![Creative Commons Attribution-NonCommercial 3.0 Unported License](http://i.creativecommons.org/l/by-nc/3.0/88x31.png)](http://creativecommons.org/licenses/by-nc/3.0)
+[![Creative Commons Attribution-ShareAlike 3.0 Unported License](https://i.creativecommons.org/l/by-sa/3.0/88x31.png)](https://creativecommons.org/licenses/by-sa/3.0/)
