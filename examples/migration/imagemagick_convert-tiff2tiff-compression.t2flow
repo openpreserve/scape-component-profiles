@@ -14,8 +14,8 @@
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>&lt;&gt;    &lt;http://purl.org/DP/components#portType&gt;
-              &lt;http://purl.org/DP/components#SourcePathPort&gt; .
+        <content>&lt;&gt;    &lt;http://purl.org/DP/components#accepts&gt;
+              &lt;http://purl.org/DP/components#SourceObject&gt; .
 </content>
       </annotationBean>
       <date>2013-03-06 15:36:17.856 UTC</date>
@@ -61,27 +61,27 @@
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>&lt;&gt;    &lt;http://purl.org/DP/components#portType&gt;
-              &lt;http://purl.org/DP/components#ParameterPort&gt; .
+        <content>&lt;&gt;    &lt;http://purl.org/DP/components#accepts&gt;
+              &lt;http://purl.org/DP/components#Parameter&gt; .
 
-&lt;&gt;    &lt;http://purl.org/DP/components#acceptsPredefinedParameter&gt;
-              [ a       &lt;http://purl.org/DP/components#PredefinedParameter&gt; ;
+&lt;&gt;    &lt;http://purl.org/DP/components#accepts&gt;
+              [ a       &lt;http://purl.org/DP/components#PredefinedParameterValue&gt; ;
                 &lt;http://purl.org/DP/components#parameterDescription&gt;
                         "no compression" ;
                 &lt;http://purl.org/DP/components#parameterValue&gt;
                         "none"
               ] .
 
-&lt;&gt;    &lt;http://purl.org/DP/components#acceptsPredefinedParameter&gt;
-              [ a       &lt;http://purl.org/DP/components#PredefinedParameter&gt; ;
+&lt;&gt;    &lt;http://purl.org/DP/components#accepts&gt;
+              [ a       &lt;http://purl.org/DP/components#PredefinedParameterValue&gt; ;
                 &lt;http://purl.org/DP/components#parameterDescription&gt;
                         "CCITT Group 4" ;
                 &lt;http://purl.org/DP/components#parameterValue&gt;
                         "Group4"
               ] .
 
-&lt;&gt;    &lt;http://purl.org/DP/components#acceptsPredefinedParameter&gt;
-              [ a       &lt;http://purl.org/DP/components#PredefinedParameter&gt; ;
+&lt;&gt;    &lt;http://purl.org/DP/components#accepts&gt;
+              [ a       &lt;http://purl.org/DP/components#PredefinedParameterValue&gt; ;
                 &lt;http://purl.org/DP/components#parameterDescription&gt;
                         "run length encoding" ;
                 &lt;http://purl.org/DP/components#parameterValue&gt;
@@ -99,8 +99,8 @@
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>&lt;&gt;    &lt;http://purl.org/DP/components#portType&gt;
-              &lt;http://purl.org/DP/components#ActionStatusPort&gt; .
+        <content>&lt;&gt;    &lt;http://purl.org/DP/components#provides&gt;
+              &lt;http://purl.org/DP/components#Status&gt; .
 </content>
       </annotationBean>
       <date>2013-03-06 15:35:48.882 UTC</date>
@@ -135,8 +135,8 @@
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>&lt;&gt;    &lt;http://purl.org/DP/components#portType&gt;
-              &lt;http://purl.org/DP/components#TargetPathPort&gt; .
+        <content>&lt;&gt;    &lt;http://purl.org/DP/components#provides&gt;
+              &lt;http://purl.org/DP/components#TargetObject&gt; .
 </content>
       </annotationBean>
       <date>2013-03-06 15:36:17.856 UTC</date>
@@ -152,10 +152,10 @@
         <content>&lt;&gt; &lt;http://purl.org/DP/components#requiresInstallation&gt; 
       [ a &lt;http://purl.org/DP/components#Installation&gt; ;
     &lt;http://purl.org/DP/components#hasEnvironment&gt; &lt;http://purl.org/DP/components#Debian&gt; ;
-    &lt;http://purl.org/DP/components#hasPackageManagerConfig&gt; 
-        [ a &lt;http://purl.org/DP/components#DpkgConfig&gt; ;
+    &lt;http://purl.org/DP/components#hasSourceConfiguration&gt; 
+        [ a &lt;http://purl.org/DP/components#DpkgConfiguration&gt; ;
             &lt;http://purl.org/DP/components#installsDpkgs&gt; "imagemagick" ;
-            &lt;http://purl.org/DP/components#requiresSource&gt; "deb http://scape.keep.pt/apt stable main"
+            &lt;http://purl.org/DP/components#requiresAptSource&gt; "deb http://scape.keep.pt/apt stable main"
         ] ;
     &lt;http://purl.org/DP/components#dependsOn&gt;
         [ a &lt;http://purl.org/DP/components#Dependency&gt; ;
