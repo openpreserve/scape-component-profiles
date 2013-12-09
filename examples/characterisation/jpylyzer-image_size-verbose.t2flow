@@ -1,10 +1,21 @@
-<workflow xmlns="http://taverna.sf.net/2008/xml/t2flow" version="1" producedBy="taverna-2.4.0"><dataflow id="653090a0-2d9e-410a-b872-8e293f598d6f" role="top"><name>Characterisation_ima</name><inputPorts><port><name>source_path</name><depth>0</depth><granularDepth>0</granularDepth><annotations><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+<workflow xmlns="http://taverna.sf.net/2008/xml/t2flow" version="1" producedBy="taverna-2.4.0"><dataflow id="c296589f-3c16-406d-b033-b113fc19fa89" role="top"><name>Jpylyzer</name><inputPorts><port><name>source_path</name><depth>0</depth><granularDepth>0</granularDepth><annotations><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.FreeTextDescription">
+        <text>Path to the source image</text>
+      </annotationBean>
+      <date>2014-02-17 09:52:18.494 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
   <annotationAssertions>
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.ExampleValue">
-        <text>/tmp/test.JP2</text>
+        <text>~/source_image.jp2</text>
       </annotationBean>
-      <date>2013-03-11 13:45:24.370 UTC</date>
+      <date>2014-02-17 09:52:00.780 UTC</date>
       <creators />
       <curationEventList />
     </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
@@ -14,8 +25,8 @@
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>&lt;&gt;    &lt;http://purl.org/DP/components#portType&gt;
-              &lt;http://purl.org/DP/components#SourcePathPort&gt; .
+        <content>&lt;&gt;    &lt;http://purl.org/DP/components#accepts&gt;
+              &lt;http://purl.org/DP/components#SourceObject&gt; .
 </content>
       </annotationBean>
       <date>2013-03-11 14:06:40.282 UTC</date>
@@ -23,24 +34,35 @@
       <curationEventList />
     </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
   </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2></annotations></port><port><name>verbose</name><depth>0</depth><granularDepth>0</granularDepth><annotations><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2></annotations></port><port><name>verbose</name><depth>0</depth><granularDepth>0</granularDepth><annotations><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.ExampleValue">
+        <text>non-verbose</text>
+      </annotationBean>
+      <date>2014-02-17 09:52:47.814 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
   <annotationAssertions>
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>&lt;&gt;    &lt;http://purl.org/DP/components#portType&gt;
-              &lt;http://purl.org/DP/components#ParameterPort&gt; .
+        <content>&lt;&gt;    &lt;http://purl.org/DP/components#accepts&gt;
+              &lt;http://purl.org/DP/components#Parameter&gt; .
 
-              &lt;&gt;    &lt;http://purl.org/DP/components#acceptsPredefinedParameter&gt;
-              [ a &lt;http://purl.org/DP/components#PredefinedParameter&gt; ;
+              &lt;&gt;    &lt;http://purl.org/DP/components#accepts&gt;
+              [ a &lt;http://purl.org/DP/components#PredefinedParameterValue&gt; ;
                 &lt;http://purl.org/DP/components#parameterValue&gt;
                         "" ;
                 &lt;http://purl.org/DP/components#parameterDescription&gt;
                         "non-verbose"
               ] .
 
-              &lt;&gt;    &lt;http://purl.org/DP/components#acceptsPredefinedParameter&gt;
-              [ a &lt;http://purl.org/DP/components#PredefinedParameter&gt; ;
+              &lt;&gt;    &lt;http://purl.org/DP/components#accepts&gt;
+              [ a &lt;http://purl.org/DP/components#PredefinedParameterValue&gt; ;
                 &lt;http://purl.org/DP/components#parameterValue&gt;
                         "--verbose" ;
                 &lt;http://purl.org/DP/components#parameterDescription&gt;
@@ -53,7 +75,18 @@
       <curationEventList />
     </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
   </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2></annotations></port></inputPorts><outputPorts><port><name>jpylyzer_STDOUT</name><annotations><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.FreeTextDescription">
+        <text>Parameter specifying verbose or non-verbose output.</text>
+      </annotationBean>
+      <date>2014-02-17 09:53:25.896 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain></annotations></port></inputPorts><outputPorts><port><name>jpylyzer_STDOUT</name><annotations><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
   <annotationAssertions>
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.FreeTextDescription">
@@ -75,7 +108,21 @@
       <curationEventList />
     </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
   </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain></annotations></port><port><name>image_height</name><annotations><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain></annotations></port><port><name>image_height</name><annotations><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
+        <mimeType>text/rdf+n3</mimeType>
+        <content>&lt;&gt;    &lt;http://purl.org/DP/components#provides&gt;
+              &lt;http://purl.org/DP/quality/measures#52&gt; .
+</content>
+      </annotationBean>
+      <date>2013-03-11 14:07:37.127 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
   <annotationAssertions>
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.ExampleValue">
@@ -86,26 +133,12 @@
       <curationEventList />
     </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
   </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain></annotations></port><port><name>image_width</name><annotations><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
   <annotationAssertions>
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>&lt;&gt;    &lt;http://purl.org/DP/components#providesMeasure&gt;
-              &lt;http://purl.org/DP/quality/measures#52&gt; .
-</content>
-      </annotationBean>
-      <date>2013-03-11 14:07:37.127 UTC</date>
-      <creators />
-      <curationEventList />
-    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-  </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2></annotations></port><port><name>image_width</name><annotations><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
-  <annotationAssertions>
-    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
-        <mimeType>text/rdf+n3</mimeType>
-        <content>&lt;&gt;    &lt;http://purl.org/DP/components#providesMeasure&gt;
+        <content>&lt;&gt;    &lt;http://purl.org/DP/components#provides&gt;
               &lt;http://purl.org/DP/quality/measures#50&gt; .
 </content>
       </annotationBean>
@@ -133,14 +166,14 @@
         <content>&lt;&gt; &lt;http://purl.org/DP/components#requiresInstallation&gt; 
         [ &lt;http://purl.org/DP/components#Installation&gt; ;
     &lt;http://purl.org/DP/components#hasEnvironment&gt; &lt;http://purl.org/DP/components#Debian&gt; ;
-    &lt;http://purl.org/DP/components#hasPackageManagerConfig&gt; 
-        [ a &lt;http://purl.org/DP/components#DpkgConfig&gt; ;
+    &lt;http://purl.org/DP/components#hasSourceConfiguration&gt; 
+        [ a &lt;http://purl.org/DP/components#DpkgConfiguration&gt; ;
             &lt;http://purl.org/DP/components#installsDpkgs&gt; "jpylyzer" ;
-            &lt;http://purl.org/DP/components#requiresSource&gt; "deb http://deb.openplanetsfoundation.org stable main"
+            &lt;http://purl.org/DP/components#requiresAptSource&gt; "deb http://deb.openplanetsfoundation.org stable main"
         ] ;
     &lt;http://purl.org/DP/components#dependsOn&gt;
         [ a &lt;http://purl.org/DP/components#Dependency&gt; ;
-            &lt;http://purl.org/dc/terms/title&gt; "jpylyzer" ;
+            &lt;http://www.w3.org/2004/02/skos/core#prefLabel&gt; "jpylyzer" ;
             &lt;http://xmlns.com/foaf/0.1/page&gt; &lt;http://www.openplanetsfoundation.org/software/jpylyzer&gt; ;
             &lt;http://creativecommons.org/ns#license&gt; &lt;http://opensource.org/licenses/GPL-3.0&gt;
         ] ].
@@ -364,9 +397,97 @@ concatenated = sb.toString();
   <annotationAssertions>
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>ef21f066-5c8d-4174-bea6-ecfe78510d36</identification>
+      </annotationBean>
+      <date>2013-03-11 13:40:54.669 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>d7b0a706-8ad8-4123-992c-18826129e196</identification>
+      </annotationBean>
+      <date>2014-02-17 09:52:49.780 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>fef1fb53-5eb1-4730-b915-aea9fb6d2595</identification>
+      </annotationBean>
+      <date>2013-03-11 14:08:46.487 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
         <identification>4cbd63a7-aa1c-47c5-8929-8e33d5beed1b</identification>
       </annotationBean>
       <date>2013-03-11 13:39:00.285 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>bb1d277d-884c-4111-8420-6a759357b65f</identification>
+      </annotationBean>
+      <date>2013-08-13 16:36:16.689 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.FreeTextDescription">
+        <text>Extracts image width and height of JP2 images using Jpylyzer</text>
+      </annotationBean>
+      <date>2014-02-17 09:51:49.643 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>33645291-43c4-4554-a417-5a4e25a4cf1c</identification>
+      </annotationBean>
+      <date>2013-03-11 13:46:15.203 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.DescriptiveTitle">
+        <text>Jpylyzer - Image Size</text>
+      </annotationBean>
+      <date>2014-02-17 09:50:37.633 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>2e472a2e-6388-422c-ad7c-0c72d5a6ebaa</identification>
+      </annotationBean>
+      <date>2013-03-11 13:28:22.177 UTC</date>
       <creators />
       <curationEventList />
     </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
@@ -399,9 +520,9 @@ concatenated = sb.toString();
   <annotationAssertions>
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>b8611a15-73ab-4398-b327-b901ff7388cc</identification>
+        <identification>f77fc990-6ac2-403b-af2b-ee3c94e48df7</identification>
       </annotationBean>
-      <date>2013-03-11 15:18:22.371 UTC</date>
+      <date>2014-02-17 09:50:53.794 UTC</date>
       <creators />
       <curationEventList />
     </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
@@ -410,9 +531,9 @@ concatenated = sb.toString();
   <annotationAssertions>
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>ef21f066-5c8d-4174-bea6-ecfe78510d36</identification>
+        <identification>c296589f-3c16-406d-b033-b113fc19fa89</identification>
       </annotationBean>
-      <date>2013-03-11 13:40:54.669 UTC</date>
+      <date>2014-02-17 09:53:26.325 UTC</date>
       <creators />
       <curationEventList />
     </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
@@ -421,9 +542,9 @@ concatenated = sb.toString();
   <annotationAssertions>
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>653090a0-2d9e-410a-b872-8e293f598d6f</identification>
+        <identification>0fb1c70c-4203-486a-a01c-1301fd8c0e58</identification>
       </annotationBean>
-      <date>2013-08-16 17:08:40.518 UTC</date>
+      <date>2013-03-12 14:30:45.464 UTC</date>
       <creators />
       <curationEventList />
     </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
@@ -439,6 +560,28 @@ concatenated = sb.toString();
       <curationEventList />
     </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
   </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.Author">
+        <text>Markus Plangg</text>
+      </annotationBean>
+      <date>2014-02-17 09:49:37.547 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>653090a0-2d9e-410a-b872-8e293f598d6f</identification>
+      </annotationBean>
+      <date>2013-08-16 17:08:40.518 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
 </net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
   <annotationAssertions>
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
@@ -450,79 +593,13 @@ concatenated = sb.toString();
       <curationEventList />
     </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
   </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
-  <annotationAssertions>
-    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.DescriptiveTitle">
-        <text>Characterisation image size using jpylyzer</text>
-      </annotationBean>
-      <date>2013-03-11 13:42:31.372 UTC</date>
-      <creators />
-      <curationEventList />
-    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-  </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
-  <annotationAssertions>
-    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>33645291-43c4-4554-a417-5a4e25a4cf1c</identification>
-      </annotationBean>
-      <date>2013-03-11 13:46:15.203 UTC</date>
-      <creators />
-      <curationEventList />
-    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-  </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
-  <annotationAssertions>
-    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.FreeTextDescription">
-        <text>Characterises image size of JP2 files using jpylyzer</text>
-      </annotationBean>
-      <date>2013-03-11 13:43:00.85 UTC</date>
-      <creators />
-      <curationEventList />
-    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-  </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
-  <annotationAssertions>
-    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>bb1d277d-884c-4111-8420-6a759357b65f</identification>
-      </annotationBean>
-      <date>2013-08-13 16:36:16.689 UTC</date>
-      <creators />
-      <curationEventList />
-    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-  </annotationAssertions>
 </net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
   <annotationAssertions>
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>2e472a2e-6388-422c-ad7c-0c72d5a6ebaa</identification>
+        <identification>b8611a15-73ab-4398-b327-b901ff7388cc</identification>
       </annotationBean>
-      <date>2013-03-11 13:28:22.177 UTC</date>
-      <creators />
-      <curationEventList />
-    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-  </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
-  <annotationAssertions>
-    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>fef1fb53-5eb1-4730-b915-aea9fb6d2595</identification>
-      </annotationBean>
-      <date>2013-03-11 14:08:46.487 UTC</date>
-      <creators />
-      <curationEventList />
-    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-  </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
-  <annotationAssertions>
-    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>0fb1c70c-4203-486a-a01c-1301fd8c0e58</identification>
-      </annotationBean>
-      <date>2013-03-12 14:30:45.464 UTC</date>
+      <date>2013-03-11 15:18:22.371 UTC</date>
       <creators />
       <curationEventList />
     </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>

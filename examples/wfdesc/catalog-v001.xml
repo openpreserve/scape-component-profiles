@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
-    <uri id="Imports Wizard Entry" name="http://purl.org/DP/components/licenses" uri="file:/home/plangg/Entwicklung/Profiles/scape-component-profiles/ontology/scape-component-profiles-licenses.rdf"/>
-    <uri id="Imports Wizard Entry" name="http://purl.org/wf4ever/wfdesc" uri="https://raw.github.com/wf4ever/ro/master/wfdesc.owl"/>
-    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1370272567814" name="http://www.semanticweb.org/plangg/ontologies/2013/5/wfdesc-example" uri="wfdesc-example.owl"/>
-    </group>
-</catalog>

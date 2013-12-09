@@ -7,56 +7,63 @@
 	<id>http://purl.org/DP/components#QAObjectComparison</id>
 	<name>Quality Assurance Object Comparison Component</name>
 	<description>A SCAPE component for object comparison QA</description>
-	<ontology id="components">http://purl.org/DP/components</ontology>
+	<ontology id="components">http://purl.org/DP/components/1.0</ontology>
 	<component>
 		<inputPort maxDepth="1">
 			<semanticAnnotation ontology="components"
-				predicate="http://purl.org/DP/components#portType"
-				class="http://purl.org/DP/components#PortType">
-				http://purl.org/DP/components#SourcePath1Port
+				predicate="http://purl.org/DP/components#accepts"
+				class="http://purl.org/DP/components#ObjectValue">
+				http://purl.org/DP/components#LeftObject
 			</semanticAnnotation>
 		</inputPort>
 		<inputPort maxDepth="1">
 			<semanticAnnotation ontology="components"
-				predicate="http://purl.org/DP/components#portType"
-				class="http://purl.org/DP/components#PortType">
-				http://purl.org/DP/components#SourcePath2Port
+				predicate="http://purl.org/DP/components#accepts"
+				class="http://purl.org/DP/components#ObjectValue">
+				http://purl.org/DP/components#RightObject
 			</semanticAnnotation>
 		</inputPort>
 		<inputPort maxDepth="0" minOccurs="0" maxOccurs="unbounded">
 			<semanticAnnotation ontology="components"
-				predicate="http://purl.org/DP/components#portType"
-				class="http://purl.org/DP/components#MeasurePortType" />
-			<semanticAnnotation ontology="components"
-				predicate="http://purl.org/DP/components#acceptsMeasure"
+				predicate="http://purl.org/DP/components#accepts"
 				class="http://purl.org/DP/quality#Measure" />
+			<semanticAnnotation ontology="components"
+				predicate="http://purl.org/DP/components#relatesTo"
+				class="http://purl.org/DP/components#ObjectValue"
+				minOccurs="0" maxOccurs="unbounded" />
 		</inputPort>
 		<inputPort maxDepth="0" minOccurs="0" maxOccurs="unbounded">
 			<annotation>Description</annotation>
 			<semanticAnnotation ontology="components"
-				predicate="http://purl.org/DP/components#portType"
-				class="http://purl.org/DP/components#PortType">
-				http://purl.org/DP/components#ParameterPort
+				predicate="http://purl.org/DP/components#accepts"
+				class="http://purl.org/DP/components#ParameterValue">
+				http://purl.org/DP/components#Parameter
 			</semanticAnnotation>
 			<semanticAnnotation ontology="components"
-				predicate="http://purl.org/DP/components#acceptsPredefinedParameter"
-				class="http://purl.org/DP/components#PredefinedParameter"
+				predicate="http://purl.org/DP/components#accepts"
+				class="http://purl.org/DP/components#PredefinedParameterValue"
 				minOccurs="0" maxOccurs="unbounded" />
+		</inputPort>
+		<inputPort maxDepth="0" minOccurs="0" maxOccurs="unbounded">
+			<annotation>Description</annotation>
+			<semanticAnnotation ontology="components"
+				predicate="http://purl.org/DP/components#accepts"
+				class="http://purl.org/DP/components#WorkingDirectory"/>
 		</inputPort>
 		<outputPort maxDepth="0" minOccurs="1" maxOccurs="unbounded">
 			<annotation>Example</annotation>
 			<semanticAnnotation ontology="components"
-				predicate="http://purl.org/DP/components#providesMeasure"
+				predicate="http://purl.org/DP/components#provides"
 				class="http://purl.org/DP/quality#Measure" />
 		</outputPort>
 		<outputPort maxDepth="0" minOccurs="0" maxOccurs="unbounded">
 			<annotation>Example</annotation>
 			<semanticAnnotation ontology="components"
-				predicate="http://purl.org/DP/components#portType"
-				class="http://purl.org/DP/components#MeasurePortType" />
-			<semanticAnnotation ontology="components"
-				predicate="http://purl.org/DP/components#providesMeasure"
+				predicate="http://purl.org/DP/components#provides"
 				class="http://purl.org/DP/quality#Measure" />
+			<semanticAnnotation ontology="components"
+				predicate="http://purl.org/DP/components#relatesTo"
+				class="http://purl.org/DP/components#ObjectValue" />
 		</outputPort>
 		<activity type="Tool" minOccurs="0" maxOccurs="unbounded">
 			<semanticAnnotation ontology="components"

@@ -7,37 +7,43 @@
 	<id>http://purl.org/DP/components#Validation</id>
 	<name>Validation Component</name>
 	<description>A SCAPE component for validation</description>
-	<ontology id="components">http://purl.org/DP/components</ontology>
+	<ontology id="components">http://purl.org/DP/components/1.0</ontology>
 	<component>
 		<inputPort maxDepth="1">
 			<semanticAnnotation ontology="components"
-				predicate="http://purl.org/DP/components#portType"
-				class="http://purl.org/DP/components#PortType">
-				http://purl.org/DP/components#SourcePathPort
+				predicate="http://purl.org/DP/components#accepts"
+				class="http://purl.org/DP/components#ObjectValue">
+				http://purl.org/DP/components#SourceObject
 			</semanticAnnotation>
 		</inputPort>
-		<inputPort maxDepth="0" minOccurs="0" maxOccurs="unbounded">
+		<inputPort maxDepth="0" maxOccurs="unbounded">
 			<annotation>Example</annotation>
 			<semanticAnnotation ontology="components"
-				predicate="http://purl.org/DP/components#acceptsMeasure"
+				predicate="http://purl.org/DP/components#accepts"
 				class="http://purl.org/DP/quality#Measure" />
 		</inputPort>
 		<inputPort maxDepth="0" minOccurs="0" maxOccurs="unbounded">
 			<annotation>Description</annotation>
 			<semanticAnnotation ontology="components"
-				predicate="http://purl.org/DP/components#portType"
-				class="http://purl.org/DP/components#PortType">
-				http://purl.org/DP/components#ParameterPort
+				predicate="http://purl.org/DP/components#accepts"
+				class="http://purl.org/DP/components#ParameterValue">
+				http://purl.org/DP/components#Parameter
 			</semanticAnnotation>
 			<semanticAnnotation ontology="components"
-				predicate="http://purl.org/DP/components#acceptsPredefinedParameter"
-				class="http://purl.org/DP/components#PredefinedParameter"
+				predicate="http://purl.org/DP/components#accepts"
+				class="http://purl.org/DP/components#PredefinedParameterValue"
 				minOccurs="0" maxOccurs="unbounded" />
+		</inputPort>
+		<inputPort maxDepth="0" minOccurs="0" maxOccurs="unbounded">
+			<annotation>Description</annotation>
+			<semanticAnnotation ontology="components"
+				predicate="http://purl.org/DP/components#accepts"
+				class="http://purl.org/DP/components#WorkingDirectory"/>
 		</inputPort>
 		<outputPort maxDepth="0" minOccurs="1" maxOccurs="unbounded">
 			<annotation>Example</annotation>
 			<semanticAnnotation ontology="components"
-				predicate="http://purl.org/DP/components#providesMeasure"
+				predicate="http://purl.org/DP/components#provides"
 				class="http://purl.org/DP/quality#Measure" />
 		</outputPort>
 		<activity type="Tool" minOccurs="0" maxOccurs="unbounded">

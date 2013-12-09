@@ -7,40 +7,36 @@
 	<id>http://purl.org/DP/components#ExecutablePlan</id>
 	<name>Migration Executable Plan Component</name>
 	<description>A SCAPE component for executable plans based on migration</description>
-	<ontology id="components">http://purl.org/DP/components</ontology>
+	<ontology id="components">http://purl.org/DP/components/1.0</ontology>
 	<component>
 		<inputPort maxDepth="1">
 			<semanticAnnotation ontology="components"
-				predicate="http://purl.org/DP/components#portType"
-				class="http://purl.org/DP/components#PortType">
-				http://purl.org/DP/components#SourcePathPort
+				predicate="http://purl.org/DP/components#accepts"
+				class="http://purl.org/DP/components#ObjectValue">
+				http://purl.org/DP/components#SourceObject
 			</semanticAnnotation>
 		</inputPort>
 		<outputPort maxDepth="1">
 			<semanticAnnotation ontology="components"
-				predicate="http://purl.org/DP/components#portType"
-				class="http://purl.org/DP/components#PortType">
-				http://purl.org/DP/components#TargetPathPort
+				predicate="http://purl.org/DP/components#provides"
+				class="http://purl.org/DP/components#ObjectValue">
+				http://purl.org/DP/components#TargetObject
 			</semanticAnnotation>
 		</outputPort>
 		<outputPort maxDepth="0" minOccurs="0" maxOccurs="unbounded">
 			<semanticAnnotation ontology="components"
-				predicate="http://purl.org/DP/components#providesMeasure"
+				predicate="http://purl.org/DP/components#provides"
 				class="http://purl.org/DP/quality#Measure" />
-		</outputPort>
-		<outputPort maxDepth="0" minOccurs="0" maxOccurs="unbounded">
 			<semanticAnnotation ontology="components"
-				predicate="http://purl.org/DP/components#portType"
-				class="http://purl.org/DP/components#MeasurePortType" />
-			<semanticAnnotation ontology="components"
-				predicate="http://purl.org/DP/components#providesMeasure"
-				class="http://purl.org/DP/quality#Measure" />
+				predicate="http://purl.org/DP/components#relatesTo"
+				class="http://purl.org/DP/components#ObjectValue" 
+				minOccurs="0" maxOccurs="unbounded" />
 		</outputPort>
 		<outputPort maxDepth="0">
 			<semanticAnnotation ontology="components"
-				predicate="http://purl.org/DP/components#portType"
-				class="http://purl.org/DP/components#PortType">
-				http://purl.org/DP/components#ActionStatusPort
+				predicate="http://purl.org/DP/components#provides"
+				class="http://purl.org/DP/components#StatusValue">
+				http://purl.org/DP/components#Status
 			</semanticAnnotation>
 		</outputPort>
 		<activity type="Tool" minOccurs="0" maxOccurs="unbounded">

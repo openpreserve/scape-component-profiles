@@ -7,39 +7,45 @@
 	<id>http://purl.org/DP/components#MigrationAction</id>
 	<name>Migration Action Component</name>
 	<description>A SCAPE component for migration actions</description>
-	<ontology id="components">http://purl.org/DP/components</ontology>
+	<ontology id="components">http://purl.org/DP/components/1.0</ontology>
 	<component>
 		<inputPort maxDepth="1">
 			<semanticAnnotation ontology="components"
-				predicate="http://purl.org/DP/components#portType"
-				class="http://purl.org/DP/components#PortType">
-				http://purl.org/DP/components#SourcePathPort
+				predicate="http://purl.org/DP/components#accepts"
+				class="http://purl.org/DP/components#ObjectValue">
+				http://purl.org/DP/components#SourceObject
 			</semanticAnnotation>
 		</inputPort>
 		<inputPort maxDepth="0" minOccurs="0" maxOccurs="unbounded">
 			<annotation>Description</annotation>
 			<semanticAnnotation ontology="components"
-				predicate="http://purl.org/DP/components#portType"
-				class="http://purl.org/DP/components#PortType">
-				http://purl.org/DP/components#ParameterPort
+				predicate="http://purl.org/DP/components#accepts"
+				class="http://purl.org/DP/components#ParameterValue">
+				http://purl.org/DP/components#Parameter
 			</semanticAnnotation>
 			<semanticAnnotation ontology="components"
-				predicate="http://purl.org/DP/components#acceptsPredefinedParameter"
-				class="http://purl.org/DP/components#PredefinedParameter"
+				predicate="http://purl.org/DP/components#accepts"
+				class="http://purl.org/DP/components#PredefinedParameterValue"
 				minOccurs="0" maxOccurs="unbounded" />
+		</inputPort>
+		<inputPort maxDepth="0" minOccurs="0" maxOccurs="unbounded">
+			<annotation>Description</annotation>
+			<semanticAnnotation ontology="components"
+				predicate="http://purl.org/DP/components#accepts"
+				class="http://purl.org/DP/components#WorkingDirectory"/>
 		</inputPort>
 		<outputPort maxDepth="1">
 			<semanticAnnotation ontology="components"
-				predicate="http://purl.org/DP/components#portType"
-				class="http://purl.org/DP/components#PortType">
-				http://purl.org/DP/components#TargetPathPort
+				predicate="http://purl.org/DP/components#provides"
+				class="http://purl.org/DP/components#ObjectValue">
+				http://purl.org/DP/components#TargetObject
 			</semanticAnnotation>
 		</outputPort>
 		<outputPort maxDepth="0">
 			<semanticAnnotation ontology="components"
-				predicate="http://purl.org/DP/components#portType"
-				class="http://purl.org/DP/components#PortType">
-				http://purl.org/DP/components#ActionStatusPort
+				predicate="http://purl.org/DP/components#provides"
+				class="http://purl.org/DP/components#StatusValue">
+				http://purl.org/DP/components#Status
 			</semanticAnnotation>
 		</outputPort>
 		<activity type="Tool" minOccurs="0" maxOccurs="unbounded">
