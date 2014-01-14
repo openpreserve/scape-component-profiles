@@ -15,8 +15,8 @@
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
         <content>&lt;&gt;
-      &lt;http://purl.org/DP/components#portType&gt;
-              &lt;http://purl.org/DP/components#SourcePathPort&gt; .
+      &lt;http://purl.org/DP/components#accepts&gt;
+              &lt;http://purl.org/DP/components#SourceObject&gt; .
 </content>
       </annotationBean>
       <date>2013-08-16 17:18:57.186 UTC</date>
@@ -40,7 +40,7 @@
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>&lt;&gt;    &lt;http://purl.org/DP/components#providesMeasure&gt;
+        <content>&lt;&gt;    &lt;http://purl.org/DP/components#provides&gt;
               &lt;http://purl.org/DP/quality/measures#50&gt; .
 </content>
       </annotationBean>
@@ -65,7 +65,7 @@
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>&lt;&gt;    &lt;http://purl.org/DP/components#providesMeasure&gt;
+        <content>&lt;&gt;    &lt;http://purl.org/DP/components#provides&gt;
               &lt;http://purl.org/DP/quality/measures#52&gt; .
 </content>
       </annotationBean>
@@ -90,7 +90,7 @@
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>&lt;&gt;    &lt;http://purl.org/DP/components#providesMeasure&gt;
+        <content>&lt;&gt;    &lt;http://purl.org/DP/components#provides&gt;
               &lt;http://purl.org/DP/quality/measures#54&gt; .
 </content>
       </annotationBean>
@@ -118,14 +118,14 @@
         <content>&lt;&gt; &lt;http://purl.org/DP/components#requiresInstallation&gt; 
         [ a &lt;http://purl.org/DP/components#Installation&gt; ;
     &lt;http://purl.org/DP/components#hasEnvironment&gt; &lt;http://purl.org/DP/components#Debian&gt; ;
-    &lt;http://purl.org/DP/components#hasPackageManagerConfig&gt; 
-        [ a &lt;http://purl.org/DP/components#DpkgConfig&gt; ;
+    &lt;http://purl.org/DP/components#hasSourceConfiguration&gt; 
+        [ a &lt;http://purl.org/DP/components#DpkgConfiguration&gt; ;
             &lt;http://purl.org/DP/components#installsDpkgs&gt; "imagemagick" ;
-            &lt;http://purl.org/DP/components#requiresSource&gt; "deb http://scape.keep.pt/apt stable main"
+            &lt;http://purl.org/DP/components#requiresAptSource&gt; "deb http://scape.keep.pt/apt stable main"
         ] ;
     &lt;http://purl.org/DP/components#dependsOn&gt;
         [ a &lt;http://purl.org/DP/components#Dependency&gt; ;
-            &lt;http://purl.org/dc/terms/title&gt; "imagemagick" ;
+            &lt;http://www.w3.org/2004/02/skos/core#prefLabel&gt; "imagemagick" ;
             &lt;http://purl.org/DP/components#dependencyVersion&gt; "6.7.7.10" ;
             &lt;http://xmlns.com/foaf/0.1/page&gt; &lt;http://www.imagemagick.org&gt; ;
             &lt;http://creativecommons.org/ns#license&gt; &lt;http://opensource.org/licenses/Apache-2.0&gt;

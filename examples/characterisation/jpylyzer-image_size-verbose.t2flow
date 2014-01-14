@@ -14,8 +14,8 @@
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>&lt;&gt;    &lt;http://purl.org/DP/components#portType&gt;
-              &lt;http://purl.org/DP/components#SourcePathPort&gt; .
+        <content>&lt;&gt;    &lt;http://purl.org/DP/components#accepts&gt;
+              &lt;http://purl.org/DP/components#SourceObject&gt; .
 </content>
       </annotationBean>
       <date>2013-03-11 14:06:40.282 UTC</date>
@@ -28,19 +28,19 @@
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>&lt;&gt;    &lt;http://purl.org/DP/components#portType&gt;
-              &lt;http://purl.org/DP/components#ParameterPort&gt; .
+        <content>&lt;&gt;    &lt;http://purl.org/DP/components#accepts&gt;
+              &lt;http://purl.org/DP/components#Parameter&gt; .
 
-              &lt;&gt;    &lt;http://purl.org/DP/components#acceptsPredefinedParameter&gt;
-              [ a &lt;http://purl.org/DP/components#PredefinedParameter&gt; ;
+              &lt;&gt;    &lt;http://purl.org/DP/components#accepts&gt;
+              [ a &lt;http://purl.org/DP/components#PredefinedParameterValue&gt; ;
                 &lt;http://purl.org/DP/components#parameterValue&gt;
                         "" ;
                 &lt;http://purl.org/DP/components#parameterDescription&gt;
                         "non-verbose"
               ] .
 
-              &lt;&gt;    &lt;http://purl.org/DP/components#acceptsPredefinedParameter&gt;
-              [ a &lt;http://purl.org/DP/components#PredefinedParameter&gt; ;
+              &lt;&gt;    &lt;http://purl.org/DP/components#accepts&gt;
+              [ a &lt;http://purl.org/DP/components#PredefinedParameterValue&gt; ;
                 &lt;http://purl.org/DP/components#parameterValue&gt;
                         "--verbose" ;
                 &lt;http://purl.org/DP/components#parameterDescription&gt;
@@ -91,7 +91,7 @@
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>&lt;&gt;    &lt;http://purl.org/DP/components#providesMeasure&gt;
+        <content>&lt;&gt;    &lt;http://purl.org/DP/components#provides&gt;
               &lt;http://purl.org/DP/quality/measures#52&gt; .
 </content>
       </annotationBean>
@@ -105,7 +105,7 @@
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.SemanticAnnotation">
         <mimeType>text/rdf+n3</mimeType>
-        <content>&lt;&gt;    &lt;http://purl.org/DP/components#providesMeasure&gt;
+        <content>&lt;&gt;    &lt;http://purl.org/DP/components#provides&gt;
               &lt;http://purl.org/DP/quality/measures#50&gt; .
 </content>
       </annotationBean>
@@ -133,14 +133,14 @@
         <content>&lt;&gt; &lt;http://purl.org/DP/components#requiresInstallation&gt; 
         [ &lt;http://purl.org/DP/components#Installation&gt; ;
     &lt;http://purl.org/DP/components#hasEnvironment&gt; &lt;http://purl.org/DP/components#Debian&gt; ;
-    &lt;http://purl.org/DP/components#hasPackageManagerConfig&gt; 
-        [ a &lt;http://purl.org/DP/components#DpkgConfig&gt; ;
+    &lt;http://purl.org/DP/components#hasSourceConfiguration&gt; 
+        [ a &lt;http://purl.org/DP/components#DpkgConfiguration&gt; ;
             &lt;http://purl.org/DP/components#installsDpkgs&gt; "jpylyzer" ;
-            &lt;http://purl.org/DP/components#requiresSource&gt; "deb http://deb.openplanetsfoundation.org stable main"
+            &lt;http://purl.org/DP/components#requiresAptSource&gt; "deb http://deb.openplanetsfoundation.org stable main"
         ] ;
     &lt;http://purl.org/DP/components#dependsOn&gt;
         [ a &lt;http://purl.org/DP/components#Dependency&gt; ;
-            &lt;http://purl.org/dc/terms/title&gt; "jpylyzer" ;
+            &lt;http://www.w3.org/2004/02/skos/core#prefLabel&gt; "jpylyzer" ;
             &lt;http://xmlns.com/foaf/0.1/page&gt; &lt;http://www.openplanetsfoundation.org/software/jpylyzer&gt; ;
             &lt;http://creativecommons.org/ns#license&gt; &lt;http://opensource.org/licenses/GPL-3.0&gt;
         ] ].
