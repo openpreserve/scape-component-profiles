@@ -1,0 +1,186 @@
+@import "settings";
+@import "foundation";
+
+// Or selectively include components
+// @import
+//   "foundation/components/accordion",
+//   "foundation/components/alert-boxes",
+//   "foundation/components/block-grid",
+//   "foundation/components/breadcrumbs",
+//   "foundation/components/button-groups",
+//   "foundation/components/buttons",
+//   "foundation/components/clearing",
+//   "foundation/components/dropdown",
+//   "foundation/components/dropdown-buttons",
+//   "foundation/components/flex-video",
+//   "foundation/components/forms",
+//   "foundation/components/grid",
+//   "foundation/components/inline-lists",
+//   "foundation/components/joyride",
+//   "foundation/components/keystrokes",
+//   "foundation/components/labels",
+//   "foundation/components/magellan",
+//   "foundation/components/orbit",
+//   "foundation/components/pagination",
+//   "foundation/components/panels",
+//   "foundation/components/pricing-tables",
+//   "foundation/components/progress-bars",
+//   "foundation/components/reveal",
+//   "foundation/components/side-nav",
+//   "foundation/components/split-buttons",
+//   "foundation/components/sub-nav",
+//   "foundation/components/switch",
+//   "foundation/components/tables",
+//   "foundation/components/tabs",
+//   "foundation/components/thumbs",
+//   "foundation/components/tooltips",
+//   "foundation/components/top-bar",
+//   "foundation/components/type",
+//   "foundation/components/offcanvas",
+//   "foundation/components/visibility";
+
+svg {
+	
+}
+
+.title {
+	background: $topbar-bg-color;
+	margin-bottom: 3rem;
+
+	h1 {
+		color: $topbar-link-color;
+	}
+
+	.title-logo {
+		img {
+			height: 120px;
+			margin: 10px;
+		}
+	}
+}
+
+.menu {
+	div {
+		width: 3 * $row-width / $total-columns;
+		min-width: 3 * $row-width / $total-columns;
+	}
+
+	.menu-titel {
+		background: $topbar-bg-color;
+		color: $topbar-link-color;
+		font-size: 1rem !important;
+		font-weight: bold;
+
+		div {
+			height: auto;
+		}
+
+		.menu-titel-content {
+			display: block;
+
+		}
+		.menu-titel-placeholder {
+			display: none;
+		}
+
+		&.active {
+			.menu-titel-content {
+				display: none;
+			}
+
+			.menu-titel-placeholder {
+				display: block;
+				background: $body-bg;
+			}
+		}
+	}
+}
+
+[data-magellan-expedition] {
+	.side-nav {
+		ul {
+			padding-top: 0px;
+			padding-left: 25px;
+		}
+
+		dd,
+		dt,
+		li {
+			padding: $sub-nav-active-padding;
+			padding-top: 0px;
+			padding-bottom: 0px;
+			font-family: $sub-nav-font-family;
+			font-weight: $sub-nav-font-weight;
+			font-size: $sub-nav-font-size;
+			color: $sub-nav-font-color;
+
+			a {
+				text-decoration: $sub-nav-text-decoration;
+				&:hover {
+					color: $sub-nav-active-bg-hover;
+				}
+			}
+
+			&.active {
+				padding: 0px;
+			}
+
+			&.active a:first-child {
+				@include radius($global-radius);
+				font-weight: $sub-nav-active-font-weight;
+				background: $sub-nav-active-bg;
+				padding: $sub-nav-active-padding;
+				cursor: $sub-nav-active-cursor;
+				color: $sub-nav-active-color;
+				&:hover {
+					background: $sub-nav-active-bg-hover;
+				}
+			}
+		}
+	}
+}
+
+
+
+.tooltip-workflows {
+	margin-top: 20px;
+}
+
+
+.workflow-diagram {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.workflow-annotations {
+	display: inline-block;
+}
+
+.workflow-annotation {
+	display: none;
+	vertical-align: top;
+	background: $tooltip-bg;
+	color: $tooltip-font-color;
+	white-space: pre;
+	padding: 10px;
+
+	.workflow-part {
+		color: #1d71aa;
+	}
+
+	.class {
+		color: #c44440;
+	}
+
+	.instance {
+		color: #8cbb4e;
+	}
+
+	.data-property {
+		color: #f8a10c;
+	}
+}
+
+
+
+

@@ -1,0 +1,322 @@
+  <!doctype html>
+  <html class="no-js" lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Scape Component Profiles</title>
+      <link rel="stylesheet" href="stylesheets/app.css" />
+      <script src="bower_components/modernizr/modernizr.js"></script>
+    </head>
+    <body>
+
+  <div class="title clearfix" data-magellan-destination="scape-component-profiles">
+    <div class="title-logo large-2 left show-for-medium-up">
+      <img src="images/logo-light.svg" alt="Scape Components Profiles Logo"/>
+    </div>
+
+    <div class="title-name large-9 columns">
+      <a name="scape-component-profiles"></a>
+      <h1>Scape Component Profiles</h1>
+    </div>
+  </div>
+
+  <div class="menu left show-for-large-up">
+      <div data-magellan-expedition="fixed">
+        <ul class="side-nav">
+          <li data-magellan-arrival="scape-component-profiles" class="active"><a href="#scape-component-profiles">Scape Component Profiles</a></li>
+          <li data-magellan-arrival="profiles"><a href="#profiles">Profiles</a>
+            <ul class="side-nav">
+              <li data-magellan-arrival="migrationaction"><a href="#migrationaction">Migration action</a></li>
+              <li data-magellan-arrival="characterisation"><a href="#characterisation">Characterisation</a></li>
+              <li data-magellan-arrival="object-quality-assurance"><a href="#object-quality-assurance">Quality assurance</a></li>
+              <li data-magellan-arrival="executable-plan"><a href="#executable-plan">Executable Plan</a></li>
+            </ul>
+          </li>
+
+          <li data-magellan-arrival="annotations"><a href="#annotations">Annotations</a>
+            <ul class="side-nav">
+              <li data-magellan-arrival="workflow"><a href="#workflow">Workflow</a></li>
+              <li data-magellan-arrival="input-ports"><a href="#input-ports">Input ports</a></li>
+              <li data-magellan-arrival="output-ports"><a href="#output-ports">Output ports</a></li>
+              <li data-magellan-arrival="tools"><a href="#tools">Tools</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+  </div>
+
+    <div class="large-9 columns">
+      <div class="row">
+        <div class="large-12 columns">
+          <p>
+            In Digital Preservation a variety of tools and services for preservation actions, characterisation and quality assurance are used. These tools require various inputs and parameters and provide a variety of output formats. Preservation Components help provide interoperability between tools and services and enable automation of preservation processes. Components are based on <a href="http://www.taverna.org.uk/">Taverna</a> workflows as a common language. They either wrap command line tools or services with necessary post-processing, are directly implemented as workflows or are composed of other components.
+          </p><p>
+            Based on the Component's task, the component profile defines a unified interface as well as other metadata required to find and execute components. The interface is described as required and optional inputs and outputs. Annotations help identify the ports and provide further metadata used for execution. Processors depending on external tools can be enriched with licensing information and information about the installation of the tools for different environments. Depending on the component profile, supported filetypes and other metadata can be added to the component itself.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <a name="profiles"></a>
+          <h2 data-magellan-destination="profiles">Profiles</h2>
+          <p>
+            <a href="http://www.taverna.org.uk/developers/work-in-progress/components/">"Taverna's components </a> are defined as XML documents validated against the <a href="http://ns.taverna.org.uk/2012/component/profile">Component Profile Schema</a>.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="large-12 columns">
+          <a name="migrationaction"></a>
+          <h3 data-magellan-destination="migrationaction">Migration Action</h3>
+          <p>
+            A migration action migrates an object to a different format. The component needs the source object as input. Additionally it can accept parameters and a working directory. The output is the migrated target object. Optionally a status message is provided. To identify supported formats the component must be annotated with a migration paths, pairs of source- and target mimetypes. External tools can be annotated with information about the installation of dependencies.
+          </p>
+
+          <div id="workflows-migration-imagemagick_convert-tiff2tiff-compression" class="workflow-diagram"></div>
+          <div id="workflow-mig1-annotations" class="workflow-annotations">
+
+<div id="workflow-mig1-in-source" class="workflow-annotation"><pre>
+<span class="workflow-part">&lt;&gt;</span> #accepts <span class="instance">#SourceObject</span>.
+</pre></div>
+
+<div id="workflow-mig1-in-parameter" class="workflow-annotation"><pre>
+<span class="workflow-part">&lt;&gt;</span> #accepts <span class="instance">#Parameter</span>.
+
+<span class="workflow-part">&lt;&gt;</span> #accepts
+  [ a <span class="instance">#PredefinedParameterValue</span> ;
+    #parameterDescription <span class="data-property">"no compression"</span> ;
+    #parameterValue <span class="data-property">"none"</span>
+  ] .
+
+<span class="workflow-part">&lt;&gt;</span> #accepts
+  [ a <span class="instance">#PredefinedParameterValue</span> ;
+    #parameterDescription <span class="data-property">"CCITT Group 4"</span> ;
+    #parameterValue <span class="data-property">"Group4"</span>
+  ] .
+
+<span class="workflow-part">&lt;&gt;</span> #accepts
+  [ a <span class="instance">#PredefinedParameterValue</span> ;
+    #parameterDescription <span class="data-property">"run length encoding"</span> ;
+    #parameterValue <span class="data-property">"RLE"</span>
+  ] .
+</pre></div>
+
+<div id="workflow-mig1-out-status" class="workflow-annotation"><pre>
+<span class="workflow-part">&lt;&gt;</span> #provides <span class="instance">#Status</span>.
+</pre></div>
+
+<div id="workflow-mig1-out-target" class="workflow-annotation"><pre>
+<span class="workflow-part">&lt;&gt;</span> #provides <span class="instance">#TargetObject</span>.
+</pre></div>
+
+<div id="workflow-mig1-tool" class="workflow-annotation"><pre>
+<span class="workflow-part">&lt;&gt;</span> #requiresInstallation
+  [ a <span class="instance">#Installation</span> ;
+    #hasEnvironment <span class="instance">#Debian</span> ;
+    #hasSourceConfiguration
+      [ a <span class="class">#DpkgConfiguration</span> ;
+        #installsDpkgs <span class="data-property">"imagemagick"</span> ;
+        #requiresAptSource <span class="data-property">"deb http://scape.keep.pt/apt stable main"</span>
+      ] ;
+    #dependsOn
+      [ a <span class="class">#Dependency</span> ;
+        skos#prefLabel <span class="data-property">"imagemagick"</span> ;
+        purl#dependencyVersion <span class="data-property">"5"</span> ;
+        foaf#page <span class="data-property">&lt;http://www.imagemagick.org&gt;</span> ;
+        cc#license <span class="data-property">&lt;http://opensource.org/licenses/Apache-2.0&gt;</span>
+    ]
+  ] .
+</pre></div>
+
+<div id="workflow-mig1-workflow" class="workflow-annotation"><pre>
+<span class="workflow-part">&lt;&gt;</span> #fits <span class="instance">#MigrationAction</span> .
+  #handlesMimetype <span class="data-property">"image/*"</span> .
+
+<span class="workflow-part">&lt;&gt;</span> #migrates
+  [ a <span class="individual">#MigrationPath</span> ;
+    #sourceMimetype <span class="data-property">"image/*"</span> ;
+    #targetMimetype <span class="data-property">"image/tiff"</span> ;
+  ] .
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <a name="characterisation"></a>
+          <h3 data-magellan-destination="characterisation">Characterisation</h3>
+          <p>
+            A characterisation component provide measures about properties of single objects. The source object must be specified as input. Additionally it can accept parameters and a working directory. As output, the component must provide one or more measures. Supported formats must be added to the component. External tools can be annotated with information about the installation of dependencies.
+          </p>
+          <div id="workflows-cc-imagemagick-image_size" class="workflow-diagram"></div>
+          <div id="workflow-cc1-annotations" class="workflow-annotations">
+
+<div id="workflow-cc1-in-source" class="workflow-annotation"><pre>
+<span class="workflow-part">&lt;&gt;</span> #accepts <span class="instance">#SourceObject</span>.
+</pre></div>
+
+<div id="workflow-cc1-out-54" class="workflow-annotation"><pre>
+<span class="workflow-part">&lt;&gt;</span> #provides <span class="instance">measures#54</span>.
+</pre></div>
+
+<div id="workflow-cc1-out-50" class="workflow-annotation"><pre>
+<span class="workflow-part">&lt;&gt;</span> #provides <span class="instance">measures#50</span>.
+</pre></div>
+
+<div id="workflow-cc1-out-52" class="workflow-annotation"><pre>
+<span class="workflow-part">&lt;&gt;</span> #provides <span class="instance">measures#52</span>.
+</pre></div>
+
+<div id="workflow-cc1-tool" class="workflow-annotation"><pre>
+<span class="workflow-part">&lt;&gt;</span> #requiresInstallation
+  [ a <span class="instance">#Installation</span> ;
+    #hasEnvironment <span class="instance">#Debian</span> ;
+    #hasSourceConfiguration
+      [ a <span class="class">#DpkgConfiguration</span> ;
+        #installsDpkgs <span class="data-property">"imagemagick"</span> ;
+        #requiresAptSource <span class="data-property">"deb http://scape.keep.pt/apt stable main"</span>
+      ] ;
+    #dependsOn
+      [ a <span class="class">#Dependency</span> ;
+        skos#prefLabel <span class="data-property">"imagemagick"</span> ;
+        purl#dependencyVersion <span class="data-property">"5"</span> ;
+        foaf#page <span class="data-property">&lt;http://www.imagemagick.org&gt;</span> ;
+        cc#license <span class="data-property">&lt;http://opensource.org/licenses/Apache-2.0&gt;</span>
+    ]
+  ] .
+</pre></div>
+
+<div id="workflow-cc1-workflow" class="workflow-annotation"><pre>
+<span class="workflow-part">&lt;&gt;</span> #fits <span class="instance">#Characterisation</span> ;
+  #handlesMimetype <span class="data-property">"image/*"</span> .
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <a name="object-quality-assurance"></a>
+          <h3 data-magellan-destination="object-quality-assurance">Object Quality Assurance</h3>
+          <p>
+            To compare two objects, e.g. after a migration action, a quality assurance component can be used. It requires a left and right object as input. Additionally it can accept parameters and a working directory. The output is one or more measures. To specify supported formats they must be specified as mimetype pairs relating to the left and right objects. External tools can be annotated with information about the installation of dependencies.
+          </p>
+          <div id="workflows-qaobject-imagemagick_compare-tiff2tiff-mse" class="workflow-diagram"></div>
+          <div id="workflow-qao1-annotations" class="workflow-annotations">
+
+<div id="workflow-qao1-in-left" class="workflow-annotation"><pre>
+<span class="workflow-part">&lt;&gt;</span> #accepts <span class="instance">#LeftObject</span>.
+</pre></div>
+
+<div id="workflow-qao1-in-right" class="workflow-annotation"><pre>
+<span class="workflow-part">&lt;&gt;</span> #accepts <span class="instance">#RightObject</span>.
+</pre></div>
+
+<div id="workflow-qao1-out-6" class="workflow-annotation"><pre>
+<span class="workflow-part">&lt;&gt;</span> #provides <span class="instance">measures#6</span>.
+</pre></div>
+
+<div id="workflow-qao1-tool" class="workflow-annotation"><pre>
+<span class="workflow-part">&lt;&gt;</span> #requiresInstallation
+  [ a <span class="instance">#Installation</span> ;
+    #hasEnvironment <span class="instance">#Debian</span> ;
+    #hasSourceConfiguration
+      [ a <span class="class">#DpkgConfiguration</span> ;
+        #installsDpkgs <span class="data-property">"imagemagick"</span> ;
+        #requiresAptSource <span class="data-property">"deb http://scape.keep.pt/apt stable main"</span>
+      ] ;
+    #dependsOn
+      [ a <span class="class">#Dependency</span> ;
+        skos#prefLabel <span class="data-property">"imagemagick"</span> ;
+        purl#dependencyVersion <span class="data-property">"5"</span> ;
+        foaf#page <span class="data-property">&lt;http://www.imagemagick.org&gt;</span> ;
+        cc#license <span class="data-property">&lt;http://opensource.org/licenses/Apache-2.0&gt;</span>
+    ]
+  ] .
+</pre></div>
+
+<div id="workflow-qao1-workflow" class="workflow-annotation"><pre>
+<span class="workflow-part">&lt;&gt;</span> #fits <span class="instance">#QAObjectComparison</span> ;
+  #handlesMimetype <span class="instance">"image/*"</span> .
+              
+<span class="workflow-part">&lt;&gt;</span> #handlesMimetypes
+  [ a <span class="instance">#AcceptedMimetypes</span> ;
+      #handlesLeftMimetype <span class="data-property">image/tiff"</span> ;
+      #handlesRightMimetype <span class="data-property">image/tiff"</span>
+  ] .
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <a name="executable-plan"></a>
+          <h3 data-magellan-destination="executable-plan">Executable Plan</h3>
+          <p>
+            As the result of a preservation planning process, an executable plan combines a preservation action with necessary characterisation and quality assurance components. The input of the component must consist of the source object and optionally parameters and a working directory. The output is the migrated target object, a status message and measures relevant measures of the characterisation and quality assurance components. Supported formats are added as migration paths, pairs of source- and target mimetypes. External tools can be annotated with information about the installation of dependencies.
+          </p>
+
+          <div id="workflows-pap-imagemagick_convert-tiff2tiff-mse-height-width" class="workflow-diagram"></div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="large-12 columns">
+          <a name="annotations"></a>
+          <h2 data-magellan-destination="annotations">Annotations</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <a name="workflow"></a>
+          <h3 data-magellan-destination="workflow">Workflow</h3>
+          <img src="images/annotations-workflow.svg" alt="Annotations Workflow"/>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <a name="input-ports"></a>
+          <h3 data-magellan-destination="input-ports">Input ports</h3>
+          <img src="images/annotations-input-ports.svg" alt="Annotations Input Ports"/>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <a name="output-ports"></a>
+          <h3 data-magellan-destination="output-ports">Output ports</h3>
+          <div id="output-ports-diagram"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <a name="tools"></a>
+          <h3 data-magellan-destination="tools">Tools</h3>
+          <div id="processors-diagram"></div>        
+        </div>
+      </div>
+
+    </div>
+
+  <span data-tooltip class="has-tip tooltip-workflows" title="<div style='background: red;'>asdf</div>">extended information</span>
+
+  <script src="bower_components/jquery/jquery.js"></script>
+  <script src="bower_components/foundation/js/foundation.js"></script>
+  <script src="bower_components/foundation/js/foundation/foundation.magellan.js"></script>
+  <script src="bower_components/foundation/js/foundation/foundation.tooltip.js"></script>
+  <script src="bower_components/d3/d3.min.js" charset="utf-8"></script>
+  <script src="js/app.js"></script>
+    </body>
+  </html>

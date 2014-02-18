@@ -1,0 +1,9 @@
+{
+  "name": "scape-component-profiles-page",
+  "version": "0.0.1",
+  "private": "true",
+  "dependencies": {
+    "foundation": "zurb/bower-foundation",
+    "d3": "latest"
+  }
+}
