@@ -168,8 +168,7 @@
     &lt;http://purl.org/DP/components#hasEnvironment&gt; &lt;http://purl.org/DP/components#Debian&gt; ;
     &lt;http://purl.org/DP/components#hasSourceConfiguration&gt; 
         [ a &lt;http://purl.org/DP/components#DpkgConfiguration&gt; ;
-            &lt;http://purl.org/DP/components#installsDpkgs&gt; "jpylyzer" ;
-            &lt;http://purl.org/DP/components#requiresAptSource&gt; "deb http://deb.openplanetsfoundation.org stable main"
+            &lt;http://purl.org/DP/components#installsDpkgs&gt; "python-jpylyzer" ;
         ] ;
     &lt;http://purl.org/DP/components#dependsOn&gt;
         [ a &lt;http://purl.org/DP/components#Dependency&gt; ;
