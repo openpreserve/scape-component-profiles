@@ -125,7 +125,7 @@ svg {
 				padding: 0px;
 			}
 
-			&.active a:first-child {
+			&.active > a:first-child {
 				@include radius($global-radius);
 				font-weight: $sub-nav-active-font-weight;
 				background: $sub-nav-active-bg;
@@ -180,7 +180,3 @@ svg {
 		color: #f8a10c;
 	}
 }
-
-
-
-

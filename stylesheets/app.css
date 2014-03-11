@@ -7811,9 +7811,9 @@ th.hide-for-touch {
   padding: 0px;
 }
 /* line 128, ../scss/app.scss */
-[data-magellan-expedition] .side-nav dd.active a:first-child,
-[data-magellan-expedition] .side-nav dt.active a:first-child,
-[data-magellan-expedition] .side-nav li.active a:first-child {
+[data-magellan-expedition] .side-nav dd.active > a:first-child,
+[data-magellan-expedition] .side-nav dt.active > a:first-child,
+[data-magellan-expedition] .side-nav li.active > a:first-child {
   -webkit-border-radius: 3px;
   border-radius: 3px;
   font-weight: normal;
@@ -7823,9 +7823,9 @@ th.hide-for-touch {
   color: white;
 }
 /* line 135, ../scss/app.scss */
-[data-magellan-expedition] .side-nav dd.active a:first-child:hover,
-[data-magellan-expedition] .side-nav dt.active a:first-child:hover,
-[data-magellan-expedition] .side-nav li.active a:first-child:hover {
+[data-magellan-expedition] .side-nav dd.active > a:first-child:hover,
+[data-magellan-expedition] .side-nav dt.active > a:first-child:hover,
+[data-magellan-expedition] .side-nav li.active > a:first-child:hover {
   background: #0078a0;
 }
 

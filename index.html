@@ -41,6 +41,13 @@
               <li data-magellan-arrival="tools"><a href="#tools">Tools</a></li>
             </ul>
           </li>
+
+          <li data-magellan-arrival="component-creation"><a href="#component-creation">Component creation</a>
+            <ul class="side-nav">
+              <li data-magellan-arrival="component-creation-toolwrapper"><a href="#component-creation-toolwrapper">Toolwrapper</a></li>
+              <li data-magellan-arrival="component-creation-taverna"><a href="#component-creation-taverna">Taverna</a></li>
+            </ul>
+          </li>
         </ul>
       </div>
   </div>
@@ -51,7 +58,7 @@
           <p>
             In Digital Preservation a variety of tools and services for preservation actions, characterisation and quality assurance are used. These tools require various inputs and parameters and provide a variety of output formats. Preservation Components help provide interoperability between tools and services and enable automation of preservation processes. Components are based on <a href="http://www.taverna.org.uk/">Taverna</a> workflows as a common language. They either wrap command line tools or services with necessary post-processing, are directly implemented as workflows or are composed of other components.
           </p><p>
-            Based on the Component's task, the component profile defines a unified interface as well as other metadata required to find and execute components. The interface is described as required and optional inputs and outputs. Annotations help identify the ports and provide further metadata used for execution. Processors depending on external tools can be enriched with licensing information and information about the installation of the tools for different environments. Depending on the component profile, supported filetypes and other metadata can be added to the component itself.
+            Based on the component's task, the component profile defines a unified interface as well as other metadata required to find and execute components. The interface is described as required and optional inputs and outputs. Annotations help identify the ports and provide further metadata used for execution. Processors depending on external tools can be enriched with licensing information and information about the installation of the tools for different environments. Depending on the component profile, supported filetypes and other metadata can be added to the component itself.
           </p>
         </div>
       </div>
@@ -61,7 +68,7 @@
           <a name="profiles"></a>
           <h2 data-magellan-destination="profiles">Profiles</h2>
           <p>
-            <a href="http://www.taverna.org.uk/developers/work-in-progress/components/">"Taverna's components </a> are defined as XML documents validated against the <a href="http://ns.taverna.org.uk/2012/component/profile">Component Profile Schema</a>.
+            <a href="http://www.taverna.org.uk/developers/work-in-progress/components/">Taverna's components </a> are defined as XML documents validated against the <a href="http://ns.taverna.org.uk/2012/component/profile">Component Profile Schema</a>.
           </p>
         </div>
       </div>
@@ -72,7 +79,10 @@
           <a name="migrationaction"></a>
           <h3 data-magellan-destination="migrationaction">Migration Action</h3>
           <p>
-            A migration action migrates an object to a different format. The component needs the source object as input. Additionally it can accept parameters and a working directory. The output is the migrated target object. Optionally a status message is provided. To identify supported formats the component must be annotated with a migration paths, pairs of source- and target mimetypes. External tools can be annotated with information about the installation of dependencies.
+            A migration action migrates an object to a different format. The component needs the source object as input. Additionally it can accept parameters and a working directory. The output is the migrated target object. Optionally a status message is provided. To identify supported formats the component must be annotated with migration paths, pairs of source- and target mimetypes. External tools can be annotated with information about the installation of dependencies.
+          </p>
+          <p>
+            See the <a href="https://github.com/openplanets/scape-component-profiles/blob/master/profiles/MigrationActionComponentProfile.xml">Migration Action Component Profile</a> for further details.
           </p>
 
           <div id="workflows-migration-imagemagick_convert-tiff2tiff-compression" class="workflow-diagram"></div>
@@ -153,6 +163,9 @@
           <p>
             A characterisation component provide measures about properties of single objects. The source object must be specified as input. Additionally it can accept parameters and a working directory. As output, the component must provide one or more measures. Supported formats must be added to the component. External tools can be annotated with information about the installation of dependencies.
           </p>
+          <p>
+            See the <a href="https://github.com/openplanets/scape-component-profiles/blob/master/profiles/CharacterisationComponentProfile.xml">Characterisation Component Profile</a> for further details.
+          </p>
           <div id="workflows-cc-imagemagick-image_size" class="workflow-diagram"></div>
           <div id="workflow-cc1-annotations" class="workflow-annotations">
 
@@ -206,6 +219,9 @@
           <h3 data-magellan-destination="object-quality-assurance">Object Quality Assurance</h3>
           <p>
             To compare two objects, e.g. after a migration action, a quality assurance component can be used. It requires a left and right object as input. Additionally it can accept parameters and a working directory. The output is one or more measures. To specify supported formats they must be specified as mimetype pairs relating to the left and right objects. External tools can be annotated with information about the installation of dependencies.
+          </p>
+          <p>
+            See the <a href="https://github.com/openplanets/scape-component-profiles/blob/master/profiles/QAObjectComparisonComponentProfile.xml">Quality Assurance Object Component Profile</a> for further details.
           </p>
           <div id="workflows-qaobject-imagemagick_compare-tiff2tiff-mse" class="workflow-diagram"></div>
           <div id="workflow-qao1-annotations" class="workflow-annotations">
@@ -263,6 +279,9 @@
           <p>
             As the result of a preservation planning process, an executable plan combines a preservation action with necessary characterisation and quality assurance components. The input of the component must consist of the source object and optionally parameters and a working directory. The output is the migrated target object, a status message and measures relevant measures of the characterisation and quality assurance components. Supported formats are added as migration paths, pairs of source- and target mimetypes. External tools can be annotated with information about the installation of dependencies.
           </p>
+          <p>
+            See the <a href="https://github.com/openplanets/scape-component-profiles/blob/master/profiles/MigrationExecutablePlanComponentProfile.xml">Executable Plan Component Profile</a> for further details.
+          </p>
 
           <div id="workflows-pap-imagemagick_convert-tiff2tiff-mse-height-width" class="workflow-diagram"></div>
         </div>
@@ -308,7 +327,61 @@
         </div>
       </div>
 
+
+      <div class="row">
+        <div class="large-12 columns">
+          <a name="component-creation"></a>
+          <h2 data-magellan-destination="component-creation">Component Creation</h2>
+          <p>
+            There are two recommended ways to create and publish components. The Scape Toolwrapper allows automatic package and component generation from a tool- and component specification and publishing to myExperiment. Alternatively the Taverna Workbench can be used to create components manually and publish them.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <a name="component-creation-toolwrapper"></a>
+          <h3 data-magellan-destination="component-creation-toolwrapper">Toolwrapper</h3>
+          <p>
+            The <a href="http://openplanets.github.io/scape-toolwrapper/">Scape Toolwrapper</a> is a tool to package command line tools and specific tool operations. Additionally it can create artefacts for tool execution, one of which is a Scape Preservation Component.
+          </p><p>
+            Tool operations are specified in a toolspec and consist of the operation's command and it's inputs and outputs. The toolspec also contains installation information and dependencies. Additional metadata required to elevate a wrapped tool to a Preservation Component is provided in a componentspec.
+          </p><p>
+            Publication of a Preservation Component is a three step process supported by the Toolwrapper:
+            <ol>
+              <li>Create a wrapper script and component</li>
+              <li>Package the wrapper script and component</li>
+              <li>Publish the component on myExperiment.org</li>
+            </ol>
+          </p>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="large-12 columns">
+          <a name="component-creation-taverna"></a>
+          <h3 data-magellan-destination="component-creation-taverna">Taverna</h3>
+          <p>
+            The <a href="http://www.taverna.org.uk/">Taverna Workbench</a> supports creating workflows and enriching them to Components through the <a href="http://www.taverna.org.uk/developers/work-in-progress/components/">Taverna Components Plugin</a>. The plugin uses myExperiment as registry be default but also allows creating a local registry in the Taverna data directory on your computer.
+          </p><p>
+            Starting from a regular workflow a component can be created by adding it to a component family. The component family links the components to the profile. After that, Taverna uses the information from the profile to allow adding semantic annotations to the inputs, outputs, processors and the workflow itself. Simple validation against the profile is performed.
+          </p><p>
+            Once the component is ready for publication, it can be added to myExperiment and or the local registry.
+          </p>
+        </div>
+      </div>
+
     </div>
+
+    <footer class="row">
+      <div class="large-12 columns text-center">
+        <small>
+          Part of this work was supported by the European Union in the 7th Framework Program, IST, through the SCAPE project, Contract 270137.<br></br>
+          <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br></br>All content and data are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
+        </small>
+      </div>
+    </footer>
 
   <span data-tooltip class="has-tip tooltip-workflows" title="<div style='background: red;'>asdf</div>">extended information</span>
 
