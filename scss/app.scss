@@ -161,8 +161,11 @@ svg {
 	vertical-align: top;
 	background: $tooltip-bg;
 	color: $tooltip-font-color;
-	white-space: pre;
 	padding: 10px;
+
+	pre {
+		white-space: pre;
+	}
 
 	.workflow-part {
 		color: #1d71aa;
@@ -178,5 +181,21 @@ svg {
 
 	.data-property {
 		color: #f8a10c;
+	}
+
+	.workflow-annotation-title {
+		margin-bottom: 10px;
+
+		img {
+			width: 22px;
+			height: 22px;
+		}
+	}
+}
+
+
+.tabs-content {
+	.content {
+		background-color: #fff;
 	}
 }

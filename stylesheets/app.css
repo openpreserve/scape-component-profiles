@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* line 259, ../bower_components/foundation/scss/foundation/components/_global.scss */
 meta.foundation-version {
   font-family: "/5.1.0/";
@@ -7851,22 +7852,39 @@ th.hide-for-touch {
   vertical-align: top;
   background: #333333;
   color: white;
-  white-space: pre;
   padding: 10px;
 }
-/* line 167, ../scss/app.scss */
+/* line 166, ../scss/app.scss */
+.workflow-annotation pre {
+  white-space: pre;
+}
+/* line 170, ../scss/app.scss */
 .workflow-annotation .workflow-part {
   color: #1d71aa;
 }
-/* line 171, ../scss/app.scss */
+/* line 174, ../scss/app.scss */
 .workflow-annotation .class {
   color: #c44440;
 }
-/* line 175, ../scss/app.scss */
+/* line 178, ../scss/app.scss */
 .workflow-annotation .instance {
   color: #8cbb4e;
 }
-/* line 179, ../scss/app.scss */
+/* line 182, ../scss/app.scss */
 .workflow-annotation .data-property {
   color: #f8a10c;
+}
+/* line 186, ../scss/app.scss */
+.workflow-annotation .workflow-annotation-title {
+  margin-bottom: 10px;
+}
+/* line 189, ../scss/app.scss */
+.workflow-annotation .workflow-annotation-title img {
+  width: 22px;
+  height: 22px;
+}
+
+/* line 198, ../scss/app.scss */
+.tabs-content .content {
+  background-color: #fff;
 }

@@ -85,14 +85,110 @@
             See the <a href="https://github.com/openplanets/scape-component-profiles/blob/master/profiles/MigrationActionComponentProfile.xml">Migration Action Component Profile</a> for further details.
           </p>
 
-          <div id="workflows-migration-imagemagick_convert-tiff2tiff-compression" class="workflow-diagram"></div>
-          <div id="workflow-mig1-annotations" class="workflow-annotations">
+          <dl class="tabs" data-tab>
+            <dd class="active"><a href="#migration-profile">Profile</a></dd>
+            <dd><a href="#migration-example-1">Imagemagick - image/* &#8605; image/tiff</a></dd>
+          </dl>
+          <div class="tabs-content">
+            <div class="content active" id="migration-profile">
+              <div id="workflows-migration-profile" class="workflow-diagram"></div>
+              <div id="workflow-mig-profile-annotations" class="workflow-annotations">
 
-<div id="workflow-mig1-in-source" class="workflow-annotation"><pre>
+<div id="workflow-mig-profile-in-source" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflow-port.svg"></img> Source object
+</div>
+<pre>
 <span class="workflow-part">&lt;&gt;</span> #accepts <span class="instance">#SourceObject</span>.
 </pre></div>
 
-<div id="workflow-mig1-in-parameter" class="workflow-annotation"><pre>
+<div id="workflow-mig-profile-in-parameter" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflow-port.svg"></img> Parameter [optional]
+</div>
+<pre>
+<span class="workflow-part">&lt;&gt;</span> #accepts <span class="instance">#Parameter</span>.
+
+<span class="workflow-part">&lt;&gt;</span> #accepts
+  [ a <span class="instance">#PredefinedParameterValue</span> ;
+    #parameterDescription <span class="data-property">"Description"</span> ;
+    #parameterValue <span class="data-property">"value"</span>
+  ] .
+</pre></div>
+
+<div id="workflow-mig-profile-out-status" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflow-port.svg"></img> Status
+</div>
+<pre>
+<span class="workflow-part">&lt;&gt;</span> #provides <span class="instance">#Status</span>.
+</pre></div>
+
+<div id="workflow-mig-profile-out-target" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflow-port.svg"></img> Target object
+</div>
+<pre>
+<span class="workflow-part">&lt;&gt;</span> #provides <span class="instance">#TargetObject</span>.
+</pre></div>
+
+<div id="workflow-mig-profile-tool" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflow-tool.svg"></img> External tool [optional]
+</div>
+<pre>
+<span class="workflow-part">&lt;&gt;</span> #requiresInstallation
+  [ a <span class="instance">#Installation</span> ;
+    #hasEnvironment <span class="instance">#Debian</span> ;
+    #hasSourceConfiguration
+      [ a <span class="class">#DpkgConfiguration</span> ;
+        #installsDpkgs <span class="data-property">"package name"</span> ;
+        #requiresAptSource <span class="data-property">"deb sources line"</span>
+      ] ;
+    #dependsOn
+      [ a <span class="class">#Dependency</span> ;
+        skos#prefLabel <span class="data-property">"dependency name"</span> ;
+        purl#dependencyVersion <span class="data-property">"dependency version"</span> ;
+        foaf#page <span class="data-property">&lt;dependency page&gt;</span> ;
+        cc#license <span class="data-property">&lt;license URI&gt;</span>
+    ]
+  ] .
+</pre></div>
+
+<div id="workflow-mig-profile-workflow" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflows-migration.svg"></img> Workflow
+</div>
+<pre>
+<span class="workflow-part">&lt;&gt;</span> #fits <span class="instance">#MigrationAction</span> .
+
+<span class="workflow-part">&lt;&gt;</span> #migrates
+  [ a <span class="individual">#MigrationPath</span> ;
+    #sourceMimetype <span class="data-property">"source mimetype"</span> ;
+    #targetMimetype <span class="data-property">"target mimetype"</span> ;
+  ] .
+</pre></div>
+
+              </div>
+            </div>
+
+            <div class="content" id="migration-example-1">
+              <div id="workflows-migration-imagemagick_convert-tiff2tiff-compression" class="workflow-diagram"></div>
+              <div id="workflow-mig1-annotations" class="workflow-annotations">
+
+<div id="workflow-mig1-in-source" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflow-port.svg"></img> Source object
+</div>
+<pre>
+<span class="workflow-part">&lt;&gt;</span> #accepts <span class="instance">#SourceObject</span>.
+</pre></div>
+
+<div id="workflow-mig1-in-parameter" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflow-port.svg"></img> Parameter
+</div>
+<pre>
 <span class="workflow-part">&lt;&gt;</span> #accepts <span class="instance">#Parameter</span>.
 
 <span class="workflow-part">&lt;&gt;</span> #accepts
@@ -114,15 +210,27 @@
   ] .
 </pre></div>
 
-<div id="workflow-mig1-out-status" class="workflow-annotation"><pre>
+<div id="workflow-mig1-out-status" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflow-port.svg"></img> Status
+</div>
+<pre>
 <span class="workflow-part">&lt;&gt;</span> #provides <span class="instance">#Status</span>.
 </pre></div>
 
-<div id="workflow-mig1-out-target" class="workflow-annotation"><pre>
+<div id="workflow-mig1-out-target" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflow-port.svg"></img> Target object
+</div>
+<pre>
 <span class="workflow-part">&lt;&gt;</span> #provides <span class="instance">#TargetObject</span>.
 </pre></div>
 
-<div id="workflow-mig1-tool" class="workflow-annotation"><pre>
+<div id="workflow-mig1-tool" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflow-tool.svg"></img> External tool
+</div>
+<pre>
 <span class="workflow-part">&lt;&gt;</span> #requiresInstallation
   [ a <span class="instance">#Installation</span> ;
     #hasEnvironment <span class="instance">#Debian</span> ;
@@ -141,9 +249,12 @@
   ] .
 </pre></div>
 
-<div id="workflow-mig1-workflow" class="workflow-annotation"><pre>
+<div id="workflow-mig1-workflow" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflows-migration-imagemagick_convert-tiff2tiff-compression.svg"></img> workflow
+</div>
+<pre>
 <span class="workflow-part">&lt;&gt;</span> #fits <span class="instance">#MigrationAction</span> .
-  #handlesMimetype <span class="data-property">"image/*"</span> .
 
 <span class="workflow-part">&lt;&gt;</span> #migrates
   [ a <span class="individual">#MigrationPath</span> ;
@@ -151,6 +262,9 @@
     #targetMimetype <span class="data-property">"image/tiff"</span> ;
   ] .
 </pre></div>
+
+              </div>
+            </div>
 
           </div>
         </div>
@@ -166,8 +280,13 @@
           <p>
             See the <a href="https://github.com/openplanets/scape-component-profiles/blob/master/profiles/CharacterisationComponentProfile.xml">Characterisation Component Profile</a> for further details.
           </p>
-          <div id="workflows-cc-imagemagick-image_size" class="workflow-diagram"></div>
-          <div id="workflow-cc1-annotations" class="workflow-annotations">
+          <dl class="tabs" data-tab>
+            <dd class="active"><a href="#cc-example-1">Imagemagick - image/* - size</a></dd>
+          </dl>
+          <div class="tabs-content">
+            <div class="content active" id="cc-example-1">
+              <div id="workflows-cc-imagemagick-image_size" class="workflow-diagram"></div>
+              <div id="workflow-cc1-annotations" class="workflow-annotations">
 
 <div id="workflow-cc1-in-source" class="workflow-annotation"><pre>
 <span class="workflow-part">&lt;&gt;</span> #accepts <span class="instance">#SourceObject</span>.
@@ -209,6 +328,8 @@
   #handlesMimetype <span class="data-property">"image/*"</span> .
 </pre></div>
 
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -223,8 +344,13 @@
           <p>
             See the <a href="https://github.com/openplanets/scape-component-profiles/blob/master/profiles/QAObjectComparisonComponentProfile.xml">Quality Assurance Object Component Profile</a> for further details.
           </p>
-          <div id="workflows-qaobject-imagemagick_compare-tiff2tiff-mse" class="workflow-diagram"></div>
-          <div id="workflow-qao1-annotations" class="workflow-annotations">
+          <dl class="tabs" data-tab>
+            <dd class="active"><a href="#qa0-example-1">Imagemagick - image/tiff - MSE</a></dd>
+          </dl>
+          <div class="tabs-content">
+            <div class="content active" id="qao-example-1">
+              <div id="workflows-qaobject-imagemagick_compare-tiff2tiff-mse" class="workflow-diagram"></div>
+              <div id="workflow-qao1-annotations" class="workflow-annotations">
 
 <div id="workflow-qao1-in-left" class="workflow-annotation"><pre>
 <span class="workflow-part">&lt;&gt;</span> #accepts <span class="instance">#LeftObject</span>.
@@ -268,6 +394,8 @@
   ] .
 </pre></div>
 
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -282,8 +410,14 @@
           <p>
             See the <a href="https://github.com/openplanets/scape-component-profiles/blob/master/profiles/MigrationExecutablePlanComponentProfile.xml">Executable Plan Component Profile</a> for further details.
           </p>
-
-          <div id="workflows-pap-imagemagick_convert-tiff2tiff-mse-height-width" class="workflow-diagram"></div>
+          <dl class="tabs" data-tab>
+            <dd class="active"><a href="#pap-example-1">Imagemagick - image/* &#8605; image/tiff</a></dd>
+          </dl>
+          <div class="tabs-content">
+            <div class="content active" id="pap-example-1">
+              <div id="workflows-pap-imagemagick_convert-tiff2tiff-mse-height-width" class="workflow-diagram"></div>
+            </div>
+          </div>
         </div>
       </div>
 

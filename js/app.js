@@ -33,6 +33,39 @@ var setAnnotations = function(element, data) {
 };
 
 $(document).ready(function() {
+
+	var migProfile = {
+		selector: "g, polygon",
+		identifier: "id",
+		annotationsSelector: "#workflow-mig-profile-annotations",
+		annotations: [{
+			name: "node4",
+			content: "Source object",
+			onClickShow: "#workflow-mig-profile-in-source"
+		}, {
+			name: "node3",
+			content: "Parameter",
+			onClickShow: "#workflow-mig-profile-in-parameter"
+		}, {
+			name: "node7",
+			content: "Status",
+			onClickShow: "#workflow-mig-profile-out-status"
+		}, {
+			name: "node8",
+			content: "Target object",
+			onClickShow: "#workflow-mig-profile-out-target"
+		}, {
+			name: "node9",
+			content: "External tool",
+			onClickShow: "#workflow-mig-profile-tool"
+		},{
+			name: null,
+			content: "Workflow",
+			onClickShow: "#workflow-mig-profile-workflow"
+		}]
+	};
+	load("#workflows-migration-profile", "images/workflows-migration-imagemagick_convert-tiff2tiff-compression.svg", migProfile);
+
 	var mig1 = {
 		selector: "g, polygon",
 		identifier: "id",
