@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* line 259, ../bower_components/foundation/scss/foundation/components/_global.scss */
 meta.foundation-version {
   font-family: "/5.1.0/";
@@ -7727,61 +7726,61 @@ th.hide-for-touch {
   display: table-cell !important;
 }
 
-/* line 46, ../scss/app.scss */
+/* line 42, ../scss/app.scss */
 .title {
   background: #333333;
   margin-bottom: 3rem;
 }
-/* line 50, ../scss/app.scss */
+/* line 46, ../scss/app.scss */
 .title h1 {
   color: white;
 }
-/* line 55, ../scss/app.scss */
+/* line 51, ../scss/app.scss */
 .title .title-logo img {
   height: 120px;
   margin: 10px;
 }
 
-/* line 63, ../scss/app.scss */
+/* line 59, ../scss/app.scss */
 .menu div {
   width: 15.625rem;
   min-width: 15.625rem;
 }
-/* line 68, ../scss/app.scss */
+/* line 64, ../scss/app.scss */
 .menu .menu-titel {
   background: #333333;
   color: white;
   font-size: 1rem !important;
   font-weight: bold;
 }
-/* line 74, ../scss/app.scss */
+/* line 70, ../scss/app.scss */
 .menu .menu-titel div {
   height: auto;
 }
-/* line 78, ../scss/app.scss */
+/* line 74, ../scss/app.scss */
 .menu .menu-titel .menu-titel-content {
   display: block;
 }
-/* line 82, ../scss/app.scss */
+/* line 78, ../scss/app.scss */
 .menu .menu-titel .menu-titel-placeholder {
   display: none;
 }
-/* line 87, ../scss/app.scss */
+/* line 83, ../scss/app.scss */
 .menu .menu-titel.active .menu-titel-content {
   display: none;
 }
-/* line 91, ../scss/app.scss */
+/* line 87, ../scss/app.scss */
 .menu .menu-titel.active .menu-titel-placeholder {
   display: block;
   background: #fafafa;
 }
 
-/* line 101, ../scss/app.scss */
+/* line 97, ../scss/app.scss */
 [data-magellan-expedition] .side-nav ul {
   padding-top: 0px;
   padding-left: 25px;
 }
-/* line 108, ../scss/app.scss */
+/* line 104, ../scss/app.scss */
 [data-magellan-expedition] .side-nav dd,
 [data-magellan-expedition] .side-nav dt,
 [data-magellan-expedition] .side-nav li {
@@ -7793,25 +7792,25 @@ th.hide-for-touch {
   font-size: 0.875rem;
   color: #999999;
 }
-/* line 117, ../scss/app.scss */
+/* line 113, ../scss/app.scss */
 [data-magellan-expedition] .side-nav dd a,
 [data-magellan-expedition] .side-nav dt a,
 [data-magellan-expedition] .side-nav li a {
   text-decoration: none;
 }
-/* line 119, ../scss/app.scss */
+/* line 115, ../scss/app.scss */
 [data-magellan-expedition] .side-nav dd a:hover,
 [data-magellan-expedition] .side-nav dt a:hover,
 [data-magellan-expedition] .side-nav li a:hover {
   color: #0078a0;
 }
-/* line 124, ../scss/app.scss */
+/* line 120, ../scss/app.scss */
 [data-magellan-expedition] .side-nav dd.active,
 [data-magellan-expedition] .side-nav dt.active,
 [data-magellan-expedition] .side-nav li.active {
   padding: 0px;
 }
-/* line 128, ../scss/app.scss */
+/* line 124, ../scss/app.scss */
 [data-magellan-expedition] .side-nav dd.active > a:first-child,
 [data-magellan-expedition] .side-nav dt.active > a:first-child,
 [data-magellan-expedition] .side-nav li.active > a:first-child {
@@ -7823,27 +7822,31 @@ th.hide-for-touch {
   cursor: default;
   color: white;
 }
-/* line 135, ../scss/app.scss */
+/* line 131, ../scss/app.scss */
 [data-magellan-expedition] .side-nav dd.active > a:first-child:hover,
 [data-magellan-expedition] .side-nav dt.active > a:first-child:hover,
 [data-magellan-expedition] .side-nav li.active > a:first-child:hover {
   background: #0078a0;
 }
 
-/* line 145, ../scss/app.scss */
+/* line 141, ../scss/app.scss */
 .tooltip-workflows {
   margin-top: 20px;
 }
 
-/* line 150, ../scss/app.scss */
+/* line 146, ../scss/app.scss */
 .workflow-diagram {
   display: inline-block;
   vertical-align: top;
 }
 
-/* line 155, ../scss/app.scss */
+/* line 151, ../scss/app.scss */
 .workflow-annotations {
   display: inline-block;
+}
+/* line 154, ../scss/app.scss */
+.workflow-annotations .active {
+  display: block;
 }
 
 /* line 159, ../scss/app.scss */
@@ -7855,36 +7858,21 @@ th.hide-for-touch {
   padding: 10px;
 }
 /* line 166, ../scss/app.scss */
-.workflow-annotation pre {
-  white-space: pre;
+.workflow-annotation code {
+  font-weight: normal;
+  font-size: 0.8em;
 }
-/* line 170, ../scss/app.scss */
-.workflow-annotation .workflow-part {
-  color: #1d71aa;
-}
-/* line 174, ../scss/app.scss */
-.workflow-annotation .class {
-  color: #c44440;
-}
-/* line 178, ../scss/app.scss */
-.workflow-annotation .instance {
-  color: #8cbb4e;
-}
-/* line 182, ../scss/app.scss */
-.workflow-annotation .data-property {
-  color: #f8a10c;
-}
-/* line 186, ../scss/app.scss */
+/* line 171, ../scss/app.scss */
 .workflow-annotation .workflow-annotation-title {
   margin-bottom: 10px;
 }
-/* line 189, ../scss/app.scss */
+/* line 174, ../scss/app.scss */
 .workflow-annotation .workflow-annotation-title img {
   width: 22px;
   height: 22px;
 }
 
-/* line 198, ../scss/app.scss */
+/* line 183, ../scss/app.scss */
 .tabs-content .content {
   background-color: #fff;
 }

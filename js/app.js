@@ -22,6 +22,8 @@ var setAnnotations = function(element, data) {
 		return d3.select(this).attr("class") + " has-tip tip-top";
 	}).attr("data-tooltip", "").attr("title", function(d) {
 		return d.content + "<div><small>[Click to show annotations]</small></div>";
+	}).attr("id", function(d) {
+		return element.substr(1) + "-" + d.name;
 	}).on("click", function(d) {
 		$(data.annotationsSelector + " .workflow-annotation").hide();
 		$(d.onClickShow).fadeIn().css("display", "inline-block");
@@ -88,7 +90,7 @@ $(document).ready(function() {
 			onClickShow: "#workflow-mig1-out-target"
 		}, {
 			name: "node9",
-			content: "External tool",
+			content: "Imagemagick",
 			onClickShow: "#workflow-mig1-tool"
 		},{
 			name: null,
@@ -97,6 +99,38 @@ $(document).ready(function() {
 		}]
 	};
 	load("#workflows-migration-imagemagick_convert-tiff2tiff-compression", "images/workflows-migration-imagemagick_convert-tiff2tiff-compression.svg", mig1);
+
+	var ccProfile = {
+		selector: "g, polygon",
+		identifier: "id",
+		annotationsSelector: "#workflow-cc-profile-annotations",
+		annotations: [{	
+			name: "node3",
+			content: "Source object",
+			onClickShow: "#workflow-cc-profile-in-source"
+		}, {
+			name: "node8",
+			content: "Image resolution",
+			onClickShow: "#workflow-cc-profile-out-54"
+		}, {
+			name: "node7",
+			content: "Image width",
+			onClickShow: "#workflow-cc-profile-out-50"
+		}, {
+			name: "node6",
+			content: "Image height",
+			onClickShow: "#workflow-cc-profile-out-52"
+		}, {
+			name: "node9",
+			content: "External tool",
+			onClickShow: "#workflow-cc-profile-tool"
+		},{
+			name: null,
+			content: "Workflow",
+			onClickShow: "#workflow-cc-profile-workflow"
+		}]
+	};
+	load("#workflows-cc-profile", "images/workflows-characterisation.svg", ccProfile);
 
 	var cc1 = {
 		selector: "g, polygon",
@@ -120,7 +154,7 @@ $(document).ready(function() {
 			onClickShow: "#workflow-cc1-out-52"
 		}, {
 			name: "node9",
-			content: "External tool",
+			content: "Imagemagick",
 			onClickShow: "#workflow-cc1-tool"
 		},{
 			name: null,
@@ -130,6 +164,33 @@ $(document).ready(function() {
 	};
 	load("#workflows-cc-imagemagick-image_size", "images/workflows-cc-imagemagick-image_size.svg", cc1);
 	
+	var qaoProfile = {
+		selector: "g, polygon",
+		identifier: "id",
+		annotationsSelector: "#workflow-qao-profile-annotations",
+		annotations: [{	
+			name: "node4",
+			content: "Left object",
+			onClickShow: "#workflow-qao-profile-in-left"
+		}, {
+			name: "node3",
+			content: "Right object",
+			onClickShow: "#workflow-qao-profile-in-right"
+		}, {
+			name: "node7",
+			content: "Measure port",
+			onClickShow: "#workflow-qao-profile-out-6"
+		}, {
+			name: "node10",
+			content: "External tool",
+			onClickShow: "#workflow-qao-profile-tool"
+		},{
+			name: null,
+			content: "Workflow",
+			onClickShow: "#workflow-qao-profile-workflow"
+		}]
+	};
+	load("#workflows-qaobject-profile", "images/workflows-qaobject.svg", qaoProfile);
 
 	var qao1 = {
 		selector: "g, polygon",
@@ -145,11 +206,11 @@ $(document).ready(function() {
 			onClickShow: "#workflow-qao1-in-right"
 		}, {
 			name: "node7",
-			content: "Mean Square Error",
+			content: "MSE",
 			onClickShow: "#workflow-qao1-out-6"
 		}, {
 			name: "node10",
-			content: "External tool",
+			content: "Imagemagick",
 			onClickShow: "#workflow-qao1-tool"
 		},{
 			name: null,
@@ -158,9 +219,11 @@ $(document).ready(function() {
 		}]
 	};
 	load("#workflows-qaobject-imagemagick_compare-tiff2tiff-mse", "images/workflows-qaobject-imagemagick_compare-tiff2tiff-mse.svg", qao1);
+
 	load("#workflows-pap-imagemagick_convert-tiff2tiff-mse-height-width", "images/workflows-pap-imagemagick_convert-tiff2tiff-mse-height-width.svg");
 
 	$(document).foundation();
+	hljs.initHighlightingOnLoad();
 });
 
 

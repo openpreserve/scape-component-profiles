@@ -5,6 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Scape Component Profiles</title>
       <link rel="stylesheet" href="stylesheets/app.css" />
+      <link rel="stylesheet" href="stylesheets/scape-component-profiles.css" />
       <script src="bower_components/modernizr/modernizr.js"></script>
     </head>
     <body>
@@ -98,76 +99,70 @@
 <div class="workflow-annotation-title">
   <img src="images/workflow-port.svg"></img> Source object
 </div>
-<pre>
-<span class="workflow-part">&lt;&gt;</span> #accepts <span class="instance">#SourceObject</span>.
-</pre></div>
+<pre><code>&lt;&gt; #accepts #SourceObject.</code></pre>
+</div>
 
 <div id="workflow-mig-profile-in-parameter" class="workflow-annotation">
 <div class="workflow-annotation-title">
   <img src="images/workflow-port.svg"></img> Parameter [optional]
 </div>
-<pre>
-<span class="workflow-part">&lt;&gt;</span> #accepts <span class="instance">#Parameter</span>.
+<pre><code>&lt;&gt; #accepts #Parameter.
 
-<span class="workflow-part">&lt;&gt;</span> #accepts
-  [ a <span class="instance">#PredefinedParameterValue</span> ;
-    #parameterDescription <span class="data-property">"Description"</span> ;
-    #parameterValue <span class="data-property">"value"</span>
-  ] .
-</pre></div>
+&lt;&gt; #accepts
+  [ a #PredefinedParameterValue ;
+    #parameterDescription "Description" ;
+    #parameterValue "value"
+  ] .</code></pre>
+</div>
 
 <div id="workflow-mig-profile-out-status" class="workflow-annotation">
 <div class="workflow-annotation-title">
   <img src="images/workflow-port.svg"></img> Status
 </div>
-<pre>
-<span class="workflow-part">&lt;&gt;</span> #provides <span class="instance">#Status</span>.
-</pre></div>
+<pre><code>&lt;&gt; #provides #Status.</code></pre>
+</div>
 
 <div id="workflow-mig-profile-out-target" class="workflow-annotation">
 <div class="workflow-annotation-title">
   <img src="images/workflow-port.svg"></img> Target object
 </div>
-<pre>
-<span class="workflow-part">&lt;&gt;</span> #provides <span class="instance">#TargetObject</span>.
-</pre></div>
+<pre><code>&lt;&gt; #provides #TargetObject.</code></pre>
+</div>
 
 <div id="workflow-mig-profile-tool" class="workflow-annotation">
 <div class="workflow-annotation-title">
   <img src="images/workflow-tool.svg"></img> External tool [optional]
 </div>
-<pre>
-<span class="workflow-part">&lt;&gt;</span> #requiresInstallation
-  [ a <span class="instance">#Installation</span> ;
-    #hasEnvironment <span class="instance">#Debian</span> ;
+<pre><code>&lt;&gt; #requiresInstallation
+  [ a #Installation ;
+    #hasEnvironment #Environment-URI ;
     #hasSourceConfiguration
-      [ a <span class="class">#DpkgConfiguration</span> ;
-        #installsDpkgs <span class="data-property">"package name"</span> ;
-        #requiresAptSource <span class="data-property">"deb sources line"</span>
+      [ a #SourceConfig-URI ;
+        #hasConfiguration "package name" ;
+        #requiresSource "source configuration"
       ] ;
     #dependsOn
-      [ a <span class="class">#Dependency</span> ;
-        skos#prefLabel <span class="data-property">"dependency name"</span> ;
-        purl#dependencyVersion <span class="data-property">"dependency version"</span> ;
-        foaf#page <span class="data-property">&lt;dependency page&gt;</span> ;
-        cc#license <span class="data-property">&lt;license URI&gt;</span>
+      [ a #Dependency ;
+        skos#prefLabel "dependency name" ;
+        purl#dependencyVersion "dependency version" ;
+        foaf#page &lt;dependency page&gt; ;
+        cc#license &lt;license URI&gt;
     ]
-  ] .
-</pre></div>
+  ] .</code></pre>
+</div>
 
-<div id="workflow-mig-profile-workflow" class="workflow-annotation">
+<div id="workflow-mig-profile-workflow" class="workflow-annotation active">
 <div class="workflow-annotation-title">
   <img src="images/workflows-migration.svg"></img> Workflow
 </div>
-<pre>
-<span class="workflow-part">&lt;&gt;</span> #fits <span class="instance">#MigrationAction</span> .
+<pre><code>&lt;&gt; #fits #MigrationAction .
 
-<span class="workflow-part">&lt;&gt;</span> #migrates
-  [ a <span class="individual">#MigrationPath</span> ;
-    #sourceMimetype <span class="data-property">"source mimetype"</span> ;
-    #targetMimetype <span class="data-property">"target mimetype"</span> ;
-  ] .
-</pre></div>
+&lt;&gt; #migrates
+  [ a #MigrationPath ;
+    #sourceMimetype "source mimetype" ;
+    #targetMimetype "target mimetype" ;
+  ] .</code></pre>
+</div>
 
               </div>
             </div>
@@ -179,89 +174,82 @@
 <div id="workflow-mig1-in-source" class="workflow-annotation">
 <div class="workflow-annotation-title">
   <img src="images/workflow-port.svg"></img> Source object
+</div><pre><code>&lt;&gt; #accepts #SourceObject.</code></pre>
 </div>
-<pre>
-<span class="workflow-part">&lt;&gt;</span> #accepts <span class="instance">#SourceObject</span>.
-</pre></div>
 
 <div id="workflow-mig1-in-parameter" class="workflow-annotation">
 <div class="workflow-annotation-title">
   <img src="images/workflow-port.svg"></img> Parameter
 </div>
-<pre>
-<span class="workflow-part">&lt;&gt;</span> #accepts <span class="instance">#Parameter</span>.
+<pre><code>&lt;&gt; #accepts #Parameter.
 
-<span class="workflow-part">&lt;&gt;</span> #accepts
-  [ a <span class="instance">#PredefinedParameterValue</span> ;
-    #parameterDescription <span class="data-property">"no compression"</span> ;
-    #parameterValue <span class="data-property">"none"</span>
+&lt;&gt; #accepts
+  [ a #PredefinedParameterValue ;
+    #parameterDescription "no compression" ;
+    #parameterValue "none"
   ] .
 
-<span class="workflow-part">&lt;&gt;</span> #accepts
-  [ a <span class="instance">#PredefinedParameterValue</span> ;
-    #parameterDescription <span class="data-property">"CCITT Group 4"</span> ;
-    #parameterValue <span class="data-property">"Group4"</span>
+&lt;&gt; #accepts
+  [ a #PredefinedParameterValue ;
+    #parameterDescription "CCITT Group 4" ;
+    #parameterValue "Group4"
   ] .
 
-<span class="workflow-part">&lt;&gt;</span> #accepts
-  [ a <span class="instance">#PredefinedParameterValue</span> ;
-    #parameterDescription <span class="data-property">"run length encoding"</span> ;
-    #parameterValue <span class="data-property">"RLE"</span>
-  ] .
-</pre></div>
+&lt;&gt; #accepts
+  [ a #PredefinedParameterValue ;
+    #parameterDescription "run length encoding" ;
+    #parameterValue "RLE"
+  ] .</code></pre>
+</div>
 
 <div id="workflow-mig1-out-status" class="workflow-annotation">
 <div class="workflow-annotation-title">
   <img src="images/workflow-port.svg"></img> Status
 </div>
-<pre>
-<span class="workflow-part">&lt;&gt;</span> #provides <span class="instance">#Status</span>.
-</pre></div>
+<pre><code>&lt;&gt; #provides #Status.</code></pre>
+</div>
 
 <div id="workflow-mig1-out-target" class="workflow-annotation">
 <div class="workflow-annotation-title">
   <img src="images/workflow-port.svg"></img> Target object
 </div>
-<pre>
-<span class="workflow-part">&lt;&gt;</span> #provides <span class="instance">#TargetObject</span>.
-</pre></div>
+<pre><code>&lt;&gt; #provides #TargetObject.</code></pre>
+</div>
 
 <div id="workflow-mig1-tool" class="workflow-annotation">
 <div class="workflow-annotation-title">
-  <img src="images/workflow-tool.svg"></img> External tool
+  <img src="images/workflow-tool.svg"></img> Imagemagick
 </div>
-<pre>
-<span class="workflow-part">&lt;&gt;</span> #requiresInstallation
-  [ a <span class="instance">#Installation</span> ;
-    #hasEnvironment <span class="instance">#Debian</span> ;
+<pre><code>&lt;&gt; #requiresInstallation
+  [ a #Installation ;
+    #hasEnvironment #Debian ;
     #hasSourceConfiguration
-      [ a <span class="class">#DpkgConfiguration</span> ;
-        #installsDpkgs <span class="data-property">"imagemagick"</span> ;
-        #requiresAptSource <span class="data-property">"deb http://scape.keep.pt/apt stable main"</span>
+      [ a #DpkgConfiguration ;
+        #installsDpkgs "imagemagick" ;
+        #requiresAptSource "deb http://scape.keep.pt/apt stable main"
       ] ;
     #dependsOn
-      [ a <span class="class">#Dependency</span> ;
-        skos#prefLabel <span class="data-property">"imagemagick"</span> ;
-        purl#dependencyVersion <span class="data-property">"5"</span> ;
-        foaf#page <span class="data-property">&lt;http://www.imagemagick.org&gt;</span> ;
-        cc#license <span class="data-property">&lt;http://opensource.org/licenses/Apache-2.0&gt;</span>
+      [ a #Dependency ;
+        skos#prefLabel "imagemagick" ;
+        purl#dependencyVersion "5" ;
+        foaf#page &lt;http://www.imagemagick.org&gt; ;
+        cc#license &lt;http://opensource.org/licenses/Apache-2.0&gt;
     ]
-  ] .
-</pre></div>
-
-<div id="workflow-mig1-workflow" class="workflow-annotation">
-<div class="workflow-annotation-title">
-  <img src="images/workflows-migration-imagemagick_convert-tiff2tiff-compression.svg"></img> workflow
+  ] .</code></pre>
 </div>
-<pre>
-<span class="workflow-part">&lt;&gt;</span> #fits <span class="instance">#MigrationAction</span> .
 
-<span class="workflow-part">&lt;&gt;</span> #migrates
-  [ a <span class="individual">#MigrationPath</span> ;
-    #sourceMimetype <span class="data-property">"image/*"</span> ;
-    #targetMimetype <span class="data-property">"image/tiff"</span> ;
-  ] .
-</pre></div>
+<div id="workflow-mig1-workflow" class="workflow-annotation active">
+<div class="workflow-annotation-title">
+  <img src="images/workflows-migration-imagemagick_convert-tiff2tiff-compression.svg"></img> Workflow
+</div>
+<pre><code>&lt;&gt; #fits #MigrationAction .
+
+&lt;&gt; #migrates
+  [ a #MigrationPath ;
+    #sourceMimetype "image/*" ;
+    #targetMimetype "image/tiff" ;
+  ] .</code></pre>
+</div>
 
               </div>
             </div>
@@ -281,55 +269,140 @@
             See the <a href="https://github.com/openplanets/scape-component-profiles/blob/master/profiles/CharacterisationComponentProfile.xml">Characterisation Component Profile</a> for further details.
           </p>
           <dl class="tabs" data-tab>
-            <dd class="active"><a href="#cc-example-1">Imagemagick - image/* - size</a></dd>
+            <dd class="active"><a href="#characterisation-profile">Profile</a></dd>
+            <dd><a href="#cc-example-1">Imagemagick - image/* - size</a></dd>
           </dl>
           <div class="tabs-content">
-            <div class="content active" id="cc-example-1">
-              <div id="workflows-cc-imagemagick-image_size" class="workflow-diagram"></div>
-              <div id="workflow-cc1-annotations" class="workflow-annotations">
+            <div class="content active" id="characterisation-profile">
+              <div id="workflows-cc-profile" class="workflow-diagram"></div>
+              <div id="workflow-cc-profile-annotations" class="workflow-annotations">
 
-<div id="workflow-cc1-in-source" class="workflow-annotation"><pre>
-<span class="workflow-part">&lt;&gt;</span> #accepts <span class="instance">#SourceObject</span>.
-</pre></div>
+<div id="workflow-cc-profile-in-source" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflow-port.svg"></img> Source object
+</div>
+<pre><code>&lt;&gt; #accepts #SourceObject.</code></pre>
+</div>
 
-<div id="workflow-cc1-out-54" class="workflow-annotation"><pre>
-<span class="workflow-part">&lt;&gt;</span> #provides <span class="instance">measures#54</span>.
-</pre></div>
+<div id="workflow-cc-profile-out-54" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflow-port.svg"></img> Image resolution
+</div>
+<pre><code>&lt;&gt; #provides &lt;measure-URI&gt; .</code></pre>
+</div>
 
-<div id="workflow-cc1-out-50" class="workflow-annotation"><pre>
-<span class="workflow-part">&lt;&gt;</span> #provides <span class="instance">measures#50</span>.
-</pre></div>
+<div id="workflow-cc-profile-out-50" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflow-port.svg"></img> Image width
+</div>
+<pre><code>&lt;&gt; #provides &lt;measure-URI&gt;.</code></pre>
+</div>
 
-<div id="workflow-cc1-out-52" class="workflow-annotation"><pre>
-<span class="workflow-part">&lt;&gt;</span> #provides <span class="instance">measures#52</span>.
-</pre></div>
+<div id="workflow-cc-profile-out-52" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflow-port.svg"></img> Image height
+</div>
+<pre><code>&lt;&gt; #provides &lt;measure-URI&gt;.</code></pre>
+</div>
 
-<div id="workflow-cc1-tool" class="workflow-annotation"><pre>
-<span class="workflow-part">&lt;&gt;</span> #requiresInstallation
-  [ a <span class="instance">#Installation</span> ;
-    #hasEnvironment <span class="instance">#Debian</span> ;
+<div id="workflow-cc-profile-tool" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflow-tool.svg"></img> External tool
+</div>
+<pre><code>&lt;&gt; #requiresInstallation
+  [ a #Installation ;
+    #hasEnvironment #Environment-URI ;
     #hasSourceConfiguration
-      [ a <span class="class">#DpkgConfiguration</span> ;
-        #installsDpkgs <span class="data-property">"imagemagick"</span> ;
-        #requiresAptSource <span class="data-property">"deb http://scape.keep.pt/apt stable main"</span>
+      [ a #SourceConfig-URI ;
+        #hasConfiguration "package name" ;
+        #requiresSource "source configuration"
       ] ;
     #dependsOn
-      [ a <span class="class">#Dependency</span> ;
-        skos#prefLabel <span class="data-property">"imagemagick"</span> ;
-        purl#dependencyVersion <span class="data-property">"5"</span> ;
-        foaf#page <span class="data-property">&lt;http://www.imagemagick.org&gt;</span> ;
-        cc#license <span class="data-property">&lt;http://opensource.org/licenses/Apache-2.0&gt;</span>
+      [ a #Dependency ;
+        skos#prefLabel "dependency name" ;
+        purl#dependencyVersion "dependency version" ;
+        foaf#page &lt;dependency page&gt; ;
+        cc#license &lt;license URI&gt;
     ]
-  ] .
-</pre></div>
+  ] .</code></pre>
+</div>
 
-<div id="workflow-cc1-workflow" class="workflow-annotation"><pre>
-<span class="workflow-part">&lt;&gt;</span> #fits <span class="instance">#Characterisation</span> ;
-  #handlesMimetype <span class="data-property">"image/*"</span> .
-</pre></div>
+<div id="workflow-cc-profile-workflow" class="workflow-annotation active">
+<div class="workflow-annotation-title">
+  <img src="images/workflows-cc-imagemagick-image_size.svg"></img> Workflow
+</div>
+<pre><code>&lt;&gt; #fits #Characterisation .
+&lt;&gt; #handlesMimetype "mimetype" .</code></pre>
+</div>
 
               </div>
             </div>
+
+            <div class="content" id="cc-example-1">
+              <div id="workflows-cc-imagemagick-image_size" class="workflow-diagram"></div>
+              <div id="workflow-cc1-annotations" class="workflow-annotations">
+
+<div id="workflow-cc1-in-source" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflow-port.svg"></img> Source object
+</div>
+<pre><code>&lt;&gt; #accepts #SourceObject.</code></pre>
+</div>
+
+<div id="workflow-cc1-out-54" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflow-port.svg"></img> Image resolution
+</div>
+<pre><code>&lt;&gt; #provides &lt;http://purl.org/DP/quality/measures#54&gt;.</code></pre>
+</div>
+
+<div id="workflow-cc1-out-50" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflow-port.svg"></img> Image width
+</div>
+<pre><code>&lt;&gt; #provides &lt;http://purl.org/DP/quality/measures#50&gt;.</code></pre>
+</div>
+
+<div id="workflow-cc1-out-52" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflow-port.svg"></img> Image height
+</div>
+<pre><code>&lt;&gt; #provides &lt;http://purl.org/DP/quality/measures#52&gt;.</code></pre>
+</div>
+
+<div id="workflow-cc1-tool" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflow-tool.svg"></img> Imagemagick
+</div>
+<pre><code>&lt;&gt; #requiresInstallation
+  [ a #Installation ;
+    #hasEnvironment #Debian ;
+    #hasSourceConfiguration
+      [ a #DpkgConfiguration ;
+        #installsDpkgs "imagemagick" ;
+        #requiresAptSource "deb http://scape.keep.pt/apt stable main"
+      ] ;
+    #dependsOn
+      [ a #Dependency ;
+        skos#prefLabel "imagemagick" ;
+        purl#dependencyVersion "5" ;
+        foaf#page &lt;http://www.imagemagick.org&gt; ;
+        cc#license &lt;http://opensource.org/licenses/Apache-2.0&gt;
+    ]
+  ] .</code></pre>
+</div>
+
+<div id="workflow-cc1-workflow" class="workflow-annotation active">
+<div class="workflow-annotation-title">
+  <img src="images/workflows-cc-imagemagick-image_size.svg"></img> Workflow
+</div>
+<pre><code>&lt;&gt; #fits #Characterisation ;
+  #handlesMimetype "image/*" .</code></pre>
+</div>
+
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -345,54 +418,137 @@
             See the <a href="https://github.com/openplanets/scape-component-profiles/blob/master/profiles/QAObjectComparisonComponentProfile.xml">Quality Assurance Object Component Profile</a> for further details.
           </p>
           <dl class="tabs" data-tab>
-            <dd class="active"><a href="#qa0-example-1">Imagemagick - image/tiff - MSE</a></dd>
+            <dd class="active"><a href="#qaobject-profile">Profile</a></dd>
+            <dd><a href="#qao-example-1">Imagemagick - image/tiff - MSE</a></dd>
           </dl>
           <div class="tabs-content">
-            <div class="content active" id="qao-example-1">
+
+            <div class="content active" id="qaobject-profile">
+              <div id="workflows-qaobject-profile" class="workflow-diagram"></div>
+              <div id="workflow-qao-profile-annotations" class="workflow-annotations">
+
+<div id="workflow-qao-profile-in-left" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflow-port.svg"></img> Left object
+</div>
+<pre><code>&lt;&gt; #accepts #LeftObject.</code></pre>
+</div>
+
+<div id="workflow-qao-profile-in-right" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflow-port.svg"></img> Right object
+</div>
+<pre><code>&lt;&gt; #accepts #RightObject.</code></pre>
+</div>
+
+<div id="workflow-qao-profile-out-6" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflow-port.svg"></img> Measure port
+</div>
+<pre><code>&lt;&gt; #provides &lt;measure-URI&gt;.</code></pre>
+</div>
+
+<div id="workflow-qao-profile-tool" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflow-tool.svg"></img> External tool [optional]
+</div>
+<pre><code>&lt;&gt; #requiresInstallation
+  [ a #Installation ;
+    #hasEnvironment #Environment-URI ;
+    #hasSourceConfiguration
+      [ a #SourceConfig-URI ;
+        #hasConfiguration "package name" ;
+        #requiresSource "source configuration"
+      ] ;
+    #dependsOn
+      [ a #Dependency ;
+        skos#prefLabel "dependency name" ;
+        purl#dependencyVersion "dependency version" ;
+        foaf#page &lt;dependency page&gt; ;
+        cc#license &lt;license URI&gt;
+    ]
+  ] .</code></pre>
+</div>
+
+<div id="workflow-qao-profile-workflow" class="workflow-annotation active">
+<div class="workflow-annotation-title">
+  <img src="images/workflows-qaobject.svg"></img> Workflow
+</div>
+<pre><code>&lt;&gt; #fits #QAObjectComparison .
+
+&lt;&gt; #handlesMimetype "mimetype" .
+
+&lt;&gt; #handlesMimetypes
+  [ a #AcceptedMimetypes ;
+      #handlesLeftMimetype "mimetype" ;
+      #handlesRightMimetype "mimetype"
+  ] .
+</code></pre>
+</div>
+
+              </div>
+            </div>
+
+            <div class="content" id="qao-example-1">
               <div id="workflows-qaobject-imagemagick_compare-tiff2tiff-mse" class="workflow-diagram"></div>
               <div id="workflow-qao1-annotations" class="workflow-annotations">
 
-<div id="workflow-qao1-in-left" class="workflow-annotation"><pre>
-<span class="workflow-part">&lt;&gt;</span> #accepts <span class="instance">#LeftObject</span>.
-</pre></div>
+<div id="workflow-qao1-in-left" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflow-port.svg"></img> Left object
+</div>
+<pre><code>&lt;&gt; #accepts #LeftObject.</code></pre>
+</div>
 
-<div id="workflow-qao1-in-right" class="workflow-annotation"><pre>
-<span class="workflow-part">&lt;&gt;</span> #accepts <span class="instance">#RightObject</span>.
-</pre></div>
+<div id="workflow-qao1-in-right" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflow-port.svg"></img> Right object
+</div>
+<pre><code>&lt;&gt; #accepts #RightObject.</code></pre>
+</div>
 
-<div id="workflow-qao1-out-6" class="workflow-annotation"><pre>
-<span class="workflow-part">&lt;&gt;</span> #provides <span class="instance">measures#6</span>.
-</pre></div>
+<div id="workflow-qao1-out-6" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflow-port.svg"></img> MSE
+</div>
+<pre><code>&lt;&gt; #provides &lt;http://purl.org/DP/quality/measures#6&gt;.</code></pre>
+</div>
 
-<div id="workflow-qao1-tool" class="workflow-annotation"><pre>
-<span class="workflow-part">&lt;&gt;</span> #requiresInstallation
-  [ a <span class="instance">#Installation</span> ;
-    #hasEnvironment <span class="instance">#Debian</span> ;
+<div id="workflow-qao1-tool" class="workflow-annotation">
+<div class="workflow-annotation-title">
+  <img src="images/workflow-tool.svg"></img> Imagemagick
+</div>
+<pre><code>&lt;&gt; #requiresInstallation
+  [ a #Installation ;
+    #hasEnvironment #Debian ;
     #hasSourceConfiguration
-      [ a <span class="class">#DpkgConfiguration</span> ;
-        #installsDpkgs <span class="data-property">"imagemagick"</span> ;
-        #requiresAptSource <span class="data-property">"deb http://scape.keep.pt/apt stable main"</span>
+      [ a #DpkgConfiguration ;
+        #installsDpkgs "imagemagick" ;
+        #requiresAptSource "deb http://scape.keep.pt/apt stable main"
       ] ;
     #dependsOn
-      [ a <span class="class">#Dependency</span> ;
-        skos#prefLabel <span class="data-property">"imagemagick"</span> ;
-        purl#dependencyVersion <span class="data-property">"5"</span> ;
-        foaf#page <span class="data-property">&lt;http://www.imagemagick.org&gt;</span> ;
-        cc#license <span class="data-property">&lt;http://opensource.org/licenses/Apache-2.0&gt;</span>
+      [ a #Dependency ;
+        skos#prefLabel "imagemagick" ;
+        purl#dependencyVersion "5" ;
+        foaf#page &lt;http://www.imagemagick.org&gt; ;
+        cc#license &lt;http://opensource.org/licenses/Apache-2.0&gt;
     ]
-  ] .
-</pre></div>
+  ] .</code></pre>
+</div>
 
-<div id="workflow-qao1-workflow" class="workflow-annotation"><pre>
-<span class="workflow-part">&lt;&gt;</span> #fits <span class="instance">#QAObjectComparison</span> ;
-  #handlesMimetype <span class="instance">"image/*"</span> .
+<div id="workflow-qao1-workflow" class="workflow-annotation active">
+<div class="workflow-annotation-title">
+  <img src="images/workflows-qaobject-imagemagick_compare-tiff2tiff-mse.svg"></img> Workflow
+</div>
+<pre><code>&lt;&gt; #fits #QAObjectComparison ;
+  #handlesMimetype "image/*" .
               
-<span class="workflow-part">&lt;&gt;</span> #handlesMimetypes
-  [ a <span class="instance">#AcceptedMimetypes</span> ;
-      #handlesLeftMimetype <span class="data-property">image/tiff"</span> ;
-      #handlesRightMimetype <span class="data-property">image/tiff"</span>
-  ] .
-</pre></div>
+&lt;&gt; #handlesMimetypes
+  [ a #AcceptedMimetypes ;
+      #handlesLeftMimetype "image/tiff" ;
+      #handlesRightMimetype "image/tiff"
+  ] .</code></pre>
+</div>
 
               </div>
             </div>
@@ -524,6 +680,7 @@
   <script src="bower_components/foundation/js/foundation/foundation.magellan.js"></script>
   <script src="bower_components/foundation/js/foundation/foundation.tooltip.js"></script>
   <script src="bower_components/d3/d3.min.js" charset="utf-8"></script>
+  <script src="js/highlight.pack.js"></script>
   <script src="js/app.js"></script>
     </body>
   </html>

@@ -39,10 +39,6 @@
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
 
-svg {
-	
-}
-
 .title {
 	background: $topbar-bg-color;
 	margin-bottom: 3rem;
@@ -154,6 +150,10 @@ svg {
 
 .workflow-annotations {
 	display: inline-block;
+
+	.active {
+		display: block;
+	}
 }
 
 .workflow-annotation {
@@ -163,24 +163,9 @@ svg {
 	color: $tooltip-font-color;
 	padding: 10px;
 
-	pre {
-		white-space: pre;
-	}
-
-	.workflow-part {
-		color: #1d71aa;
-	}
-
-	.class {
-		color: #c44440;
-	}
-
-	.instance {
-		color: #8cbb4e;
-	}
-
-	.data-property {
-		color: #f8a10c;
+	code {
+		font-weight: normal;
+		font-size: 0.8em;
 	}
 
 	.workflow-annotation-title {

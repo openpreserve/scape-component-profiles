@@ -1,0 +1,46 @@
+/*
+Scape component profile annotations
+Style for semantic annotations of Scape component profiles
+Markus Plangg <plangg@ifs.tuwien.ac.at>
+http://openplanets.github.io/scape-component-profiles
+*/
+
+.hljs {
+  display: block;
+  padding: 0.5em;
+  background: #333333;
+  color: #fff;
+}
+
+.hljs-string {
+  color: #f8a10c;
+}
+
+.hljs-data-property {
+  color: #f9ab25;
+}
+
+.hljs-object-property {
+  color: #e49207;
+}
+
+.hljs-uri {
+  color: #f8a10c;
+}
+
+.hljs-workflow-element {
+  color: #1d71aa;
+  font-weight: bold;
+}
+
+.hljs-class {
+  color: #c44440;
+}
+
+.hljs-individual {
+  color: #8cbb4e;
+}
+
+.hljs-datatype {
+  color: #a0d3e8;
+}
