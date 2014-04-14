@@ -7858,21 +7858,24 @@ th.hide-for-touch {
   padding: 10px;
 }
 /* line 166, ../scss/app.scss */
+.workflow-annotation pre {
+  font-size: 1rem;
+}
+/* line 170, ../scss/app.scss */
 .workflow-annotation code {
   font-weight: normal;
-  font-size: 0.8em;
 }
-/* line 171, ../scss/app.scss */
+/* line 174, ../scss/app.scss */
 .workflow-annotation .workflow-annotation-title {
   margin-bottom: 10px;
 }
-/* line 174, ../scss/app.scss */
+/* line 177, ../scss/app.scss */
 .workflow-annotation .workflow-annotation-title img {
   width: 22px;
   height: 22px;
 }
 
-/* line 183, ../scss/app.scss */
+/* line 186, ../scss/app.scss */
 .tabs-content .content {
   background-color: #fff;
 }
