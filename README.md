@@ -12,19 +12,12 @@ The Scape Component Profiles Page is based on foundation framework using compass
 ## Quickstart
 
   * Run `bower install` to install the latest version of Foundation
-  
-Then when you're working on your project, just run the following command:
+  * Patch `foundation.magellan.js` to avoid fix magellan sidebar by commenting `scroll_top = scroll_top - expedition.outerHeight();`.
+
+Then when you're working on your project, run the following command:
 
 ```bash
 compass watch
-```
-
-## Upgrading
-
-If you'd like to upgrade to a newer version of Foundation down the road just run:
-
-```bash
-bower update
 ```
 
 ## License an Acknowledgements

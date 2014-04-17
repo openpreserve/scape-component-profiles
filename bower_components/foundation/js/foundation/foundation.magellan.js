@@ -39,7 +39,7 @@
 
             // Account for expedition height if fixed position
             var scroll_top = target.offset().top;
-            scroll_top = scroll_top - expedition.outerHeight();
+            //scroll_top = scroll_top - expedition.outerHeight();
 
             $('html, body').stop().animate({
                 'scrollTop': scroll_top
