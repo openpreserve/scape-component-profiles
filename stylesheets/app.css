@@ -7962,8 +7962,9 @@ th.hide-for-touch {
 /* line 205, ../scss/app.scss */
 .forkme-banner:hover {
   background-color: #0078a0;
+  color: #fff;
 }
-/* line 209, ../scss/app.scss */
+/* line 210, ../scss/app.scss */
 .forkme-banner.small {
   background: url("../images/blacktocat.png") #008cba no-repeat 50% 50%;
   content: "";
