@@ -1,14 +1,17 @@
 var load = function(element, path, annotations) {
+	var dfd = $.Deferred();
 	d3.xml(path, "image/svg+xml", function(error, xml) {
 		if (error) {
-			return;
+			return dfd.reject();
 		}
 		var importedNode = document.importNode(xml.documentElement, true);
 		d3.select(element).node().appendChild(importedNode);
 		if (annotations) {
 			setAnnotations(element, annotations);
 		}
+		dfd.resolve();
 	});
+	return dfd.promise();
 }
 
 var setAnnotations = function(element, data) {
@@ -27,11 +30,13 @@ var setAnnotations = function(element, data) {
 	}).on("click", function(d) {
 		$(data.annotationsSelector + " .workflow-annotation").hide();
 		$(d.onClickShow).fadeIn().css("display", "inline-block");
-	});
+	})
 
 	d3.select(element).select("svg").attr("viewBox", function(d) {
 		return "0 0 " + d3.select(this).attr("width") + " " + d3.select(this).attr("height");
-	}).attr("width", "200px").attr("preserveAspectRatio", "xMinYMin meet");
+	}).attr("width", "180px").attr("preserveAspectRatio", "xMinYMin meet");
+
+	d3.select(element).selectAll('title').remove();
 };
 
 $(document).ready(function() {
@@ -66,7 +71,6 @@ $(document).ready(function() {
 			onClickShow: "#workflow-mig-profile-workflow"
 		}]
 	};
-	load("#workflows-migration-profile", "images/workflows-migration-imagemagick_convert-tiff2tiff-compression.svg", migProfile);
 
 	var mig1 = {
 		selector: "g, polygon",
@@ -98,7 +102,6 @@ $(document).ready(function() {
 			onClickShow: "#workflow-mig1-workflow"
 		}]
 	};
-	load("#workflows-migration-imagemagick_convert-tiff2tiff-compression", "images/workflows-migration-imagemagick_convert-tiff2tiff-compression.svg", mig1);
 
 	var ccProfile = {
 		selector: "g, polygon",
@@ -130,7 +133,6 @@ $(document).ready(function() {
 			onClickShow: "#workflow-cc-profile-workflow"
 		}]
 	};
-	load("#workflows-cc-profile", "images/workflows-characterisation.svg", ccProfile);
 
 	var cc1 = {
 		selector: "g, polygon",
@@ -162,7 +164,6 @@ $(document).ready(function() {
 			onClickShow: "#workflow-cc1-workflow"
 		}]
 	};
-	load("#workflows-cc-imagemagick-image_size", "images/workflows-cc-imagemagick-image_size.svg", cc1);
 	
 	var qaoProfile = {
 		selector: "g, polygon",
@@ -190,7 +191,6 @@ $(document).ready(function() {
 			onClickShow: "#workflow-qao-profile-workflow"
 		}]
 	};
-	load("#workflows-qaobject-profile", "images/workflows-qaobject.svg", qaoProfile);
 
 	var qao1 = {
 		selector: "g, polygon",
@@ -218,11 +218,19 @@ $(document).ready(function() {
 			onClickShow: "#workflow-qao1-workflow"
 		}]
 	};
-	load("#workflows-qaobject-imagemagick_compare-tiff2tiff-mse", "images/workflows-qaobject-imagemagick_compare-tiff2tiff-mse.svg", qao1);
 
-	load("#workflows-pap-imagemagick_convert-tiff2tiff-mse-height-width", "images/workflows-pap-imagemagick_convert-tiff2tiff-mse-height-width.svg");
+	$.when(
+		load("#workflows-migration-profile", "images/workflows-migration.svg", migProfile),
+		load("#workflows-migration-imagemagick_convert-tiff2tiff-compression", "images/workflows-migration-imagemagick_convert-tiff2tiff-compression.svg", mig1),
+		load("#workflows-cc-profile", "images/workflows-characterisation.svg", ccProfile),
+		load("#workflows-cc-imagemagick-image_size", "images/workflows-cc-imagemagick-image_size.svg", cc1),
+		load("#workflows-qaobject-profile", "images/workflows-qaobject.svg", qaoProfile),
+		load("#workflows-qaobject-imagemagick_compare-tiff2tiff-mse", "images/workflows-qaobject-imagemagick_compare-tiff2tiff-mse.svg", qao1),
+		load("#workflows-pap-imagemagick_convert-tiff2tiff-mse-height-width", "images/workflows-pap-imagemagick_convert-tiff2tiff-mse-height-width.svg")
+	).then(function() {
+		$(document).foundation();
+	});
 
-	$(document).foundation();
 	hljs.initHighlightingOnLoad();
 });
 
