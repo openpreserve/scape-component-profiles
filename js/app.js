@@ -1,4 +1,4 @@
-var load = function(element, path, annotations) {
+var load = function(element, path, prepData, data) {
 	var dfd = $.Deferred();
 	d3.xml(path, "image/svg+xml", function(error, xml) {
 		if (error) {
@@ -6,15 +6,17 @@ var load = function(element, path, annotations) {
 		}
 		var importedNode = document.importNode(xml.documentElement, true);
 		d3.select(element).node().appendChild(importedNode);
-		if (annotations) {
-			setAnnotations(element, annotations);
+		// Callback after load
+		if (prepData && data) {
+			prepData(element, data);
 		}
 		dfd.resolve();
 	});
 	return dfd.promise();
 }
 
-var setAnnotations = function(element, data) {
+var prepAnnotations = function(element, data) {
+	// Set data
 	d3.select(element).selectAll(data.selector).data(data.annotations, function(d, i) {
 		if (d === undefined) {
 			return d3.select(this).attr(data.identifier);
@@ -32,12 +34,39 @@ var setAnnotations = function(element, data) {
 		$(d.onClickShow).fadeIn().css("display", "inline-block");
 	})
 
-	d3.select(element).select("svg").attr("viewBox", function(d) {
-		return "0 0 " + d3.select(this).attr("width") + " " + d3.select(this).attr("height");
-	}).attr("width", "180px").attr("preserveAspectRatio", "xMinYMin meet");
+	// Set size
+	d3.select(element).select("svg").attr("width", function() {
+		return $(this).parent().width();
+	}).attr("preserveAspectRatio", "xMinYMin meet");
 
+	// Remove titles to avoid duplicate tooltips
 	d3.select(element).selectAll('title').remove();
 };
+
+var prepOntology = function(element, data) {
+	d3.select(element).select("svg").attr("height", function() {
+		return $(this).height() * $(this).parent().width() / $(this).width();
+	}).attr("width", function(d) {
+		return $(this).parent().width();
+	}).attr("height", function() {
+		return $(this).parent().height();
+	}).attr("preserveAspectRatio", "xMinYMin meet");
+}
+
+var highlightOntology = function(event) {
+	$('.ontology-button').removeClass('highlighted');
+	$(this).addClass('highlighted');
+
+	d3.selectAll(".ontology-element")
+		.transition()
+		.style("opacity", 0.3);
+
+	d3.selectAll(event.data.hightlightElements)
+		.transition()
+		.style("opacity", 1);
+
+	return false;
+}
 
 $(document).ready(function() {
 
@@ -219,19 +248,30 @@ $(document).ready(function() {
 		}]
 	};
 
+	// Deferred for loading
 	$.when(
-		load("#workflows-migration-profile", "images/workflows-migration.svg", migProfile),
-		load("#workflows-migration-imagemagick_convert-tiff2tiff-compression", "images/workflows-migration-imagemagick_convert-tiff2tiff-compression.svg", mig1),
-		load("#workflows-cc-profile", "images/workflows-characterisation.svg", ccProfile),
-		load("#workflows-cc-imagemagick-image_size", "images/workflows-cc-imagemagick-image_size.svg", cc1),
-		load("#workflows-qaobject-profile", "images/workflows-qaobject.svg", qaoProfile),
-		load("#workflows-qaobject-imagemagick_compare-tiff2tiff-mse", "images/workflows-qaobject-imagemagick_compare-tiff2tiff-mse.svg", qao1),
-		load("#workflows-pap-imagemagick_convert-tiff2tiff-mse-height-width", "images/workflows-pap-imagemagick_convert-tiff2tiff-mse-height-width.svg")
+		load("#workflows-migration-profile", "images/workflows-migration.svg", prepAnnotations, migProfile),
+		load("#workflows-migration-imagemagick_convert-tiff2tiff-compression", "images/workflows-migration-imagemagick_convert-tiff2tiff-compression.svg", prepAnnotations, mig1),
+		load("#workflows-cc-profile", "images/workflows-characterisation.svg", prepAnnotations, ccProfile),
+		load("#workflows-cc-imagemagick-image_size", "images/workflows-cc-imagemagick-image_size.svg", prepAnnotations, cc1),
+		load("#workflows-qaobject-profile", "images/workflows-qaobject.svg", prepAnnotations, qaoProfile),
+		load("#workflows-qaobject-imagemagick_compare-tiff2tiff-mse", "images/workflows-qaobject-imagemagick_compare-tiff2tiff-mse.svg", prepAnnotations, qao1),
+		load("#workflows-pap-imagemagick_convert-tiff2tiff-mse-height-width", "images/workflows-pap-imagemagick_convert-tiff2tiff-mse-height-width.svg"),
+
+
+		load("#annotations-workflow", "images/annotations-workflow.svg", prepOntology, {}),
+		load("#annotations-ports", "images/annotations-ports.svg", prepOntology, {})
 	).then(function() {
 		$(document).foundation();
 	});
 
+	// Highlight.js
 	hljs.initHighlightingOnLoad();
+
+	$('#annotations-migration').click({hightlightElements: '.ontology-migration'}, highlightOntology);
+	$('#annotations-characterisation').click({hightlightElements: '.ontology-characterisation'}, highlightOntology);
+	$('#annotations-qao').click({hightlightElements: '.ontology-qao'}, highlightOntology);
+	$('#annotations-executable-plan').click({hightlightElements: '.ontology-executable-plan'}, highlightOntology);
 });
 
 

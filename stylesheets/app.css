@@ -7969,3 +7969,8 @@ th.hide-for-touch {
   background: url("../images/blacktocat.png") #008cba no-repeat 50% 50%;
   content: "";
 }
+
+/* line 216, ../scss/app.scss */
+.button.highlighted {
+  background-color: #007095;
+}

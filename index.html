@@ -9,6 +9,8 @@
       <script src="bower_components/modernizr/modernizr.js"></script>
       <link rel="shortcut icon" type="image/png" href="images/favicon.png?v=3" />
 
+      <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+
       <link href="images/favicon-144.png" rel="apple-touch-icon-precomposed" sizes="144x144" type="image/png"/>
       <link href="images/favicon-114.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png"/>
       <link href="images/favicon-72.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png"/>
@@ -49,8 +51,7 @@
           <li data-magellan-arrival="annotations"><a href="#annotations">Annotations</a>
             <ul class="side-nav">
               <li data-magellan-arrival="workflow"><a href="#workflow">Workflow</a></li>
-              <li data-magellan-arrival="input-ports"><a href="#input-ports">Input ports</a></li>
-              <li data-magellan-arrival="output-ports"><a href="#output-ports">Output ports</a></li>
+              <li data-magellan-arrival="ports"><a href="#input-ports">Ports</a></li>
               <li data-magellan-arrival="tools"><a href="#tools">Tools</a></li>
             </ul>
           </li>
@@ -440,7 +441,7 @@
           <div class="tabs-content">
 
             <div class="content active" id="qaobject-profile">
-              <div id="workflows-qaobject-profile" class="workflow-diagram"></div>
+              <div id="workflows-qaobject-profile" class="workflow-diagram large-3"></div>
               <div id="workflow-qao-profile-annotations" class="workflow-annotations">
 
 <div id="workflow-qao-profile-in-left" class="workflow-annotation">
@@ -601,6 +602,12 @@
         <div class="large-12 columns">
           <a name="annotations"></a>
           <h2 data-magellan-destination="annotations">Annotations</h2>
+          <ul class="button-group">
+            <li><a id="annotations-migration" href="#" class="small button ontology-button">Migration</a></li>
+            <li><a id="annotations-characterisation" href="#" class="small button ontology-button">Characterisation</a></li>
+            <li><a id="annotations-qao" href="#" class="small button ontology-button">Object QA</a></li>
+            <li><a id="annotations-executable-plan" href="#" class="small button ontology-button">Executable Plan</a></li>
+          </ul>
         </div>
       </div>
 
@@ -608,23 +615,15 @@
         <div class="large-12 columns">
           <a name="workflow"></a>
           <h3 data-magellan-destination="workflow">Workflow</h3>
-          <img src="images/annotations-workflow.svg" alt="Annotations Workflow"/>
+          <div id="annotations-workflow" class="annotations-diagram"></div>
         </div>
       </div>
 
       <div class="row">
         <div class="large-12 columns">
-          <a name="input-ports"></a>
-          <h3 data-magellan-destination="input-ports">Input ports</h3>
-          <img src="images/annotations-input-ports.svg" alt="Annotations Input Ports"/>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="large-12 columns">
-          <a name="output-ports"></a>
-          <h3 data-magellan-destination="output-ports">Output ports</h3>
-          <div id="output-ports-diagram"></div>
+          <a name="ports"></a>
+          <h3 data-magellan-destination="ports">Ports</h3>
+          <div id="annotations-ports" class="annotations-diagram"></div>
         </div>
       </div>
 
@@ -632,7 +631,7 @@
         <div class="large-12 columns">
           <a name="tools"></a>
           <h3 data-magellan-destination="tools">Tools</h3>
-          <div id="processors-diagram"></div>        
+          <img src="images/annotations-tools.svg" alt="Annotations Tools"/>
         </div>
       </div>
 
