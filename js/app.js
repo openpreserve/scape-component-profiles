@@ -34,24 +34,9 @@ var prepAnnotations = function(element, data) {
 		$(d.onClickShow).fadeIn().css("display", "inline-block");
 	})
 
-	// Set size
-	d3.select(element).select("svg").attr("width", function() {
-		return $(this).parent().width();
-	}).attr("preserveAspectRatio", "xMinYMin meet");
-
 	// Remove titles to avoid duplicate tooltips
 	d3.select(element).selectAll('title').remove();
 };
-
-var prepOntology = function(element, data) {
-	d3.select(element).select("svg").attr("height", function() {
-		return $(this).height() * $(this).parent().width() / $(this).width();
-	}).attr("width", function(d) {
-		return $(this).parent().width();
-	}).attr("height", function() {
-		return $(this).parent().height();
-	}).attr("preserveAspectRatio", "xMinYMin meet");
-}
 
 var highlightOntology = function(event) {
 	$('.ontology-button').removeClass('highlighted');
@@ -259,8 +244,8 @@ $(document).ready(function() {
 		load("#workflows-pap-imagemagick_convert-tiff2tiff-mse-height-width", "images/workflows-pap-imagemagick_convert-tiff2tiff-mse-height-width.svg"),
 
 
-		load("#annotations-workflow", "images/annotations-workflow.svg", prepOntology, {}),
-		load("#annotations-ports", "images/annotations-ports.svg", prepOntology, {})
+		load("#annotations-workflow", "images/annotations-workflow.svg"),
+		load("#annotations-ports", "images/annotations-ports.svg")
 	).then(function() {
 		$(document).foundation();
 	});

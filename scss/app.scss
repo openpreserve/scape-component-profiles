@@ -146,6 +146,11 @@
 .workflow-diagram {
 	display: inline-block;
 	vertical-align: top;
+
+	svg {
+		width: 100%;
+		height: 100%;
+	}
 }
 
 .workflow-annotations {
@@ -181,6 +186,12 @@
 	}
 }
 
+.annotations-diagram {
+	svg {
+		width: 100%;
+		height: 100%;
+	}
+}
 
 .tabs-content {
 	.content {

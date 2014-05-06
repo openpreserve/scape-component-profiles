@@ -7903,17 +7903,22 @@ th.hide-for-touch {
   display: inline-block;
   vertical-align: top;
 }
+/* line 150, ../scss/app.scss */
+.workflow-diagram svg {
+  width: 100%;
+  height: 100%;
+}
 
-/* line 151, ../scss/app.scss */
+/* line 156, ../scss/app.scss */
 .workflow-annotations {
   display: inline-block;
 }
-/* line 154, ../scss/app.scss */
+/* line 159, ../scss/app.scss */
 .workflow-annotations .active {
   display: block;
 }
 
-/* line 159, ../scss/app.scss */
+/* line 164, ../scss/app.scss */
 .workflow-annotation {
   display: none;
   vertical-align: top;
@@ -7921,30 +7926,36 @@ th.hide-for-touch {
   color: white;
   padding: 10px;
 }
-/* line 166, ../scss/app.scss */
+/* line 171, ../scss/app.scss */
 .workflow-annotation pre {
   font-size: 1rem;
 }
-/* line 170, ../scss/app.scss */
+/* line 175, ../scss/app.scss */
 .workflow-annotation code {
   font-weight: normal;
 }
-/* line 174, ../scss/app.scss */
+/* line 179, ../scss/app.scss */
 .workflow-annotation .workflow-annotation-title {
   margin-bottom: 10px;
 }
-/* line 177, ../scss/app.scss */
+/* line 182, ../scss/app.scss */
 .workflow-annotation .workflow-annotation-title img {
   width: 22px;
   height: 22px;
 }
 
-/* line 186, ../scss/app.scss */
+/* line 190, ../scss/app.scss */
+.annotations-diagram svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 197, ../scss/app.scss */
 .tabs-content .content {
   background-color: #fff;
 }
 
-/* line 191, ../scss/app.scss */
+/* line 202, ../scss/app.scss */
 .forkme-banner {
   display: block;
   position: absolute;
@@ -7959,18 +7970,18 @@ th.hide-for-touch {
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
 }
-/* line 205, ../scss/app.scss */
+/* line 216, ../scss/app.scss */
 .forkme-banner:hover {
   background-color: #0078a0;
   color: #fff;
 }
-/* line 210, ../scss/app.scss */
+/* line 221, ../scss/app.scss */
 .forkme-banner.small {
   background: url("../images/blacktocat.png") #008cba no-repeat 50% 50%;
   content: "";
 }
 
-/* line 216, ../scss/app.scss */
-.button.highlighted {
+/* line 227, ../scss/app.scss */
+.button .highlighted {
   background-color: #007095;
 }
