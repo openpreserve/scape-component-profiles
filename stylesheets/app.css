@@ -7982,6 +7982,6 @@ th.hide-for-touch {
 }
 
 /* line 227, ../scss/app.scss */
-.button .highlighted {
+.button.highlighted {
   background-color: #007095;
 }
