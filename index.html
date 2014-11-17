@@ -21,8 +21,8 @@
     </head>
     <body>
 
-  <a id="forkme-banner-large" href="https://github.com/openplanets/scape-component-profiles" class="show-for-large-up forkme-banner">View on GitHub</a>
-  <a id="forkme-banner-small" href="https://github.com/openplanets/scape-component-profiles" class="hide-for-large-up forkme-banner small">&nbsp;</a>
+  <a id="forkme-banner-large" href="https://github.com/openpreserve/scape-component-profiles" class="show-for-large-up forkme-banner">View on GitHub</a>
+  <a id="forkme-banner-small" href="https://github.com/openpreserve/scape-component-profiles" class="hide-for-large-up forkme-banner small">&nbsp;</a>
 
   <div class="title clearfix" data-magellan-destination="scape-component-profiles">
     <div class="title-logo large-2 left show-for-large-up">
@@ -96,7 +96,7 @@
             A migration action migrates an object to a different format. The component needs the source object as input. Additionally it can accept parameters and a working directory. The output is the migrated target object. Optionally a status message is provided. To identify supported formats the component must be annotated with migration paths, pairs of source- and target mimetypes. External tools can be annotated with information about the installation of dependencies.
           </p>
           <p>
-            See the <a href="https://github.com/openplanets/scape-component-profiles/blob/master/profiles/MigrationActionComponentProfile.xml">Migration Action Component Profile</a> for further details.
+            See the <a href="https://github.com/openpreserve/scape-component-profiles/blob/master/profiles/MigrationActionComponentProfile.xml">Migration Action Component Profile</a> for further details.
           </p>
 
           <dl class="tabs" data-tab>
@@ -283,7 +283,7 @@
             A characterisation component provide measures about properties of single objects. The source object must be specified as input. Additionally it can accept parameters and a working directory. As output, the component must provide one or more measures. Supported formats must be added to the component. External tools can be annotated with information about the installation of dependencies.
           </p>
           <p>
-            See the <a href="https://github.com/openplanets/scape-component-profiles/blob/master/profiles/CharacterisationComponentProfile.xml">Characterisation Component Profile</a> for further details.
+            See the <a href="https://github.com/openpreserve/scape-component-profiles/blob/master/profiles/CharacterisationComponentProfile.xml">Characterisation Component Profile</a> for further details.
           </p>
           <dl class="tabs" data-tab>
             <dd class="active"><a href="#characterisation-profile">Profile</a></dd>
@@ -436,7 +436,7 @@
             To compare two objects, e.g. after a migration action, a quality assurance component can be used. It requires a left and right object as input. Additionally it can accept parameters and a working directory. The output is one or more measures. To specify supported formats they must be specified as mimetype pairs relating to the left and right objects. External tools can be annotated with information about the installation of dependencies.
           </p>
           <p>
-            See the <a href="https://github.com/openplanets/scape-component-profiles/blob/master/profiles/QAObjectComparisonComponentProfile.xml">Quality Assurance Object Component Profile</a> for further details.
+            See the <a href="https://github.com/openpreserve/scape-component-profiles/blob/master/profiles/QAObjectComparisonComponentProfile.xml">Quality Assurance Object Component Profile</a> for further details.
           </p>
           <dl class="tabs" data-tab>
             <dd class="active"><a href="#qaobject-profile">Profile</a></dd>
@@ -590,7 +590,7 @@
             As the result of a preservation planning process, an executable plan combines a preservation action with necessary characterisation and quality assurance components. The input of the component must consist of the source object and optionally parameters and a working directory. The output is the migrated target object, a status message and measures relevant measures of the characterisation and quality assurance components. Supported formats are added as migration paths, pairs of source- and target mimetypes. External tools can be annotated with information about the installation of dependencies.
           </p>
           <p>
-            See the <a href="https://github.com/openplanets/scape-component-profiles/blob/master/profiles/MigrationExecutablePlanComponentProfile.xml">Executable Plan Component Profile</a> for further details.
+            See the <a href="https://github.com/openpreserve/scape-component-profiles/blob/master/profiles/MigrationExecutablePlanComponentProfile.xml">Executable Plan Component Profile</a> for further details.
           </p>
           <dl class="tabs" data-tab>
             <dd class="active"><a href="#pap-example-1">Imagemagick - image/* &#8605; image/tiff</a></dd>
@@ -657,7 +657,7 @@
           <a name="component-creation-toolwrapper"></a>
           <h3 data-magellan-destination="component-creation-toolwrapper">Toolwrapper</h3>
           <p>
-            The <a href="http://openplanets.github.io/scape-toolwrapper/">Scape Toolwrapper</a> is a tool to package command line tools and specific tool operations. Additionally it can create artefacts for tool execution, one of which is a Scape Preservation Component.
+            The <a href="http://openpreserve.github.io/scape-toolwrapper/">Scape Toolwrapper</a> is a tool to package command line tools and specific tool operations. Additionally it can create artefacts for tool execution, one of which is a Scape Preservation Component.
           </p><p>
             Tool operations are specified in a toolspec and consist of the operation's command and it's inputs and outputs. The toolspec also contains installation information and dependencies. Additional metadata required to elevate a wrapped tool to a Preservation Component is provided in a componentspec.
           </p><p>
